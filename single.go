@@ -9,6 +9,8 @@ import (
 func singleCommand() *cobra.Command {
 	var (
 		file string
+
+		opts *metricOptions
 	)
 
 	c := &cobra.Command{
@@ -22,7 +24,7 @@ func singleCommand() *cobra.Command {
 			if err != nil {
 				return err
 			}
-			metricMap, err := familiesToKeyPairs(families)
+			metricMap, err := familiesToKeyPairs(families, opts)
 			if err != nil {
 				return err
 			}
@@ -33,5 +35,7 @@ func singleCommand() *cobra.Command {
 	}
 
 	c.Flags().StringVar(&file, "file", "", "file to parse")
+
+	opts = addMetricFlags(c)
 	return c
 }

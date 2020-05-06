@@ -1,10 +1,10 @@
 package main
 
 import (
-	"errors"
 	"fmt"
-	"strings"
+	"sort"
 
+	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
 )
 
@@ -12,7 +12,8 @@ func compareCommand() *cobra.Command {
 	var (
 		oldFile string
 		newFile string
-		metrics string
+
+		opts *metricOptions
 	)
 
 	c := &cobra.Command{
@@ -27,62 +28,53 @@ func compareCommand() *cobra.Command {
 			}
 			oldFamilies, err := readFile(oldFile)
 			if err != nil {
-				return fmt.Errorf("error reading old file: %v", err)
+				return errors.Wrap(err, "error reading old file")
 			}
 
-			oldMetricMap, err := familiesToKeyPairs(oldFamilies)
+			oldMetricMap, err := familiesToKeyPairs(oldFamilies, opts)
 			if err != nil {
-				return fmt.Errorf("error generating old metric map: %v", err)
+				return errors.Wrap(err, "error generating old metric map")
 			}
 
 			newFamilies, err := readFile(newFile)
 			if err != nil {
-				return fmt.Errorf("error reading new file: %v", err)
+				return errors.Wrap(err, "error reading new file")
 			}
 
-			newMetricMap, err := familiesToKeyPairs(newFamilies)
+			newMetricMap, err := familiesToKeyPairs(newFamilies, opts)
 			if err != nil {
-				return fmt.Errorf("error generating new metric map: %v", err)
+				return errors.Wrap(err, "error generating new metric map")
 			}
 
-			var metricSlice []string
-			if metrics != "" {
-				metricSlice = strings.Split(metrics, ",")
-			}
-
-			compareMetricMaps(oldMetricMap, newMetricMap, metricSlice)
+			compareMetricMaps(oldMetricMap, newMetricMap)
 			return nil
 		},
 	}
 
 	c.Flags().StringVar(&oldFile, "old-file", "", "old metrics file to parse")
 	c.Flags().StringVar(&newFile, "new-file", "", "new metrics file to parse")
-	c.Flags().StringVar(&metrics, "metrics", "", "comma separate list of metrics to include in the results")
+
+	opts = addMetricFlags(c)
 
 	return c
 }
 
-func compareMetricMaps(oldMap, newMap metricMap, metricSlice []string) {
-	desiredMetrics := make(map[string]struct{})
-	for _, m := range metricSlice {
-		desiredMetrics[m] = struct{}{}
+func compareMetricMaps(oldMap, newMap metricMap) {
+	var keys []familyKey
+	for k := range oldMap {
+		keys = append(keys, k)
 	}
-
-	fmt.Printf("Metrics: %+v\n", desiredMetrics)
-
-	var removedKeys []familyKey
+	sort.Slice(keys, func(i, j int) bool {
+		if keys[i].metric != keys[j].metric {
+			return keys[i].metric < keys[j].metric
+		}
+		return keys[i].labels < keys[j].labels
+	})
 
 	// Show comparisons
-	for k := range oldMap {
+	for _, k := range keys {
 		if _, ok := newMap[k]; !ok {
-			removedKeys = append(removedKeys, k)
 			continue
-		}
-
-		if len(desiredMetrics) > 0 {
-			if _, ok := desiredMetrics[k.metric]; !ok {
-				continue
-			}
 		}
 
 		if oldMap[k].value != 0 {
@@ -92,13 +84,4 @@ func compareMetricMaps(oldMap, newMap metricMap, metricSlice []string) {
 			fmt.Printf("%s %s (old: %s, new %s)\n", k.metric, k.labels, oldMap[k].String(), newMap[k].String())
 		}
 	}
-
-	fmt.Println()
-	for _, removed := range removedKeys {
-		fmt.Println("Removed", removed)
-	}
-
-	//for k, v := range oldMap {
-	//
-	//}
 }

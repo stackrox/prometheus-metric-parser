@@ -8,7 +8,22 @@ import (
 	"strings"
 
 	"github.com/prometheus/prom2json"
+	"github.com/spf13/cobra"
 )
+
+type metricOptions struct {
+	metrics           string
+	minHistogramCount int
+	trimPrefix        string
+}
+
+func addMetricFlags(c *cobra.Command) *metricOptions {
+	var opts metricOptions
+	c.Flags().StringVar(&opts.metrics, "metrics", "", "comma separate list of metrics to include in the results")
+	c.Flags().IntVar(&opts.minHistogramCount, "min-histogram-counts", 5, "minimum number of histogram counts to be completed in order for the metric to show up")
+	c.Flags().StringVar(&opts.trimPrefix, "trim-prefix-histogram-counts", "rox_central_", "prefix to automatically strip")
+	return &opts
+}
 
 type labelPair map[string]string
 
@@ -51,11 +66,25 @@ func (m metricMap) Print() {
 		}
 		return keys[i].labels < keys[j].labels
 	})
+
+	// Longest key with +1 padding
+	var keyStrings []string
+	var longest int
 	for _, k := range keys {
+		stringKey := fmt.Sprintf("%s %s", k.metric, k.labels)
+		if len(stringKey) > longest {
+			longest = len(stringKey)
+		}
+		keyStrings = append(keyStrings, stringKey)
+	}
+
+	for i, k := range keys {
+		keyString := keyStrings[i]
 		if m[k].count == 0 {
-			fmt.Printf("%s %s %0.3f\n", k.metric, k.labels, m[k].value)
+			fmt.Printf("%-80v %0.0f\n", keyString, m[k].value)
 		} else {
-			fmt.Printf("%s %s (%0.3f/%d) %0.3f\n", k.metric, k.labels, m[k].sum, int64(m[k].count), m[k].value)
+			fraction := fmt.Sprintf("(%0.0f/%d)", m[k].sum, int64(m[k].count))
+			fmt.Printf("%-80v %s %0.3f\n", keyString, fraction, m[k].value)
 		}
 	}
 }
@@ -65,9 +94,22 @@ type familyKey struct {
 	labels string
 }
 
-func familiesToKeyPairs(families []*prom2json.Family) (metricMap, error) {
+func familiesToKeyPairs(families []*prom2json.Family, opts *metricOptions) (metricMap, error) {
+	desiredMetrics := make(map[string]struct{})
+	if opts.metrics != "" {
+		for _, m := range strings.Split(opts.metrics, ",") {
+			desiredMetrics[m] = struct{}{}
+		}
+	}
+
 	metricMap := make(map[familyKey]metric)
 	for _, family := range families {
+		if len(desiredMetrics) > 0 {
+			if _, ok := desiredMetrics[family.Name]; !ok {
+				continue
+			}
+		}
+
 		switch family.Type {
 		case "HISTOGRAM":
 			for _, familyMetric := range family.Metrics {
@@ -76,12 +118,17 @@ func familiesToKeyPairs(families []*prom2json.Family) (metricMap, error) {
 				if err != nil {
 					return nil, err
 				}
+				if count < float64(opts.minHistogramCount) {
+					continue
+				}
+
 				sum, err := strconv.ParseFloat(histogram.Sum, 64)
 				if err != nil {
 					return nil, err
 				}
+
 				metricMap[familyKey{
-					metric: family.Name,
+					metric: strings.TrimPrefix(family.Name, opts.trimPrefix),
 					labels: labelPair(histogram.Labels).String(),
 				}] = metric{
 					value: sum / count,
@@ -97,7 +144,7 @@ func familiesToKeyPairs(families []*prom2json.Family) (metricMap, error) {
 					return nil, err
 				}
 				metricMap[familyKey{
-					metric: family.Name,
+					metric: strings.TrimPrefix(family.Name, opts.trimPrefix),
 					labels: labelPair(m.Labels).String(),
 				}] = metric{
 					value: value,
