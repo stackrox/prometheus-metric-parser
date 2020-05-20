@@ -15,6 +15,7 @@ type metricOptions struct {
 	metrics           string
 	minHistogramCount int
 	trimPrefix        string
+	format            string
 }
 
 func addMetricFlags(c *cobra.Command) *metricOptions {
@@ -22,6 +23,7 @@ func addMetricFlags(c *cobra.Command) *metricOptions {
 	c.Flags().StringVar(&opts.metrics, "metrics", "", "comma separate list of metrics to include in the results")
 	c.Flags().IntVar(&opts.minHistogramCount, "min-histogram-counts", 5, "minimum number of histogram counts to be completed in order for the metric to show up")
 	c.Flags().StringVar(&opts.trimPrefix, "trim-prefix-histogram-counts", "rox_central_", "prefix to automatically strip")
+	c.Flags().StringVar(&opts.format, "format", "plain", "format to output the metrics in (options are plain or csv)")
 	return &opts
 }
 
@@ -37,7 +39,7 @@ func (l labelPair) String() string {
 	for _, k := range keys {
 		sb.WriteString(fmt.Sprintf("%s=%s ", k, l[k]))
 	}
-	return sb.String()
+	return strings.TrimSpace(sb.String())
 }
 
 type metric struct {
@@ -54,7 +56,7 @@ func (m metric) String() string {
 
 type metricMap map[familyKey]metric
 
-func (m metricMap) Print() {
+func (m metricMap) toSortedKeys() []familyKey {
 	var keys []familyKey
 	for k := range m {
 		keys = append(keys, k)
@@ -66,7 +68,10 @@ func (m metricMap) Print() {
 		}
 		return keys[i].labels < keys[j].labels
 	})
+	return keys
+}
 
+func (m metricMap) stdout(keys []familyKey) {
 	// Longest key with +1 padding
 	var keyStrings []string
 	var longest int
@@ -86,6 +91,25 @@ func (m metricMap) Print() {
 			fraction := fmt.Sprintf("(%0.0f/%d)", m[k].sum, int64(m[k].count))
 			fmt.Printf("%-80v %s %0.3f\n", keyString, fraction, m[k].value)
 		}
+	}
+}
+
+func (m metricMap) csv(keys []familyKey) {
+	for _, k := range keys {
+		fmt.Printf("%s,%s,%g\n", k.metric, k.labels, m[k].value)
+	}
+}
+
+func (m metricMap) Print(format string) {
+	keys := m.toSortedKeys()
+
+	switch format {
+	case "plain":
+		m.stdout(keys)
+	case "csv":
+		m.csv(keys)
+	default:
+		panic("unknown format")
 	}
 }
 

@@ -28,7 +28,7 @@ func singleCommand() *cobra.Command {
 			if err != nil {
 				return err
 			}
-			metricMap.Print()
+			metricMap.Print(opts.format)
 
 			return nil
 		},
