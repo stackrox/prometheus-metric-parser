@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"sort"
 
 	"github.com/pkg/errors"
@@ -143,5 +144,11 @@ func compareMetricMaps(oldMap, newMap metricMap, maxIncrease float64, opts *metr
 		csvPrint(keys, oldMap, newMap, deltas)
 	default:
 		panic("unknown output format")
+	}
+
+	for _, v := range deltas {
+		if v.overMax {
+			os.Exit(1)
+		}
 	}
 }
