@@ -2,18 +2,26 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"os"
 	"sort"
+	"strings"
 
 	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
 )
 
+type changeThresholds struct {
+	warnAt  float64
+	errorAt float64
+}
+
 func compareCommand() *cobra.Command {
 	var (
-		oldFile     string
-		newFile     string
-		maxIncrease float64
+		oldFile string
+		newFile string
+		warnAt  float64
+		errorAt float64
 
 		opts *metricOptions
 	)
@@ -48,14 +56,15 @@ func compareCommand() *cobra.Command {
 				return errors.Wrap(err, "error generating new metric map")
 			}
 
-			compareMetricMaps(oldMetricMap, newMetricMap, maxIncrease, opts)
+			compareMetricMaps(oldMetricMap, newMetricMap, changeThresholds{warnAt, errorAt}, opts)
 			return nil
 		},
 	}
 
 	c.Flags().StringVar(&oldFile, "old-file", "", "old metrics file to parse")
 	c.Flags().StringVar(&newFile, "new-file", "", "new metrics file to parse")
-	c.Flags().Float64Var(&maxIncrease, "max-increase", 0, "the maximum percent a metric may increase")
+	c.Flags().Float64Var(&warnAt, "warn", 0, "warn when values change more or less than this percentage amount")
+	c.Flags().Float64Var(&errorAt, "error", 0, "error when values change more or less than this percentage amount and exit 1")
 
 	opts = addMetricFlags(c)
 
@@ -67,12 +76,23 @@ func stdoutPrint(keys []familyKey, oldMap, newMap metricMap, deltas oldNewDeltaM
 	for _, k := range keys {
 		delta := deltas[k]
 		if oldMap[k].value != 0 {
-			overMax := ""
-			if delta.overMax {
-				overMax = " \033[31;1;4m<-- OVER MAX!!\033[0m"
+			prefixParts := make([]string, 0)
+			if delta.isWarn || delta.isError {
+				prefixParts = append(prefixParts, "1")
 			}
-			fmt.Printf("%s %s (old: %s, new %s): change: %0.4f%%%s\n",
-				k.metric, k.labels, oldMap[k].String(), newMap[k].String(), delta.percentChange, overMax)
+			if delta.isError {
+				prefixParts = append(prefixParts, "31", "4")
+			}
+			decorationPrefix := ""
+			if len(prefixParts) > 0 {
+				decorationPrefix = "\033[" + strings.Join(prefixParts, ";") + "m"
+			}
+			decorationSuffix := ""
+			if decorationPrefix != "" {
+				decorationSuffix = "\033[0m"
+			}
+			fmt.Printf("%s%s %s (old: %s, new %s): change: %0.4f%%%s\n",
+				decorationPrefix, k.metric, k.labels, oldMap[k].String(), newMap[k].String(), delta.percentChange, decorationSuffix)
 		} else {
 			fmt.Printf("%s %s (old: %s, new %s)\n", k.metric, k.labels, oldMap[k].String(), newMap[k].String())
 		}
@@ -95,12 +115,13 @@ func csvPrint(keys []familyKey, oldMap, newMap metricMap, deltas oldNewDeltaMap)
 
 type oldNewDelta struct {
 	percentChange float64
-	overMax       bool
+	isWarn        bool
+	isError       bool
 }
 
 type oldNewDeltaMap map[familyKey]oldNewDelta
 
-func getDeltas(keys []familyKey, oldMap, newMap metricMap, maxIncrease float64) oldNewDeltaMap {
+func getDeltas(keys []familyKey, oldMap, newMap metricMap, thresholds changeThresholds) oldNewDeltaMap {
 	deltas := make(oldNewDeltaMap)
 	for _, k := range keys {
 		newMetric := newMap[k]
@@ -109,11 +130,13 @@ func getDeltas(keys []familyKey, oldMap, newMap metricMap, maxIncrease float64) 
 			percentChange := (newMetric.value - oldMetric.value) / oldMetric.value * 100
 			deltas[k] = oldNewDelta{
 				percentChange: percentChange,
-				overMax:       maxIncrease != 0.0 && percentChange > maxIncrease,
+				isError:       thresholds.errorAt != 0.0 && math.Abs(percentChange) > thresholds.errorAt,
+				isWarn:        thresholds.warnAt != 0.0 && math.Abs(percentChange) > thresholds.warnAt,
 			}
 		} else {
 			deltas[k] = oldNewDelta{
-				overMax: false,
+				isWarn:  false,
+				isError: false,
 			}
 		}
 	}
@@ -121,7 +144,7 @@ func getDeltas(keys []familyKey, oldMap, newMap metricMap, maxIncrease float64) 
 	return deltas
 }
 
-func compareMetricMaps(oldMap, newMap metricMap, maxIncrease float64, opts *metricOptions) {
+func compareMetricMaps(oldMap, newMap metricMap, thresholds changeThresholds, opts *metricOptions) {
 	var keys []familyKey
 	for k := range oldMap {
 		if _, ok := newMap[k]; ok {
@@ -135,7 +158,7 @@ func compareMetricMaps(oldMap, newMap metricMap, maxIncrease float64, opts *metr
 		return keys[i].labels < keys[j].labels
 	})
 
-	var deltas = getDeltas(keys, oldMap, newMap, maxIncrease)
+	var deltas = getDeltas(keys, oldMap, newMap, thresholds)
 
 	switch opts.format {
 	case "plain":
@@ -147,7 +170,7 @@ func compareMetricMaps(oldMap, newMap metricMap, maxIncrease float64, opts *metr
 	}
 
 	for _, v := range deltas {
-		if v.overMax {
+		if v.isError {
 			os.Exit(1)
 		}
 	}
