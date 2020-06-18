@@ -23,7 +23,7 @@ func addMetricFlags(c *cobra.Command) *metricOptions {
 	c.Flags().StringVar(&opts.metrics, "metrics", "", "comma separate list of metrics to include in the results")
 	c.Flags().IntVar(&opts.minHistogramCount, "min-histogram-counts", 5, "minimum number of histogram counts to be completed in order for the metric to show up")
 	c.Flags().StringVar(&opts.trimPrefix, "trim-prefix-histogram-counts", "rox_central_", "prefix to automatically strip")
-	c.Flags().StringVar(&opts.format, "format", "plain", "format to output the metrics in (options are plain or csv)")
+	c.Flags().StringVar(&opts.format, "format", "plain", "format to output the metrics in (options are plain, csv or inlux line protocol)")
 	return &opts
 }
 
@@ -43,6 +43,7 @@ func (l labelPair) String() string {
 }
 
 type metric struct {
+	labels     map[string]string
 	value      float64
 	sum, count float64
 }
@@ -100,6 +101,16 @@ func (m metricMap) csv(keys []familyKey) {
 	}
 }
 
+func (m metricMap) influx(keys []familyKey) {
+	for _, k := range keys {
+		influxStr := k.metric
+		for labelKey, labelValue := range m[k].labels {
+			influxStr += "," + labelKey + "=" + strings.ReplaceAll(labelValue, " ", "\\ ")
+		}
+		fmt.Printf("%s value=%g\n", influxStr, m[k].value)
+	}
+}
+
 func (m metricMap) Print(format string) {
 	keys := m.toSortedKeys()
 
@@ -108,6 +119,8 @@ func (m metricMap) Print(format string) {
 		m.stdout(keys)
 	case "csv":
 		m.csv(keys)
+	case "influx":
+		m.influx(keys)
 	default:
 		panic("unknown format")
 	}
@@ -155,9 +168,10 @@ func familiesToKeyPairs(families []*prom2json.Family, opts *metricOptions) (metr
 					metric: strings.TrimPrefix(family.Name, opts.trimPrefix),
 					labels: labelPair(histogram.Labels).String(),
 				}] = metric{
-					value: sum / count,
-					sum:   sum,
-					count: count,
+					labels: histogram.Labels,
+					value:  sum / count,
+					sum:    sum,
+					count:  count,
 				}
 			}
 		case "COUNTER", "GAUGE":
@@ -171,7 +185,8 @@ func familiesToKeyPairs(families []*prom2json.Family, opts *metricOptions) (metr
 					metric: strings.TrimPrefix(family.Name, opts.trimPrefix),
 					labels: labelPair(m.Labels).String(),
 				}] = metric{
-					value: value,
+					labels: m.Labels,
+					value:  value,
 				}
 			}
 		case "SUMMARY":
