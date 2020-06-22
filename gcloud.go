@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"log"
 	"strings"
-	"time"
 
 	monitoring "cloud.google.com/go/monitoring/apiv3"
 	"github.com/golang/protobuf/ptypes/timestamp"
@@ -52,14 +51,17 @@ func (g gcloud) close() {
 }
 
 func (g gcloud) createGcloudMetricDescriptors(families []*prom2json.Family) {
+	fmt.Print("Creating metric descriptors")
 	for _, family := range families {
 		if family.Type != "SUMMARY" {
 			_, err := g.createGcloudMetricDescriptor(family)
 			if err != nil {
 				log.Fatal(errors.Wrap(err, "error creating custom metric: "+family.Name))
 			}
+			fmt.Print(".")
 		}
 	}
+	fmt.Println("done")
 }
 
 func (g gcloud) createGcloudMetricDescriptor(family *prom2json.Family) (*metricpb.MetricDescriptor, error) {
@@ -116,33 +118,8 @@ func (g gcloud) createGcloudMetricDescriptor(family *prom2json.Family) (*metricp
 		Name:             "projects/" + g.projectID,
 		MetricDescriptor: md,
 	}
-	m, err := g.client.CreateMetricDescriptor(g.ctx, req)
-	if err != nil {
-		return nil, fmt.Errorf("could not create custom metric: %v", err)
-	}
-
-	fmt.Printf("Created metric descriptor: %s\n", m.GetName())
-	fmt.Printf("\twith labels: %s\n", m.GetLabels())
-	return m, nil
+	return g.client.CreateMetricDescriptor(g.ctx, req)
 }
-
-// func deleteGcloudMetricDescriptor(projectID, name string) error {
-// 	ctx := context.Background()
-// 	c, err := monitoring.NewMetricClient(ctx)
-// 	if err != nil {
-// 		return err
-// 	}
-
-// 	delReq := &monitoringpb.DeleteMetricDescriptorRequest{
-// 		Name: "projects/" + projectID + "/metricDescriptors/" + "custom.googleapis.com/" + name,
-// 	}
-// 	err = c.DeleteMetricDescriptor(ctx, delReq)
-// 	if err != nil {
-// 		return fmt.Errorf("could not delete custom metric: %v", err)
-// 	}
-
-// 	return nil
-// }
 
 func (g gcloud) writeGcloudTimeSeriesValue(metric metric, optionLabels map[string]string, ts int64) error {
 	theTimestamp := &timestamp.Timestamp{
@@ -189,31 +166,14 @@ func (g gcloud) writeGcloudTimeSeriesValue(metric metric, optionLabels map[strin
 			},
 			Points: []*monitoringpb.Point{{
 				Interval: &monitoringpb.TimeInterval{
-					// StartTime: theTimestamp,
 					EndTime: theTimestamp,
 				},
 				Value: value,
 			}},
 		}},
 	}
-	fmt.Printf("will write metric: %s\n", "custom.googleapis.com/"+metric.family.Name)
-	fmt.Printf("\twith labels: %s\n", labels)
 
-	tries := 0
-	for {
-		tries++
-		err := g.client.CreateTimeSeries(g.ctx, req)
-		if err == nil {
-			fmt.Printf("Done writing time series data.\n")
-			return nil
-		}
-		if tries > 10 {
-			return fmt.Errorf("could not write time series value, %v, giving up", err)
-		}
-		delay := time.Duration(10*tries) * time.Second
-		fmt.Printf("could not write time series value, %v, trying in %s...\n", err, delay)
-		time.Sleep(delay)
-	}
+	return g.client.CreateTimeSeries(g.ctx, req)
 }
 
 func valueTypeFromFamilyType(familyType string) gcloud_metric.MetricDescriptor_ValueType {

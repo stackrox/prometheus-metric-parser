@@ -24,8 +24,8 @@ func singleCommand() *cobra.Command {
 			if opts.format == "gcloud" && opts.projectID == "" {
 				return errors.New("a --project-id must be specified for gcloud")
 			}
-			if (opts.format == "gcloud" || opts.format == "influx") && opts.timestamp == 0 {
-				return errors.New("a --timestamp must be specified for gcloud/influxdb injest")
+			if (opts.format == "gcloud" || opts.format == "influxdb") && opts.timestamp == 0 {
+				return errors.New("a --timestamp must be specified for gcloud/influxdb ingest")
 			}
 			families, err := readFile(file)
 			if err != nil {

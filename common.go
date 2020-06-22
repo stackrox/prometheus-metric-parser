@@ -27,7 +27,7 @@ func addMetricFlags(c *cobra.Command) *metricOptions {
 	c.Flags().StringVar(&opts.metrics, "metrics", "", "comma separate list of metrics to include in the results")
 	c.Flags().IntVar(&opts.minHistogramCount, "min-histogram-counts", 5, "minimum number of histogram counts to be completed in order for the metric to show up")
 	c.Flags().StringVar(&opts.trimPrefix, "trim-prefix-histogram-counts", "rox_central_", "prefix to automatically strip")
-	c.Flags().StringVar(&opts.format, "format", "plain", "format to output the metrics in (options are plain, csv, influxdb line protocol or gcloud)")
+	c.Flags().StringVar(&opts.format, "format", "plain", "format to output the metrics in (options are plain, csv, influxdb or gcloud)")
 	c.Flags().StringVar(&opts.labels, "labels", "", "comma separate list of labels to include in injest e.g. Test=ci-scale-test,ClusterFlavor=gke")
 	c.Flags().StringVar(&opts.projectID, "project-id", "", "where to send the metrics e.g. stackrox-ci")
 	c.Flags().Int64Var(&opts.timestamp, "timestamp", 0, "seconds since the epoch UTC")
@@ -110,7 +110,7 @@ func (m metricMap) csv(keys []familyKey) {
 	}
 }
 
-func (m metricMap) influx(keys []familyKey, labels map[string]string, timestamp int64) {
+func (m metricMap) influxdb(keys []familyKey, labels map[string]string, timestamp int64) {
 	for _, k := range keys {
 		influxStr := k.metric
 		for labelKey, labelValue := range m[k].labels {
@@ -124,6 +124,7 @@ func (m metricMap) influx(keys []familyKey, labels map[string]string, timestamp 
 }
 
 func (m metricMap) gcloud(keys []familyKey, labels map[string]string, projectID string, timestamp int64) {
+	fmt.Print("Writing metrics")
 	g, err := gcloudConnect(projectID)
 	if err != nil {
 		log.Fatalf("Cannot connect to gcloud: %v\n", err)
@@ -131,10 +132,12 @@ func (m metricMap) gcloud(keys []familyKey, labels map[string]string, projectID 
 	for _, v := range m {
 		err := g.writeGcloudTimeSeriesValue(v, labels, timestamp)
 		if err != nil {
-			log.Fatal(errors.Wrap(err, "error creating custom metric: "+v.name))
+			log.Fatal(errors.Wrap(err, "error writing metric: "+v.name))
 		}
+		fmt.Print(".")
 	}
 	g.close()
+	fmt.Println("done")
 }
 
 func (m metricMap) Print(format string, labels map[string]string, projectID string, timestamp int64) {
@@ -145,8 +148,8 @@ func (m metricMap) Print(format string, labels map[string]string, projectID stri
 		m.stdout(keys)
 	case "csv":
 		m.csv(keys)
-	case "influx":
-		m.influx(keys, labels, timestamp)
+	case "influxdb":
+		m.influxdb(keys, labels, timestamp)
 	case "gcloud":
 		m.gcloud(keys, labels, projectID, timestamp)
 	default:
