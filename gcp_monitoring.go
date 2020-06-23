@@ -49,11 +49,11 @@ func gcpMonitoringConnect(projectID string) (*gcpMonitoring, error) {
 	}, nil
 }
 
-func (g gcpMonitoring) close() {
+func (g *gcpMonitoring) close() {
 	g.client.Close()
 }
 
-func (g gcpMonitoring) createMetricDescriptors(families []*prom2json.Family) {
+func (g *gcpMonitoring) createMetricDescriptors(families []*prom2json.Family) {
 	fmt.Print("Creating metric descriptors")
 	for _, family := range families {
 		if family.Type != "SUMMARY" {
@@ -67,7 +67,7 @@ func (g gcpMonitoring) createMetricDescriptors(families []*prom2json.Family) {
 	fmt.Println("done")
 }
 
-func (g gcpMonitoring) createMetricDescriptor(family *prom2json.Family) (*metricpb.MetricDescriptor, error) {
+func (g *gcpMonitoring) createMetricDescriptor(family *prom2json.Family) (*metricpb.MetricDescriptor, error) {
 	metricName := strings.Title(strings.ReplaceAll(family.Name, "_", " "))
 
 	valueType := valueTypeFromFamilyType(family.Type)
@@ -128,7 +128,7 @@ func (g gcpMonitoring) createMetricDescriptor(family *prom2json.Family) (*metric
 	return g.client.CreateMetricDescriptor(ctx, req)
 }
 
-func (g gcpMonitoring) writeTimeSeriesValue(metric metric, optionLabels map[string]string, ts int64) error {
+func (g *gcpMonitoring) writeTimeSeriesValue(metric metric, optionLabels map[string]string, ts int64) error {
 	timestamp := &timestamp.Timestamp{
 		Seconds: ts,
 	}
