@@ -27,7 +27,7 @@ func addMetricFlags(c *cobra.Command) *metricOptions {
 	c.Flags().StringVar(&opts.metrics, "metrics", "", "comma separate list of metrics to include in the results")
 	c.Flags().IntVar(&opts.minHistogramCount, "min-histogram-counts", 5, "minimum number of histogram counts to be completed in order for the metric to show up")
 	c.Flags().StringVar(&opts.trimPrefix, "trim-prefix-histogram-counts", "rox_central_", "prefix to automatically strip")
-	c.Flags().StringVar(&opts.format, "format", "plain", "format to output the metrics in (options are plain, csv, influxdb or gcloud)")
+	c.Flags().StringVar(&opts.format, "format", "plain", "format to output the metrics in (options are plain, csv, influxdb or gcp-monitoring)")
 	c.Flags().StringVar(&opts.labels, "labels", "", "comma separate list of labels to include in ingest e.g. Test=ci-scale-test,ClusterFlavor=gke")
 	c.Flags().StringVar(&opts.projectID, "project-id", "", "where to send the metrics e.g. stackrox-ci")
 	c.Flags().Int64Var(&opts.timestamp, "timestamp", 0, "seconds since the epoch UTC")
@@ -129,13 +129,13 @@ func makeInfluxdbLabels(labels map[string]string) string {
 
 func (m metricMap) writeToGoogleCloudMonitoring(keys []familyKey, labels map[string]string, projectID string, timestamp int64) {
 	fmt.Print("Writing metrics")
-	g, err := gcloudConnect(projectID)
+	g, err := gcpMonitoringConnect(projectID)
 	defer g.close()
 	if err != nil {
-		log.Fatalf("Cannot connect to gcloud: %v\n", err)
+		log.Fatalf("Cannot connect to GCP monitoring: %v\n", err)
 	}
 	for _, v := range m {
-		err := g.writeGcloudTimeSeriesValue(v, labels, timestamp)
+		err := g.writeTimeSeriesValue(v, labels, timestamp)
 		if err != nil {
 			log.Fatal(errors.Wrap(err, "error writing metric: "+v.name))
 		}
@@ -154,7 +154,7 @@ func (m metricMap) Print(format string, labels map[string]string, projectID stri
 		m.csv(keys)
 	case "influxdb":
 		m.printInfluxDBLineProtocol(keys, labels, timestamp)
-	case "gcloud":
+	case "gcp-monitoring":
 		m.writeToGoogleCloudMonitoring(keys, labels, projectID, timestamp)
 	default:
 		panic("unknown format")

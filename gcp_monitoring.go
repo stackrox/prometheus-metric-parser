@@ -12,13 +12,13 @@ import (
 	"github.com/pkg/errors"
 	"github.com/prometheus/prom2json"
 	"google.golang.org/genproto/googleapis/api/label"
-	gcloud_metric "google.golang.org/genproto/googleapis/api/metric"
+	google_metric "google.golang.org/genproto/googleapis/api/metric"
 	metricpb "google.golang.org/genproto/googleapis/api/metric"
 	"google.golang.org/genproto/googleapis/api/monitoredres"
 	monitoringpb "google.golang.org/genproto/googleapis/monitoring/v3"
 )
 
-type gcloud struct {
+type gcpMonitoring struct {
 	projectID string
 	client    *monitoring.MetricClient
 	ctx       context.Context
@@ -37,27 +37,27 @@ var commonMetricLabels = []*label.LabelDescriptor{
 	},
 }
 
-func gcloudConnect(projectID string) (*gcloud, error) {
+func gcpMonitoringConnect(projectID string) (*gcpMonitoring, error) {
 	ctx := context.Background()
 	client, err := monitoring.NewMetricClient(ctx)
 	if err != nil {
 		return nil, err
 	}
-	return &gcloud{
+	return &gcpMonitoring{
 		projectID: projectID,
 		client:    client,
 	}, nil
 }
 
-func (g gcloud) close() {
+func (g gcpMonitoring) close() {
 	g.client.Close()
 }
 
-func (g gcloud) createGcloudMetricDescriptors(families []*prom2json.Family) {
+func (g gcpMonitoring) createMetricDescriptors(families []*prom2json.Family) {
 	fmt.Print("Creating metric descriptors")
 	for _, family := range families {
 		if family.Type != "SUMMARY" {
-			_, err := g.createGcloudMetricDescriptor(family)
+			_, err := g.createMetricDescriptor(family)
 			if err != nil {
 				log.Fatal(errors.Wrap(err, "error creating custom metric: "+family.Name))
 			}
@@ -67,7 +67,7 @@ func (g gcloud) createGcloudMetricDescriptors(families []*prom2json.Family) {
 	fmt.Println("done")
 }
 
-func (g gcloud) createGcloudMetricDescriptor(family *prom2json.Family) (*metricpb.MetricDescriptor, error) {
+func (g gcpMonitoring) createMetricDescriptor(family *prom2json.Family) (*metricpb.MetricDescriptor, error) {
 	metricName := strings.Title(strings.ReplaceAll(family.Name, "_", " "))
 
 	valueType := valueTypeFromFamilyType(family.Type)
@@ -107,11 +107,11 @@ func (g gcloud) createGcloudMetricDescriptor(family *prom2json.Family) (*metricp
 		unit = "ms"
 	}
 
-	md := &gcloud_metric.MetricDescriptor{
+	md := &google_metric.MetricDescriptor{
 		Name:        metricName,
 		Type:        "custom.googleapis.com/" + family.Name,
 		Labels:      labels,
-		MetricKind:  gcloud_metric.MetricDescriptor_GAUGE,
+		MetricKind:  google_metric.MetricDescriptor_GAUGE,
 		ValueType:   valueType,
 		Unit:        unit,
 		Description: family.Help,
@@ -128,7 +128,7 @@ func (g gcloud) createGcloudMetricDescriptor(family *prom2json.Family) (*metricp
 	return g.client.CreateMetricDescriptor(ctx, req)
 }
 
-func (g gcloud) writeGcloudTimeSeriesValue(metric metric, optionLabels map[string]string, ts int64) error {
+func (g gcpMonitoring) writeTimeSeriesValue(metric metric, optionLabels map[string]string, ts int64) error {
 	timestamp := &timestamp.Timestamp{
 		Seconds: ts,
 	}
@@ -144,13 +144,13 @@ func (g gcloud) writeGcloudTimeSeriesValue(metric metric, optionLabels map[strin
 	valueType := valueTypeFromFamilyType(metric.family.Type)
 	var value *monitoringpb.TypedValue
 	switch valueType {
-	case gcloud_metric.MetricDescriptor_DOUBLE:
+	case google_metric.MetricDescriptor_DOUBLE:
 		value = &monitoringpb.TypedValue{
 			Value: &monitoringpb.TypedValue_DoubleValue{
 				DoubleValue: metric.value,
 			},
 		}
-	case gcloud_metric.MetricDescriptor_INT64:
+	case google_metric.MetricDescriptor_INT64:
 		value = &monitoringpb.TypedValue{
 			Value: &monitoringpb.TypedValue_Int64Value{
 				Int64Value: int64(metric.value),
@@ -186,14 +186,14 @@ func (g gcloud) writeGcloudTimeSeriesValue(metric metric, optionLabels map[strin
 	return g.client.CreateTimeSeries(ctx, req)
 }
 
-func valueTypeFromFamilyType(familyType string) gcloud_metric.MetricDescriptor_ValueType {
-	var valueType gcloud_metric.MetricDescriptor_ValueType
+func valueTypeFromFamilyType(familyType string) google_metric.MetricDescriptor_ValueType {
+	var valueType google_metric.MetricDescriptor_ValueType
 
 	switch familyType {
 	case "HISTOGRAM":
-		valueType = gcloud_metric.MetricDescriptor_DOUBLE
+		valueType = google_metric.MetricDescriptor_DOUBLE
 	case "COUNTER", "GAUGE":
-		valueType = gcloud_metric.MetricDescriptor_INT64
+		valueType = google_metric.MetricDescriptor_INT64
 	default:
 		log.Fatalf("unexpected family type: %s", familyType)
 	}

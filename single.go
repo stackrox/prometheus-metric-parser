@@ -21,23 +21,23 @@ func singleCommand() *cobra.Command {
 			if file == "" {
 				return errors.New("file must be specified")
 			}
-			if opts.format == "gcloud" && opts.projectID == "" {
-				return errors.New("a --project-id must be specified for gcloud")
+			if opts.format == "gcp-monitoring" && opts.projectID == "" {
+				return errors.New("a --project-id must be specified for gcp-monitoring")
 			}
-			if (opts.format == "gcloud" || opts.format == "influxdb") && opts.timestamp == 0 {
-				return errors.New("a --timestamp must be specified for gcloud/influxdb ingest")
+			if (opts.format == "gcp-monitoring" || opts.format == "influxdb") && opts.timestamp == 0 {
+				return errors.New("a --timestamp must be specified for gcp-monitoring/influxdb ingest")
 			}
 			families, err := readFile(file)
 			if err != nil {
 				return err
 			}
-			if opts.format == "gcloud" {
-				gcloud, err := gcloudConnect(opts.projectID)
-				defer gcloud.close()
+			if opts.format == "gcp-monitoring" {
+				gcpMonitoring, err := gcpMonitoringConnect(opts.projectID)
+				defer gcpMonitoring.close()
 				if err != nil {
-					log.Fatalf("Cannot connect to gcloud: %v\n", err)
+					log.Fatalf("Cannot connect to GCP monitoring: %v\n", err)
 				}
-				gcloud.createGcloudMetricDescriptors(families)
+				gcpMonitoring.createMetricDescriptors(families)
 			}
 			metricMap, err := familiesToKeyPairs(families, opts)
 			if err != nil {
