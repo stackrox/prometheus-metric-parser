@@ -7,6 +7,7 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/pkg/errors"
 	"github.com/prometheus/prom2json"
 	"github.com/spf13/cobra"
 )
@@ -16,6 +17,9 @@ type metricOptions struct {
 	minHistogramCount int
 	trimPrefix        string
 	format            string
+	labels            string
+	projectID         string
+	timestamp         int64
 }
 
 func addMetricFlags(c *cobra.Command) *metricOptions {
@@ -23,7 +27,10 @@ func addMetricFlags(c *cobra.Command) *metricOptions {
 	c.Flags().StringVar(&opts.metrics, "metrics", "", "comma separate list of metrics to include in the results")
 	c.Flags().IntVar(&opts.minHistogramCount, "min-histogram-counts", 5, "minimum number of histogram counts to be completed in order for the metric to show up")
 	c.Flags().StringVar(&opts.trimPrefix, "trim-prefix-histogram-counts", "rox_central_", "prefix to automatically strip")
-	c.Flags().StringVar(&opts.format, "format", "plain", "format to output the metrics in (options are plain or csv)")
+	c.Flags().StringVar(&opts.format, "format", "plain", "format to output the metrics in (options are plain, csv, influxdb or gcp-monitoring)")
+	c.Flags().StringVar(&opts.labels, "labels", "", "comma separate list of labels to include in ingest e.g. Test=ci-scale-test,ClusterFlavor=gke")
+	c.Flags().StringVar(&opts.projectID, "project-id", "", "where to send the metrics e.g. stackrox-ci")
+	c.Flags().Int64Var(&opts.timestamp, "timestamp", 0, "seconds since the epoch UTC")
 	return &opts
 }
 
@@ -43,8 +50,11 @@ func (l labelPair) String() string {
 }
 
 type metric struct {
+	name       string
+	labels     map[string]string
 	value      float64
 	sum, count float64
+	family     *prom2json.Family
 }
 
 func (m metric) String() string {
@@ -100,7 +110,41 @@ func (m metricMap) csv(keys []familyKey) {
 	}
 }
 
-func (m metricMap) Print(format string) {
+func (m metricMap) printInfluxDBLineProtocol(keys []familyKey, labels map[string]string, timestamp int64) {
+	for _, k := range keys {
+		influxStr := k.metric
+		influxStr += makeInfluxdbLabels(m[k].labels)
+		influxStr += makeInfluxdbLabels(labels)
+		fmt.Printf("%s value=%g %d\n", influxStr, m[k].value, timestamp)
+	}
+}
+
+func makeInfluxdbLabels(labels map[string]string) string {
+	labelsStr := ""
+	for labelKey, labelValue := range labels {
+		labelsStr += "," + labelKey + "=" + strings.ReplaceAll(labelValue, " ", "\\ ")
+	}
+	return labelsStr
+}
+
+func (m metricMap) writeToGoogleCloudMonitoring(keys []familyKey, labels map[string]string, projectID string, timestamp int64) {
+	fmt.Print("Writing metrics")
+	g, err := gcpMonitoringConnect(projectID)
+	defer g.close()
+	if err != nil {
+		log.Fatalf("Cannot connect to GCP monitoring: %v\n", err)
+	}
+	for _, v := range m {
+		err := g.writeTimeSeriesValue(v, labels, timestamp)
+		if err != nil {
+			log.Fatal(errors.Wrap(err, "error writing metric: "+v.name))
+		}
+		fmt.Print(".")
+	}
+	fmt.Println("done")
+}
+
+func (m metricMap) Print(format string, labels map[string]string, projectID string, timestamp int64) {
 	keys := m.toSortedKeys()
 
 	switch format {
@@ -108,6 +152,10 @@ func (m metricMap) Print(format string) {
 		m.stdout(keys)
 	case "csv":
 		m.csv(keys)
+	case "influxdb":
+		m.printInfluxDBLineProtocol(keys, labels, timestamp)
+	case "gcp-monitoring":
+		m.writeToGoogleCloudMonitoring(keys, labels, projectID, timestamp)
 	default:
 		panic("unknown format")
 	}
@@ -134,6 +182,8 @@ func familiesToKeyPairs(families []*prom2json.Family, opts *metricOptions) (metr
 			}
 		}
 
+		metricName := strings.TrimPrefix(family.Name, opts.trimPrefix)
+
 		switch family.Type {
 		case "HISTOGRAM":
 			for _, familyMetric := range family.Metrics {
@@ -152,12 +202,15 @@ func familiesToKeyPairs(families []*prom2json.Family, opts *metricOptions) (metr
 				}
 
 				metricMap[familyKey{
-					metric: strings.TrimPrefix(family.Name, opts.trimPrefix),
+					metric: metricName,
 					labels: labelPair(histogram.Labels).String(),
 				}] = metric{
-					value: sum / count,
-					sum:   sum,
-					count: count,
+					name:   metricName,
+					labels: histogram.Labels,
+					value:  sum / count,
+					sum:    sum,
+					count:  count,
+					family: family,
 				}
 			}
 		case "COUNTER", "GAUGE":
@@ -168,10 +221,13 @@ func familiesToKeyPairs(families []*prom2json.Family, opts *metricOptions) (metr
 					return nil, err
 				}
 				metricMap[familyKey{
-					metric: strings.TrimPrefix(family.Name, opts.trimPrefix),
+					metric: metricName,
 					labels: labelPair(m.Labels).String(),
 				}] = metric{
-					value: value,
+					name:   metricName,
+					labels: m.Labels,
+					value:  value,
+					family: family,
 				}
 			}
 		case "SUMMARY":
@@ -180,4 +236,20 @@ func familiesToKeyPairs(families []*prom2json.Family, opts *metricOptions) (metr
 		}
 	}
 	return metricMap, nil
+}
+
+func labelsFromOpts(optLabels string) map[string]string {
+	labels := make(map[string]string)
+	for _, pair := range strings.Split(optLabels, ",") {
+		x := strings.Split(pair, "=")
+		if len(x) == 2 {
+			name := strings.TrimSpace(x[0])
+			value := strings.TrimSpace(x[1])
+			if name != "" && value != "" {
+				labels[name] = value
+			}
+		}
+	}
+
+	return labels
 }
