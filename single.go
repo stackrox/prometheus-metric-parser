@@ -33,11 +33,11 @@ func singleCommand() *cobra.Command {
 			}
 			if opts.format == "gcloud" {
 				gcloud, err := gcloudConnect(opts.projectID)
+				defer gcloud.close()
 				if err != nil {
 					log.Fatalf("Cannot connect to gcloud: %v\n", err)
 				}
 				gcloud.createGcloudMetricDescriptors(families)
-				gcloud.close()
 			}
 			metricMap, err := familiesToKeyPairs(families, opts)
 			if err != nil {

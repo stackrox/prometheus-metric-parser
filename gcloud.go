@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"strings"
+	"time"
 
 	monitoring "cloud.google.com/go/monitoring/apiv3"
 	"github.com/golang/protobuf/ptypes/timestamp"
@@ -36,14 +37,16 @@ var commonMetricLabels = []*label.LabelDescriptor{
 	},
 }
 
-func gcloudConnect(projectID string) (gcloud, error) {
+func gcloudConnect(projectID string) (*gcloud, error) {
 	ctx := context.Background()
 	client, err := monitoring.NewMetricClient(ctx)
-	return gcloud{
+	if err != nil {
+		return nil, err
+	}
+	return &gcloud{
 		projectID: projectID,
 		client:    client,
-		ctx:       ctx,
-	}, err
+	}, nil
 }
 
 func (g gcloud) close() {
@@ -83,7 +86,7 @@ func (g gcloud) createGcloudMetricDescriptor(family *prom2json.Family) (*metricp
 		case "COUNTER", "GAUGE":
 			metricLabels = familyMetric.(prom2json.Metric).Labels
 		default:
-			panic("unexpected")
+			log.Fatalf("unexpected family type: %v", family.Type)
 		}
 
 		for labelName := range metricLabels {
@@ -118,11 +121,15 @@ func (g gcloud) createGcloudMetricDescriptor(family *prom2json.Family) (*metricp
 		Name:             "projects/" + g.projectID,
 		MetricDescriptor: md,
 	}
-	return g.client.CreateMetricDescriptor(g.ctx, req)
+
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+
+	return g.client.CreateMetricDescriptor(ctx, req)
 }
 
 func (g gcloud) writeGcloudTimeSeriesValue(metric metric, optionLabels map[string]string, ts int64) error {
-	theTimestamp := &timestamp.Timestamp{
+	timestamp := &timestamp.Timestamp{
 		Seconds: ts,
 	}
 
@@ -150,7 +157,7 @@ func (g gcloud) writeGcloudTimeSeriesValue(metric metric, optionLabels map[strin
 			},
 		}
 	default:
-		panic("unexpected")
+		log.Fatalf("unexpected metric descriptor value type: %v", valueType)
 	}
 
 	req := &monitoringpb.CreateTimeSeriesRequest{
@@ -166,14 +173,17 @@ func (g gcloud) writeGcloudTimeSeriesValue(metric metric, optionLabels map[strin
 			},
 			Points: []*monitoringpb.Point{{
 				Interval: &monitoringpb.TimeInterval{
-					EndTime: theTimestamp,
+					EndTime: timestamp,
 				},
 				Value: value,
 			}},
 		}},
 	}
 
-	return g.client.CreateTimeSeries(g.ctx, req)
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+
+	return g.client.CreateTimeSeries(ctx, req)
 }
 
 func valueTypeFromFamilyType(familyType string) gcloud_metric.MetricDescriptor_ValueType {
