@@ -122,7 +122,7 @@ func (g *gcpMonitoring) createMetricDescriptor(family *prom2json.Family) (*metri
 		MetricDescriptor: md,
 	}
 
-	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Minute)
 	defer cancel()
 
 	return g.client.CreateMetricDescriptor(ctx, req)
@@ -180,7 +180,7 @@ func (g *gcpMonitoring) writeTimeSeriesValue(metric metric, optionLabels map[str
 		}},
 	}
 
-	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Minute)
 	defer cancel()
 
 	return g.client.CreateTimeSeries(ctx, req)
