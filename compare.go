@@ -113,6 +113,35 @@ func csvPrint(keys []familyKey, oldMap, newMap metricMap, deltas oldNewDeltaMap)
 	}
 }
 
+func htmlTablePrint(keys []familyKey, oldMap, newMap metricMap, deltas oldNewDeltaMap) {
+	fmt.Printf("<table>\n")
+	fmt.Printf("<thead><th>Metric</th><th>Labels</th><th>Baseline Value</th><th>New Value</th><th>Delta</th></thead>\n")
+	fmt.Printf("<tbody>\n")
+	for _, k := range keys {
+		delta := deltas[k]
+		rowBackground := "#fff"
+		cells := make([]string, 0)
+		cells = append(cells, k.metric, k.labels, oldMap[k].String(), newMap[k].String())
+		if oldMap[k].value != 0 {
+			if delta.isWarn {
+				rowBackground = "yellow"
+			}
+			if delta.isError {
+				rowBackground = "orange"
+			}
+			cells = append(cells, fmt.Sprintf("%0.4f%%", delta.percentChange))
+		} else {
+			cells = append(cells, "n/a")
+		}
+		fmt.Printf("<tr style=\"background: %s;\">\n", rowBackground)
+		for _, cell := range cells {
+			fmt.Printf("<td>%s</td>", cell)
+		}
+		fmt.Printf("\n</tr>\n")
+	}
+	fmt.Printf("</tbody>\n</table>\n")
+}
+
 type oldNewDelta struct {
 	percentChange float64
 	isWarn        bool
@@ -165,6 +194,8 @@ func compareMetricMaps(oldMap, newMap metricMap, thresholds changeThresholds, op
 		stdoutPrint(keys, oldMap, newMap, deltas)
 	case "csv":
 		csvPrint(keys, oldMap, newMap, deltas)
+	case "html-table":
+		htmlTablePrint(keys, oldMap, newMap, deltas)
 	default:
 		panic("unknown output format")
 	}
