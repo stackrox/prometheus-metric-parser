@@ -50,19 +50,27 @@ func gcpMonitoringConnect(projectID string) (*gcpMonitoring, error) {
 }
 
 func (g *gcpMonitoring) close() {
-	g.client.Close()
+	err := g.client.Close()
+	if err != nil {
+		log.Printf("Error closing GCP monitoring client: %+v", err)
+	}
 }
 
 func (g *gcpMonitoring) createMetricDescriptors(families []*prom2json.Family) {
 	fmt.Print("Creating metric descriptors")
+	errorCount := 0
 	for _, family := range families {
 		if family.Type != "SUMMARY" {
 			_, err := g.createMetricDescriptor(family)
 			if err != nil {
-				log.Fatal(errors.Wrap(err, "error creating custom metric: "+family.Name))
+				log.Println(errors.Wrap(err, "error creating custom metric: "+family.Name))
+				errorCount++
 			}
 			fmt.Print(".")
 		}
+	}
+	if len(families) < 20*errorCount {
+		log.Fatal("More than 5% of GCP requests failed. Exiting the job.")
 	}
 	fmt.Println("done")
 }
@@ -71,8 +79,6 @@ func (g *gcpMonitoring) createMetricDescriptor(family *prom2json.Family) (*metri
 	metricName := strings.Title(strings.ReplaceAll(family.Name, "_", " "))
 
 	valueType := valueTypeFromFamilyType(family.Type)
-
-	type CommonMetric struct{ Labels map[string]string }
 
 	var labels []*label.LabelDescriptor
 	added := make(map[string]bool)

@@ -134,12 +134,17 @@ func (m metricMap) writeToGoogleCloudMonitoring(keys []familyKey, labels map[str
 	if err != nil {
 		log.Fatalf("Cannot connect to GCP monitoring: %v\n", err)
 	}
+	errorCount := 0
 	for _, v := range m {
 		err := g.writeTimeSeriesValue(v, labels, timestamp)
 		if err != nil {
-			log.Fatal(errors.Wrap(err, "error writing metric: "+v.name))
+			log.Println(errors.Wrap(err, "error writing metric: "+v.name))
+			errorCount++
 		}
 		fmt.Print(".")
+	}
+	if len(m) < 20*errorCount {
+		log.Fatal("More than 5% of GCP requests failed. Exiting the job.")
 	}
 	fmt.Println("done")
 }
