@@ -143,6 +143,9 @@ func (m metricMap) writeToGoogleCloudMonitoring(keys []familyKey, labels map[str
 		}
 		fmt.Print(".")
 	}
+	// This is a way to calculate 5% to avoid division/multiplying float numbers.
+	// Divide both sides by 20 * len(m) and you'll get:
+	// 0.05 < errorCount / len(m)
 	if len(m) < 20*errorCount {
 		log.Fatal("More than 5% of GCP requests failed. Exiting the job.")
 	}
