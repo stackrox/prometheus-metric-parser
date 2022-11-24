@@ -69,6 +69,9 @@ func (g *gcpMonitoring) createMetricDescriptors(families []*prom2json.Family) {
 			fmt.Print(".")
 		}
 	}
+	// This is a way to calculate 5% to avoid division/multiplying float numbers.
+	// Divide both sides by 20 * len(families) and you'll get:
+	// 0.05 < errorCount / len(families)
 	if len(families) < 20*errorCount {
 		log.Fatal("More than 5% of GCP requests failed. Exiting the job.")
 	}
