@@ -9,13 +9,13 @@ import (
 
 	monitoring "cloud.google.com/go/monitoring/apiv3/v2"
 	"cloud.google.com/go/monitoring/apiv3/v2/monitoringpb"
-	"github.com/golang/protobuf/ptypes/timestamp"
 	"github.com/pkg/errors"
 	"github.com/prometheus/prom2json"
 	"google.golang.org/genproto/googleapis/api/label"
 	google_metric "google.golang.org/genproto/googleapis/api/metric"
 	metricpb "google.golang.org/genproto/googleapis/api/metric"
 	"google.golang.org/genproto/googleapis/api/monitoredres"
+	timestamp "google.golang.org/protobuf/types/known/timestamppb"
 )
 
 type gcpMonitoring struct {
