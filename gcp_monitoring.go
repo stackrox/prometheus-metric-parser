@@ -23,7 +23,6 @@ import (
 type gcpMonitoring struct {
 	projectID string
 	client    *monitoring.MetricClient
-	ctx       context.Context
 }
 
 var commonMetricLabels = []*label.LabelDescriptor{
