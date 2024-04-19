@@ -7,15 +7,15 @@ import (
 	"strings"
 	"time"
 
-	monitoring "cloud.google.com/go/monitoring/apiv3"
+	monitoring "cloud.google.com/go/monitoring/apiv3/v2"
+	"cloud.google.com/go/monitoring/apiv3/v2/monitoringpb"
+	"github.com/golang/protobuf/ptypes/timestamp"
 	"github.com/pkg/errors"
 	"github.com/prometheus/prom2json"
 	"google.golang.org/genproto/googleapis/api/label"
 	google_metric "google.golang.org/genproto/googleapis/api/metric"
 	metricpb "google.golang.org/genproto/googleapis/api/metric"
 	"google.golang.org/genproto/googleapis/api/monitoredres"
-	monitoringpb "google.golang.org/genproto/googleapis/monitoring/v3"
-	"google.golang.org/protobuf/types/known/timestamppb"
 )
 
 type gcpMonitoring struct {
@@ -138,7 +138,7 @@ func (g *gcpMonitoring) createMetricDescriptor(family *prom2json.Family) (*metri
 }
 
 func (g *gcpMonitoring) writeTimeSeriesValue(metric metric, optionLabels map[string]string, ts int64) error {
-	timestamp := &timestamppb.Timestamp{
+	timestamp := &timestamp.Timestamp{
 		Seconds: ts,
 	}
 
