@@ -3,6 +3,8 @@ package main
 import (
 	"context"
 	"fmt"
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
 	"log"
 	"strings"
 	"time"
@@ -79,7 +81,7 @@ func (g *gcpMonitoring) createMetricDescriptors(families []*prom2json.Family) {
 }
 
 func (g *gcpMonitoring) createMetricDescriptor(family *prom2json.Family) (*metricpb.MetricDescriptor, error) {
-	metricName := strings.Title(strings.ReplaceAll(family.Name, "_", " "))
+	metricName := cases.Title(language.Und).String(strings.ReplaceAll(family.Name, "_", " "))
 
 	valueType := valueTypeFromFamilyType(family.Type)
 

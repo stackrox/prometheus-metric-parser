@@ -2,8 +2,6 @@ package main
 
 import (
 	"bytes"
-	"io/ioutil"
-
 	dto "github.com/prometheus/client_model/go"
 	"github.com/prometheus/prom2json"
 	"github.com/spf13/cobra"
@@ -29,7 +27,7 @@ func main() {
 }
 
 func readFile(path string) ([]*prom2json.Family, error) {
-	data, err := ioutil.ReadFile(path)
+	data, err := os.ReadFile(path)
 	if err != nil {
 		return nil, err
 	}
