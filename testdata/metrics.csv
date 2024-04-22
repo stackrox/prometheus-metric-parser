@@ -1,0 +1,1889 @@
+administration_events_queue_size_total,Operation=Add,59
+administration_events_queue_size_total,Operation=Remove,59
+cluster_metrics_cpu_capacity,ClusterID=d0526792-67ad-448c-adf6-9a5ca731644e,12
+cluster_metrics_node_count,ClusterID=d0526792-67ad-448c-adf6-9a5ca731644e,3
+datastore_function_duration,Function=AddProcessListeningOnPort Type=ProcessListeningOnPort,6.806121999999999
+datastore_function_duration,Function=Count Type=Alert,1.7332334999999999
+datastore_function_duration,Function=Count Type=Image,1.3991637809076687
+datastore_function_duration,Function=Delete Type=Pod,7.951695857142854
+datastore_function_duration,Function=DeleteImages Type=Image,14.139132217391305
+datastore_function_duration,Function=MarkAlertsResolvedBatch Type=Alert,5.797034151773053
+datastore_function_duration,Function=RemoveDeployment Type=Deployment,16.74446232369942
+datastore_function_duration,Function=Search Type=Alert,2.513855
+datastore_function_duration,Function=Search Type=Image,1.045498105011933
+datastore_function_duration,Function=Search Type=K8SRoleBinding,0.582067441580756
+datastore_function_duration,Function=Search Type=Node,2.343872714285715
+datastore_function_duration,Function=SearchAlerts Type=Alert,3.177561
+datastore_function_duration,Function=SearchDeployments Type=Deployment,1.8669168644067806
+datastore_function_duration,Function=SearchImages Type=Image,4.877737333333332
+datastore_function_duration,Function=SearchListAlerts Type=Alert,1.6120205674796748
+datastore_function_duration,Function=SearchListDeployments Type=Deployment,1.2605208277153561
+datastore_function_duration,Function=SearchListImages Type=Image,18.91602808
+datastore_function_duration,Function=SearchNodes Type=Node,1.87403225
+datastore_function_duration,Function=SearchRawAlerts Type=Alert,1.7669098246511628
+datastore_function_duration,Function=SearchRawDeployments Type=Deployment,1.6268263863636359
+datastore_function_duration,Function=SearchRawPods Type=Pod,2.1769875454545455
+datastore_function_duration,Function=Upsert Type=Pod,7.5368367688524485
+datastore_function_duration,Function=UpsertAlert Type=Alert,2.55514792386166
+datastore_function_duration,Function=UpsertDeployment Type=Deployment,27.09918681691548
+datastore_function_duration,Function=UpsertImage Type=Image,19.314387995640335
+datastore_function_duration,Function=UpsertNode Type=Node,64.1763871791045
+deduping_hash_size,cluster=d0526792-67ad-448c-adf6-9a5ca731644e,166
+function_segment_duration,Segment=AddBaseline,2.7861138249999997
+function_segment_duration,Segment=AddProcessToAggregator,0.019120245535714293
+function_segment_duration,Segment=CheckAndUpdateBaseline,0.07883970535714284
+function_segment_duration,Segment=FlushingIndicatorQueue,4.688630941964286
+go_goroutines,,704
+go_info,version=go1.21.8,1
+go_memstats_alloc_bytes,,1.48399176e+08
+go_memstats_alloc_bytes_total,,8.542009e+09
+go_memstats_buck_hash_sys_bytes,,4.432154e+06
+go_memstats_frees_total,,1.32741127e+08
+go_memstats_gc_sys_bytes,,1.254336e+07
+go_memstats_heap_alloc_bytes,,1.48399176e+08
+go_memstats_heap_idle_bytes,,1.1563008e+08
+go_memstats_heap_inuse_bytes,,1.98877184e+08
+go_memstats_heap_objects,,1.510054e+06
+go_memstats_heap_released_bytes,,8.7171072e+07
+go_memstats_heap_sys_bytes,,3.14507264e+08
+go_memstats_last_gc_time_seconds,,1.7134619958171895e+09
+go_memstats_lookups_total,,0
+go_memstats_mallocs_total,,1.34251181e+08
+go_memstats_mcache_inuse_bytes,,4800
+go_memstats_mcache_sys_bytes,,15600
+go_memstats_mspan_inuse_bytes,,2.873472e+06
+go_memstats_mspan_sys_bytes,,5.002872e+06
+go_memstats_next_gc_bytes,,1.850186e+08
+go_memstats_other_sys_bytes,,1.981254e+06
+go_memstats_stack_inuse_bytes,,4.25984e+06
+go_memstats_stack_sys_bytes,,4.25984e+06
+go_memstats_sys_bytes,,3.42742344e+08
+go_threads,,12
+graphql_op_duration,Operation=ContainerCount Resolver=Pods,0.008298375000000002
+graphql_op_duration,Operation=ContainerRestartEvents Resolver=Pods,0.004644777777777778
+graphql_op_duration,Operation=ContainerTerminationEvents Resolver=Pods,0.002709333333333333
+graphql_op_duration,Operation=Deployment Resolver=Root,0.056430400000000006
+graphql_op_duration,Operation=DeploymentCount Resolver=ImageCVEs,1.3516847921259862
+graphql_op_duration,Operation=DeploymentCount Resolver=Root,0.9622904457735239
+graphql_op_duration,Operation=EnvImpact Resolver=ImageCVEs,1.1092695331230287
+graphql_op_duration,Operation=Events Resolver=Pods,2.047938125
+graphql_op_duration,Operation=Image Resolver=Root,1.2139813333333334
+graphql_op_duration,Operation=ImageComponent Resolver=Root,1.3513552
+graphql_op_duration,Operation=ImageComponentCount Resolver=ImageCVEs,2.2767301748031477
+graphql_op_duration,Operation=ImageComponentCount Resolver=Root,2.2736322676056337
+graphql_op_duration,Operation=ImageCount Resolver=ImageCVEs,1.4128455748031505
+graphql_op_duration,Operation=ImageCount Resolver=Root,1.4097018551181093
+graphql_op_duration,Operation=ImageVulnerabilities Resolver=ImageComponents,2.9870653999999996
+graphql_op_duration,Operation=ImageVulnerabilities Resolver=Images,10.0778274
+graphql_op_duration,Operation=ImageVulnerabilities Resolver=Root,10.166924277777776
+graphql_op_duration,Operation=IsFixable Resolver=ImageCVEs,1.516657044094488
+graphql_op_duration,Operation=LastScanned Resolver=ImageCVEs,0.7142033773584906
+graphql_op_duration,Operation=Pods Resolver=Root,2.2733501999999994
+graphql_op_duration,Operation=PolicyViolationEvents Resolver=Pods,1.1325613749999999
+graphql_op_duration,Operation=ProcessActivityEvents Resolver=Pods,0.899895125
+graphql_query_duration,Query=
+    query getPodEvents($podsQuery: String) {
+        result: pods(query: $podsQuery) {
+            id
+            name
+            containerCount
+            events {
+                __typename
+                id
+                name
+                timestamp
+                ... on ProcessActivityEvent {
+                    args
+                    uid
+                    parentName
+                    parentUid
+                    inBaseline
+                }
+            }
+        }
+    },4.701071875
+grpc_error,Code=Canceled,1
+grpc_last_message_size_received_bytes,Type=*central.MsgFromSensor_ClusterHealthInfo_,39
+grpc_last_message_size_received_bytes,Type=*central.MsgFromSensor_ClusterMetrics_,6
+grpc_last_message_size_received_bytes,Type=*central.MsgFromSensor_ClusterStatusUpdate_,28
+grpc_last_message_size_received_bytes,Type=*central.MsgFromSensor_ComplianceOperatorInfo_,71
+grpc_last_message_size_received_bytes,Type=*central.MsgFromSensor_DeploymentEnhancementResponse_,553
+grpc_last_message_size_received_bytes,Type=*central.MsgFromSensor_Event_AlertResults,2455
+grpc_last_message_size_received_bytes,Type=*central.MsgFromSensor_Event_Binding,223
+grpc_last_message_size_received_bytes,Type=*central.MsgFromSensor_Event_Deployment,546
+grpc_last_message_size_received_bytes,Type=*central.MsgFromSensor_Event_ImageIntegration,2486
+grpc_last_message_size_received_bytes,Type=*central.MsgFromSensor_Event_Namespace,218
+grpc_last_message_size_received_bytes,Type=*central.MsgFromSensor_Event_NetworkPolicy,201
+grpc_last_message_size_received_bytes,Type=*central.MsgFromSensor_Event_Node,2176
+grpc_last_message_size_received_bytes,Type=*central.MsgFromSensor_Event_Pod,178
+grpc_last_message_size_received_bytes,Type=*central.MsgFromSensor_Event_ProcessIndicator,415
+grpc_last_message_size_received_bytes,Type=*central.MsgFromSensor_Event_Role,164
+grpc_last_message_size_received_bytes,Type=*central.MsgFromSensor_Event_Secret,209
+grpc_last_message_size_received_bytes,Type=*central.MsgFromSensor_Event_ServiceAccount,226
+grpc_last_message_size_received_bytes,Type=*central.MsgFromSensor_Event_Synced,23540
+grpc_last_message_size_received_bytes,Type=*central.MsgFromSensor_NetworkFlowUpdate_,1131
+grpc_last_message_size_received_bytes,Type=*central.MsgFromSensor_NetworkPoliciesResponse_,624
+grpc_last_message_size_received_bytes,Type=*central.MsgFromSensor_ProcessListeningOnPortUpdate_,520
+grpc_last_message_size_received_bytes,Type=*central.MsgFromSensor_ScrapeUpdate_,42
+grpc_last_message_size_received_bytes,Type=*central.MsgFromSensor_TelemetryDataResponse_,44
+grpc_last_message_size_sent_bytes,Type=*central.MsgToSensor_BaselineSync,333
+grpc_last_message_size_sent_bytes,Type=*central.MsgToSensor_ClusterConfig,10
+grpc_last_message_size_sent_bytes,Type=*central.MsgToSensor_ClusterHealthResponse,0
+grpc_last_message_size_sent_bytes,Type=*central.MsgToSensor_DeploymentEnhancementRequest,547
+grpc_last_message_size_sent_bytes,Type=*central.MsgToSensor_InvalidateImageCache,78
+grpc_last_message_size_sent_bytes,Type=*central.MsgToSensor_NetworkPoliciesCommand,79
+grpc_last_message_size_sent_bytes,Type=*central.MsgToSensor_PolicySync,109755
+grpc_last_message_size_sent_bytes,Type=*central.MsgToSensor_PushNetworkEntitiesRequest,4.385822e+06
+grpc_last_message_size_sent_bytes,Type=*central.MsgToSensor_ReprocessDeployments,3
+grpc_last_message_size_sent_bytes,Type=*central.MsgToSensor_ScrapeCommand,42
+grpc_last_message_size_sent_bytes,Type=*central.MsgToSensor_SensorUpgradeTrigger,286
+grpc_last_message_size_sent_bytes,Type=*central.MsgToSensor_TelemetryDataRequest,61
+grpc_last_message_size_sent_bytes,Type=*central.MsgToSensor_UpdatedImage,33547
+grpc_max_message_size_sent_bytes,Type=*central.MsgToSensor_BaselineSync,393
+grpc_max_message_size_sent_bytes,Type=*central.MsgToSensor_ClusterConfig,16
+grpc_max_message_size_sent_bytes,Type=*central.MsgToSensor_ClusterHealthResponse,0
+grpc_max_message_size_sent_bytes,Type=*central.MsgToSensor_DeploymentEnhancementRequest,547
+grpc_max_message_size_sent_bytes,Type=*central.MsgToSensor_InvalidateImageCache,154
+grpc_max_message_size_sent_bytes,Type=*central.MsgToSensor_NetworkPoliciesCommand,87724
+grpc_max_message_size_sent_bytes,Type=*central.MsgToSensor_PolicySync,126564
+grpc_max_message_size_sent_bytes,Type=*central.MsgToSensor_PushNetworkEntitiesRequest,4.385822e+06
+grpc_max_message_size_sent_bytes,Type=*central.MsgToSensor_ReprocessDeployments,3
+grpc_max_message_size_sent_bytes,Type=*central.MsgToSensor_ScrapeCommand,284
+grpc_max_message_size_sent_bytes,Type=*central.MsgToSensor_SensorUpgradeTrigger,286
+grpc_max_message_size_sent_bytes,Type=*central.MsgToSensor_TelemetryDataRequest,61
+grpc_max_message_size_sent_bytes,Type=*central.MsgToSensor_UpdatedImage,84368
+grpc_message_size_sent_bytes,Type=*central.MsgToSensor_BaselineSync,361.6666666666667
+grpc_message_size_sent_bytes,Type=*central.MsgToSensor_ClusterConfig,11.317073170731707
+grpc_message_size_sent_bytes,Type=*central.MsgToSensor_ClusterHealthResponse,0
+grpc_message_size_sent_bytes,Type=*central.MsgToSensor_InvalidateImageCache,71.56521739130434
+grpc_message_size_sent_bytes,Type=*central.MsgToSensor_NetworkPoliciesCommand,14491
+grpc_message_size_sent_bytes,Type=*central.MsgToSensor_PolicySync,113651.93150684932
+grpc_message_size_sent_bytes,Type=*central.MsgToSensor_ReprocessDeployments,3
+grpc_message_size_sent_bytes,Type=*central.MsgToSensor_ScrapeCommand,166.15
+grpc_message_size_sent_bytes,Type=*central.MsgToSensor_TelemetryDataRequest,60.5
+grpc_message_size_sent_bytes,Type=*central.MsgToSensor_UpdatedImage,8749.312278630461
+grpc_server_handled_total,grpc_code=Aborted grpc_method=ScanImageInternal grpc_service=v1.ImageService grpc_type=unary,2
+grpc_server_handled_total,grpc_code=Canceled grpc_method=Communicate grpc_service=central.SensorService grpc_type=bidi_stream,1
+grpc_server_handled_total,grpc_code=FailedPrecondition grpc_method=DeleteSimpleAccessScope grpc_service=v1.RoleService grpc_type=unary,8
+grpc_server_handled_total,grpc_code=Internal grpc_method=UpgradeCheckInFromSensor grpc_service=central.SensorUpgradeControlService grpc_type=unary,1
+grpc_server_handled_total,grpc_code=InvalidArgument grpc_method=CreateGroup grpc_service=v1.GroupService grpc_type=unary,2
+grpc_server_handled_total,grpc_code=InvalidArgument grpc_method=DeleteSimpleAccessScope grpc_service=v1.RoleService grpc_type=unary,4
+grpc_server_handled_total,grpc_code=InvalidArgument grpc_method=GetGroup grpc_service=v1.GroupService grpc_type=unary,1
+grpc_server_handled_total,grpc_code=InvalidArgument grpc_method=GetNamespace grpc_service=v1.NamespaceService grpc_type=unary,3
+grpc_server_handled_total,grpc_code=InvalidArgument grpc_method=PostPolicy grpc_service=v1.PolicyService grpc_type=unary,5
+grpc_server_handled_total,grpc_code=InvalidArgument grpc_method=TestNotifier grpc_service=v1.NotifierService grpc_type=unary,4
+grpc_server_handled_total,grpc_code=InvalidArgument grpc_method=UpdateGroup grpc_service=v1.GroupService grpc_type=unary,2
+grpc_server_handled_total,grpc_code=NotFound grpc_method=GetCloudSource grpc_service=v1.CloudSourcesService grpc_type=unary,1
+grpc_server_handled_total,grpc_code=NotFound grpc_method=GetDeployment grpc_service=v1.DeploymentService grpc_type=unary,6
+grpc_server_handled_total,grpc_code=NotFound grpc_method=GetGroup grpc_service=v1.GroupService grpc_type=unary,2
+grpc_server_handled_total,grpc_code=NotFound grpc_method=GetImageIntegration grpc_service=v1.ImageIntegrationService grpc_type=unary,41
+grpc_server_handled_total,grpc_code=NotFound grpc_method=GetNetworkPolicy grpc_service=v1.NetworkPolicyService grpc_type=unary,19
+grpc_server_handled_total,grpc_code=NotFound grpc_method=GetProcessBaseline grpc_service=v1.ProcessBaselineService grpc_type=unary,2
+grpc_server_handled_total,grpc_code=NotFound grpc_method=GetRole grpc_service=v1.RoleService grpc_type=unary,5
+grpc_server_handled_total,grpc_code=NotFound grpc_method=GetSignatureIntegration grpc_service=v1.SignatureIntegrationService grpc_type=unary,6
+grpc_server_handled_total,grpc_code=OK grpc_method=ApplyNetworkPolicy grpc_service=v1.NetworkPolicyService grpc_type=unary,10
+grpc_server_handled_total,grpc_code=OK grpc_method=Autocomplete grpc_service=v1.SearchService grpc_type=unary,12
+grpc_server_handled_total,grpc_code=OK grpc_method=CountAlerts grpc_service=v1.AlertService grpc_type=unary,3
+grpc_server_handled_total,grpc_code=OK grpc_method=CountDiscoveredClusters grpc_service=v1.DiscoveredClustersService grpc_type=unary,2
+grpc_server_handled_total,grpc_code=OK grpc_method=CreateCloudSource grpc_service=v1.CloudSourcesService grpc_type=unary,1
+grpc_server_handled_total,grpc_code=OK grpc_method=CreateGroup grpc_service=v1.GroupService grpc_type=unary,6
+grpc_server_handled_total,grpc_code=OK grpc_method=CreateRole grpc_service=v1.RoleService grpc_type=unary,34
+grpc_server_handled_total,grpc_code=OK grpc_method=DeleteAuthProvider grpc_service=v1.AuthProviderService grpc_type=unary,4
+grpc_server_handled_total,grpc_code=OK grpc_method=DeleteCloudSource grpc_service=v1.CloudSourcesService grpc_type=unary,1
+grpc_server_handled_total,grpc_code=OK grpc_method=DeleteCluster grpc_service=v1.ClustersService grpc_type=unary,3
+grpc_server_handled_total,grpc_code=OK grpc_method=DeleteGroup grpc_service=v1.GroupService grpc_type=unary,3
+grpc_server_handled_total,grpc_code=OK grpc_method=DeleteImageIntegration grpc_service=v1.ImageIntegrationService grpc_type=unary,46
+grpc_server_handled_total,grpc_code=OK grpc_method=DeleteImages grpc_service=v1.ImageService grpc_type=unary,23
+grpc_server_handled_total,grpc_code=OK grpc_method=DeleteNotifier grpc_service=v1.NotifierService grpc_type=unary,11
+grpc_server_handled_total,grpc_code=OK grpc_method=DeletePermissionSet grpc_service=v1.RoleService grpc_type=unary,31
+grpc_server_handled_total,grpc_code=OK grpc_method=DeletePolicy grpc_service=v1.PolicyService grpc_type=unary,143
+grpc_server_handled_total,grpc_code=OK grpc_method=DeletePolicyCategory grpc_service=v1.PolicyCategoryService grpc_type=unary,1
+grpc_server_handled_total,grpc_code=OK grpc_method=DeleteProcessBaselines grpc_service=v1.ProcessBaselineService grpc_type=unary,1
+grpc_server_handled_total,grpc_code=OK grpc_method=DeleteRole grpc_service=v1.RoleService grpc_type=unary,34
+grpc_server_handled_total,grpc_code=OK grpc_method=DeleteSignatureIntegration grpc_service=v1.SignatureIntegrationService grpc_type=unary,6
+grpc_server_handled_total,grpc_code=OK grpc_method=DeleteSimpleAccessScope grpc_service=v1.RoleService grpc_type=unary,4
+grpc_server_handled_total,grpc_code=OK grpc_method=DetectBuildTime grpc_service=v1.DetectionService grpc_type=unary,12
+grpc_server_handled_total,grpc_code=OK grpc_method=DetectDeployTimeFromYAML grpc_service=v1.DetectionService grpc_type=unary,3
+grpc_server_handled_total,grpc_code=OK grpc_method=DryRunPolicy grpc_service=v1.PolicyService grpc_type=unary,1
+grpc_server_handled_total,grpc_code=OK grpc_method=ExchangeToken grpc_service=v1.AuthProviderService grpc_type=unary,1
+grpc_server_handled_total,grpc_code=OK grpc_method=GenerateInitBundle grpc_service=v1.ClusterInitService grpc_type=unary,1
+grpc_server_handled_total,grpc_code=OK grpc_method=GenerateNetworkPolicies grpc_service=v1.NetworkPolicyService grpc_type=unary,7
+grpc_server_handled_total,grpc_code=OK grpc_method=GenerateToken grpc_service=v1.APITokenService grpc_type=unary,69
+grpc_server_handled_total,grpc_code=OK grpc_method=Get grpc_service=v1.GRPCPreferencesService grpc_type=unary,2
+grpc_server_handled_total,grpc_code=OK grpc_method=GetAggregatedResults grpc_service=v1.ComplianceService grpc_type=unary,5
+grpc_server_handled_total,grpc_code=OK grpc_method=GetAlert grpc_service=v1.AlertService grpc_type=unary,36
+grpc_server_handled_total,grpc_code=OK grpc_method=GetAlertsGroup grpc_service=v1.AlertService grpc_type=unary,1
+grpc_server_handled_total,grpc_code=OK grpc_method=GetAuthProvider grpc_service=v1.AuthProviderService grpc_type=unary,2
+grpc_server_handled_total,grpc_code=OK grpc_method=GetAuthProviders grpc_service=v1.AuthProviderService grpc_type=unary,6
+grpc_server_handled_total,grpc_code=OK grpc_method=GetAuthStatus grpc_service=v1.AuthService grpc_type=unary,12
+grpc_server_handled_total,grpc_code=OK grpc_method=GetCertExpiry grpc_service=v1.CredentialExpiryService grpc_type=unary,2
+grpc_server_handled_total,grpc_code=OK grpc_method=GetCloudSource grpc_service=v1.CloudSourcesService grpc_type=unary,1
+grpc_server_handled_total,grpc_code=OK grpc_method=GetCluster grpc_service=v1.ClustersService grpc_type=unary,72
+grpc_server_handled_total,grpc_code=OK grpc_method=GetClusterDefaultValues grpc_service=v1.ClustersService grpc_type=unary,1
+grpc_server_handled_total,grpc_code=OK grpc_method=GetClusters grpc_service=v1.ClustersService grpc_type=unary,907
+grpc_server_handled_total,grpc_code=OK grpc_method=GetDeclarativeConfigHealths grpc_service=v1.DeclarativeConfigHealthService grpc_type=unary,84
+grpc_server_handled_total,grpc_code=OK grpc_method=GetDeployment grpc_service=v1.DeploymentService grpc_type=unary,138
+grpc_server_handled_total,grpc_code=OK grpc_method=GetDeploymentWithRisk grpc_service=v1.DeploymentService grpc_type=unary,37
+grpc_server_handled_total,grpc_code=OK grpc_method=GetGroup grpc_service=v1.GroupService grpc_type=unary,3
+grpc_server_handled_total,grpc_code=OK grpc_method=GetGroups grpc_service=v1.GroupService grpc_type=unary,13
+grpc_server_handled_total,grpc_code=OK grpc_method=GetImage grpc_service=v1.ImageService grpc_type=unary,41
+grpc_server_handled_total,grpc_code=OK grpc_method=GetImageIntegration grpc_service=v1.ImageIntegrationService grpc_type=unary,46
+grpc_server_handled_total,grpc_code=OK grpc_method=GetImageIntegrations grpc_service=v1.ImageIntegrationService grpc_type=unary,28
+grpc_server_handled_total,grpc_code=OK grpc_method=GetInitBundles grpc_service=v1.ClusterInitService grpc_type=unary,1
+grpc_server_handled_total,grpc_code=OK grpc_method=GetListeningEndpoints grpc_service=v1.ListeningEndpointsService grpc_type=unary,148
+grpc_server_handled_total,grpc_code=OK grpc_method=GetMetadata grpc_service=v1.MetadataService grpc_type=unary,4
+grpc_server_handled_total,grpc_code=OK grpc_method=GetNamespace grpc_service=v1.NamespaceService grpc_type=unary,4
+grpc_server_handled_total,grpc_code=OK grpc_method=GetNamespaces grpc_service=v1.NamespaceService grpc_type=unary,10
+grpc_server_handled_total,grpc_code=OK grpc_method=GetNetworkGraph grpc_service=v1.NetworkGraphService grpc_type=unary,40
+grpc_server_handled_total,grpc_code=OK grpc_method=GetNetworkGraph grpc_service=v1.NetworkPolicyService grpc_type=unary,9
+grpc_server_handled_total,grpc_code=OK grpc_method=GetNetworkPolicy grpc_service=v1.NetworkPolicyService grpc_type=unary,25
+grpc_server_handled_total,grpc_code=OK grpc_method=GetNotifiers grpc_service=v1.NotifierService grpc_type=unary,2
+grpc_server_handled_total,grpc_code=OK grpc_method=GetPolicy grpc_service=v1.PolicyService grpc_type=unary,123
+grpc_server_handled_total,grpc_code=OK grpc_method=GetProcessBaseline grpc_service=v1.ProcessBaselineService grpc_type=unary,32
+grpc_server_handled_total,grpc_code=OK grpc_method=GetProcessesByDeployment grpc_service=v1.ProcessService grpc_type=unary,38
+grpc_server_handled_total,grpc_code=OK grpc_method=GetResources grpc_service=v1.RoleService grpc_type=unary,4
+grpc_server_handled_total,grpc_code=OK grpc_method=GetRole grpc_service=v1.RbacService grpc_type=unary,141
+grpc_server_handled_total,grpc_code=OK grpc_method=GetRole grpc_service=v1.RoleService grpc_type=unary,59
+grpc_server_handled_total,grpc_code=OK grpc_method=GetRunResults grpc_service=v1.ComplianceService grpc_type=unary,20
+grpc_server_handled_total,grpc_code=OK grpc_method=GetRunStatuses grpc_service=v1.ComplianceManagementService grpc_type=unary,26
+grpc_server_handled_total,grpc_code=OK grpc_method=GetSecret grpc_service=v1.SecretService grpc_type=unary,22
+grpc_server_handled_total,grpc_code=OK grpc_method=GetServiceAccount grpc_service=v1.ServiceAccountService grpc_type=unary,63
+grpc_server_handled_total,grpc_code=OK grpc_method=GetSignatureIntegration grpc_service=v1.SignatureIntegrationService grpc_type=unary,6
+grpc_server_handled_total,grpc_code=OK grpc_method=GetStandard grpc_service=v1.ComplianceService grpc_type=unary,5
+grpc_server_handled_total,grpc_code=OK grpc_method=GetStandards grpc_service=v1.ComplianceService grpc_type=unary,2
+grpc_server_handled_total,grpc_code=OK grpc_method=GetSummaryCounts grpc_service=v1.SummaryService grpc_type=unary,4
+grpc_server_handled_total,grpc_code=OK grpc_method=GetUndoModification grpc_service=v1.NetworkPolicyService grpc_type=unary,5
+grpc_server_handled_total,grpc_code=OK grpc_method=GetVulnDefinitionsInfo grpc_service=v1.IntegrationHealthService grpc_type=unary,1
+grpc_server_handled_total,grpc_code=OK grpc_method=InvalidateScanAndRegistryCaches grpc_service=v1.ImageService grpc_type=unary,20
+grpc_server_handled_total,grpc_code=OK grpc_method=ListAlerts grpc_service=v1.AlertService grpc_type=unary,448
+grpc_server_handled_total,grpc_code=OK grpc_method=ListDeployments grpc_service=v1.DeploymentService grpc_type=unary,53
+grpc_server_handled_total,grpc_code=OK grpc_method=ListImages grpc_service=v1.ImageService grpc_type=unary,36
+grpc_server_handled_total,grpc_code=OK grpc_method=ListNodes grpc_service=v1.NodeService grpc_type=unary,4
+grpc_server_handled_total,grpc_code=OK grpc_method=ListPermissionSets grpc_service=v1.RoleService grpc_type=unary,5
+grpc_server_handled_total,grpc_code=OK grpc_method=ListPolicies grpc_service=v1.PolicyService grpc_type=unary,179
+grpc_server_handled_total,grpc_code=OK grpc_method=ListRoleBindings grpc_service=v1.RbacService grpc_type=unary,7
+grpc_server_handled_total,grpc_code=OK grpc_method=ListRoles grpc_service=v1.RbacService grpc_type=unary,6
+grpc_server_handled_total,grpc_code=OK grpc_method=ListSecrets grpc_service=v1.SecretService grpc_type=unary,6
+grpc_server_handled_total,grpc_code=OK grpc_method=ListServiceAccounts grpc_service=v1.ServiceAccountService grpc_type=unary,4
+grpc_server_handled_total,grpc_code=OK grpc_method=ListSimpleAccessScopes grpc_service=v1.RoleService grpc_type=unary,5
+grpc_server_handled_total,grpc_code=OK grpc_method=ListSubjects grpc_service=v1.RbacService grpc_type=unary,1
+grpc_server_handled_total,grpc_code=OK grpc_method=LockProcessBaselines grpc_service=v1.ProcessBaselineService grpc_type=unary,3
+grpc_server_handled_total,grpc_code=OK grpc_method=Options grpc_service=v1.SearchService grpc_type=unary,17
+grpc_server_handled_total,grpc_code=OK grpc_method=PatchPolicy grpc_service=v1.PolicyService grpc_type=unary,48
+grpc_server_handled_total,grpc_code=OK grpc_method=Ping grpc_service=v1.PingService grpc_type=unary,400
+grpc_server_handled_total,grpc_code=OK grpc_method=PostAuthProvider grpc_service=v1.AuthProviderService grpc_type=unary,4
+grpc_server_handled_total,grpc_code=OK grpc_method=PostCluster grpc_service=v1.ClustersService grpc_type=unary,4
+grpc_server_handled_total,grpc_code=OK grpc_method=PostImageIntegration grpc_service=v1.ImageIntegrationService grpc_type=unary,34
+grpc_server_handled_total,grpc_code=OK grpc_method=PostNotifier grpc_service=v1.NotifierService grpc_type=unary,11
+grpc_server_handled_total,grpc_code=OK grpc_method=PostPermissionSet grpc_service=v1.RoleService grpc_type=unary,31
+grpc_server_handled_total,grpc_code=OK grpc_method=PostPolicy grpc_service=v1.PolicyService grpc_type=unary,143
+grpc_server_handled_total,grpc_code=OK grpc_method=PostPolicyCategory grpc_service=v1.PolicyCategoryService grpc_type=unary,1
+grpc_server_handled_total,grpc_code=OK grpc_method=PostSignatureIntegration grpc_service=v1.SignatureIntegrationService grpc_type=unary,6
+grpc_server_handled_total,grpc_code=OK grpc_method=PostSimpleAccessScope grpc_service=v1.RoleService grpc_type=unary,5
+grpc_server_handled_total,grpc_code=OK grpc_method=PutCluster grpc_service=v1.ClustersService grpc_type=unary,41
+grpc_server_handled_total,grpc_code=OK grpc_method=PutPolicy grpc_service=v1.PolicyService grpc_type=unary,104
+grpc_server_handled_total,grpc_code=OK grpc_method=ReassessPolicies grpc_service=v1.PolicyService grpc_type=unary,1
+grpc_server_handled_total,grpc_code=OK grpc_method=ResolveAlert grpc_service=v1.AlertService grpc_type=unary,10
+grpc_server_handled_total,grpc_code=OK grpc_method=RevokeInitBundle grpc_service=v1.ClusterInitService grpc_type=unary,1
+grpc_server_handled_total,grpc_code=OK grpc_method=RevokeToken grpc_service=v1.APITokenService grpc_type=unary,13
+grpc_server_handled_total,grpc_code=OK grpc_method=ScanImage grpc_service=v1.ImageService grpc_type=unary,29
+grpc_server_handled_total,grpc_code=OK grpc_method=ScanImageInternal grpc_service=v1.ImageService grpc_type=unary,190
+grpc_server_handled_total,grpc_code=OK grpc_method=Search grpc_service=v1.SearchService grpc_type=unary,29
+grpc_server_handled_total,grpc_code=OK grpc_method=SendNetworkPolicyYAML grpc_service=v1.NetworkPolicyService grpc_type=unary,3
+grpc_server_handled_total,grpc_code=OK grpc_method=SimulateNetworkGraph grpc_service=v1.NetworkPolicyService grpc_type=unary,10
+grpc_server_handled_total,grpc_code=OK grpc_method=TLSChallenge grpc_service=v1.MetadataService grpc_type=unary,2
+grpc_server_handled_total,grpc_code=OK grpc_method=TestImageIntegration grpc_service=v1.ImageIntegrationService grpc_type=unary,33
+grpc_server_handled_total,grpc_code=OK grpc_method=TestNotifier grpc_service=v1.NotifierService grpc_type=unary,9
+grpc_server_handled_total,grpc_code=OK grpc_method=TriggerRuns grpc_service=v1.ComplianceManagementService grpc_type=unary,13
+grpc_server_handled_total,grpc_code=OK grpc_method=TriggerSensorCertRotation grpc_service=v1.SensorUpgradeService grpc_type=unary,1
+grpc_server_handled_total,grpc_code=OK grpc_method=UpdateProcessBaselines grpc_service=v1.ProcessBaselineService grpc_type=unary,2
+grpc_server_handled_total,grpc_code=OK grpc_method=UpgradeCheckInFromSensor grpc_service=central.SensorUpgradeControlService grpc_type=unary,2
+grpc_server_handled_total,grpc_code=OK grpc_method=UpgradeCheckInFromUpgrader grpc_service=central.SensorUpgradeControlService grpc_type=unary,9
+grpc_server_handled_total,grpc_code=PermissionDenied grpc_method=ApplyNetworkPolicy grpc_service=v1.NetworkPolicyService grpc_type=unary,1
+grpc_server_handled_total,grpc_code=PermissionDenied grpc_method=ExchangeToken grpc_service=v1.AuthProviderService grpc_type=unary,1
+grpc_server_handled_total,grpc_code=PermissionDenied grpc_method=GetClusters grpc_service=v1.ClustersService grpc_type=unary,2
+grpc_server_handled_total,grpc_code=PermissionDenied grpc_method=PostCluster grpc_service=v1.ClustersService grpc_type=unary,3
+grpc_server_handled_total,grpc_code=Unauthenticated grpc_method=GetAuthStatus grpc_service=v1.AuthService grpc_type=unary,11
+grpc_server_handling_seconds,grpc_method=ApplyNetworkPolicy grpc_service=v1.NetworkPolicyService grpc_type=unary,7.03293288090909
+grpc_server_handling_seconds,grpc_method=Autocomplete grpc_service=v1.SearchService grpc_type=unary,0.008687039333333334
+grpc_server_handling_seconds,grpc_method=CreateGroup grpc_service=v1.GroupService grpc_type=unary,0.007069658249999999
+grpc_server_handling_seconds,grpc_method=CreateRole grpc_service=v1.RoleService grpc_type=unary,0.012569362411764703
+grpc_server_handling_seconds,grpc_method=DeleteImageIntegration grpc_service=v1.ImageIntegrationService grpc_type=unary,0.009790726760869563
+grpc_server_handling_seconds,grpc_method=DeleteImages grpc_service=v1.ImageService grpc_type=unary,0.019604517739130436
+grpc_server_handling_seconds,grpc_method=DeleteNotifier grpc_service=v1.NotifierService grpc_type=unary,0.010342672181818181
+grpc_server_handling_seconds,grpc_method=DeletePermissionSet grpc_service=v1.RoleService grpc_type=unary,0.008700324903225809
+grpc_server_handling_seconds,grpc_method=DeletePolicy grpc_service=v1.PolicyService grpc_type=unary,0.14412191588811188
+grpc_server_handling_seconds,grpc_method=DeleteRole grpc_service=v1.RoleService grpc_type=unary,0.008570803529411765
+grpc_server_handling_seconds,grpc_method=DeleteSignatureIntegration grpc_service=v1.SignatureIntegrationService grpc_type=unary,0.10580760283333333
+grpc_server_handling_seconds,grpc_method=DeleteSimpleAccessScope grpc_service=v1.RoleService grpc_type=unary,0.0058748960625
+grpc_server_handling_seconds,grpc_method=DetectBuildTime grpc_service=v1.DetectionService grpc_type=unary,1.4758720174166668
+grpc_server_handling_seconds,grpc_method=GenerateNetworkPolicies grpc_service=v1.NetworkPolicyService grpc_type=unary,0.016293701571428572
+grpc_server_handling_seconds,grpc_method=GenerateToken grpc_service=v1.APITokenService grpc_type=unary,0.020457860782608694
+grpc_server_handling_seconds,grpc_method=GetAggregatedResults grpc_service=v1.ComplianceService grpc_type=unary,0.016914884400000003
+grpc_server_handling_seconds,grpc_method=GetAlert grpc_service=v1.AlertService grpc_type=unary,0.0047293905555555555
+grpc_server_handling_seconds,grpc_method=GetAuthProviders grpc_service=v1.AuthProviderService grpc_type=unary,0.0036461801666666667
+grpc_server_handling_seconds,grpc_method=GetAuthStatus grpc_service=v1.AuthService grpc_type=unary,0.0029840926521739124
+grpc_server_handling_seconds,grpc_method=GetCluster grpc_service=v1.ClustersService grpc_type=unary,0.004554035236111111
+grpc_server_handling_seconds,grpc_method=GetClusters grpc_service=v1.ClustersService grpc_type=unary,0.00534542585808581
+grpc_server_handling_seconds,grpc_method=GetDeclarativeConfigHealths grpc_service=v1.DeclarativeConfigHealthService grpc_type=unary,0.006038091452380952
+grpc_server_handling_seconds,grpc_method=GetDeployment grpc_service=v1.DeploymentService grpc_type=unary,0.003733607590277781
+grpc_server_handling_seconds,grpc_method=GetDeploymentWithRisk grpc_service=v1.DeploymentService grpc_type=unary,0.004464043891891893
+grpc_server_handling_seconds,grpc_method=GetGroup grpc_service=v1.GroupService grpc_type=unary,0.004943916666666667
+grpc_server_handling_seconds,grpc_method=GetGroups grpc_service=v1.GroupService grpc_type=unary,0.005783597384615384
+grpc_server_handling_seconds,grpc_method=GetImage grpc_service=v1.ImageService grpc_type=unary,0.012505765682926828
+grpc_server_handling_seconds,grpc_method=GetImageIntegration grpc_service=v1.ImageIntegrationService grpc_type=unary,0.004740217034482757
+grpc_server_handling_seconds,grpc_method=GetImageIntegrations grpc_service=v1.ImageIntegrationService grpc_type=unary,0.0064141467499999995
+grpc_server_handling_seconds,grpc_method=GetListeningEndpoints grpc_service=v1.ListeningEndpointsService grpc_type=unary,0.004967477682432432
+grpc_server_handling_seconds,grpc_method=GetNamespace grpc_service=v1.NamespaceService grpc_type=unary,0.006072868857142858
+grpc_server_handling_seconds,grpc_method=GetNamespaces grpc_service=v1.NamespaceService grpc_type=unary,0.0175677515
+grpc_server_handling_seconds,grpc_method=GetNetworkGraph grpc_service=v1.NetworkGraphService grpc_type=unary,0.012301902424999997
+grpc_server_handling_seconds,grpc_method=GetNetworkGraph grpc_service=v1.NetworkPolicyService grpc_type=unary,0.008182758333333333
+grpc_server_handling_seconds,grpc_method=GetNetworkPolicy grpc_service=v1.NetworkPolicyService grpc_type=unary,0.005179734113636364
+grpc_server_handling_seconds,grpc_method=GetPolicy grpc_service=v1.PolicyService grpc_type=unary,0.005949630837398372
+grpc_server_handling_seconds,grpc_method=GetProcessBaseline grpc_service=v1.ProcessBaselineService grpc_type=unary,0.00432816055882353
+grpc_server_handling_seconds,grpc_method=GetProcessesByDeployment grpc_service=v1.ProcessService grpc_type=unary,0.005456140894736842
+grpc_server_handling_seconds,grpc_method=GetRole grpc_service=v1.RbacService grpc_type=unary,0.004576767134751771
+grpc_server_handling_seconds,grpc_method=GetRole grpc_service=v1.RoleService grpc_type=unary,0.004316260656250002
+grpc_server_handling_seconds,grpc_method=GetRunResults grpc_service=v1.ComplianceService grpc_type=unary,0.0064511373
+grpc_server_handling_seconds,grpc_method=GetRunStatuses grpc_service=v1.ComplianceManagementService grpc_type=unary,0.003940520307692308
+grpc_server_handling_seconds,grpc_method=GetSecret grpc_service=v1.SecretService grpc_type=unary,0.006514858181818181
+grpc_server_handling_seconds,grpc_method=GetServiceAccount grpc_service=v1.ServiceAccountService grpc_type=unary,0.012047649317460319
+grpc_server_handling_seconds,grpc_method=GetSignatureIntegration grpc_service=v1.SignatureIntegrationService grpc_type=unary,0.004165233250000001
+grpc_server_handling_seconds,grpc_method=GetStandard grpc_service=v1.ComplianceService grpc_type=unary,0.0046180736
+grpc_server_handling_seconds,grpc_method=GetUndoModification grpc_service=v1.NetworkPolicyService grpc_type=unary,0.0051341594
+grpc_server_handling_seconds,grpc_method=InvalidateScanAndRegistryCaches grpc_service=v1.ImageService grpc_type=unary,0.0037391203000000004
+grpc_server_handling_seconds,grpc_method=ListAlerts grpc_service=v1.AlertService grpc_type=unary,0.006039054348214287
+grpc_server_handling_seconds,grpc_method=ListDeployments grpc_service=v1.DeploymentService grpc_type=unary,0.006101911283018867
+grpc_server_handling_seconds,grpc_method=ListImages grpc_service=v1.ImageService grpc_type=unary,0.02498974863888889
+grpc_server_handling_seconds,grpc_method=ListPermissionSets grpc_service=v1.RoleService grpc_type=unary,0.0059241838
+grpc_server_handling_seconds,grpc_method=ListPolicies grpc_service=v1.PolicyService grpc_type=unary,0.11162295213966483
+grpc_server_handling_seconds,grpc_method=ListRoleBindings grpc_service=v1.RbacService grpc_type=unary,0.006977154714285714
+grpc_server_handling_seconds,grpc_method=ListRoles grpc_service=v1.RbacService grpc_type=unary,0.007104431333333334
+grpc_server_handling_seconds,grpc_method=ListSecrets grpc_service=v1.SecretService grpc_type=unary,0.006031833166666667
+grpc_server_handling_seconds,grpc_method=ListSimpleAccessScopes grpc_service=v1.RoleService grpc_type=unary,0.0058672356
+grpc_server_handling_seconds,grpc_method=Options grpc_service=v1.SearchService grpc_type=unary,0.0038909478823529408
+grpc_server_handling_seconds,grpc_method=PatchPolicy grpc_service=v1.PolicyService grpc_type=unary,0.11366201324999997
+grpc_server_handling_seconds,grpc_method=Ping grpc_service=v1.PingService grpc_type=unary,0.00028963226750000024
+grpc_server_handling_seconds,grpc_method=PostCluster grpc_service=v1.ClustersService grpc_type=unary,0.01604626242857143
+grpc_server_handling_seconds,grpc_method=PostImageIntegration grpc_service=v1.ImageIntegrationService grpc_type=unary,0.25717161738235284
+grpc_server_handling_seconds,grpc_method=PostNotifier grpc_service=v1.NotifierService grpc_type=unary,0.008219339454545454
+grpc_server_handling_seconds,grpc_method=PostPermissionSet grpc_service=v1.RoleService grpc_type=unary,0.012372086483870967
+grpc_server_handling_seconds,grpc_method=PostPolicy grpc_service=v1.PolicyService grpc_type=unary,0.28251350545270276
+grpc_server_handling_seconds,grpc_method=PostSignatureIntegration grpc_service=v1.SignatureIntegrationService grpc_type=unary,0.006071514166666667
+grpc_server_handling_seconds,grpc_method=PostSimpleAccessScope grpc_service=v1.RoleService grpc_type=unary,0.0065408974
+grpc_server_handling_seconds,grpc_method=PutCluster grpc_service=v1.ClustersService grpc_type=unary,0.006727922682926831
+grpc_server_handling_seconds,grpc_method=PutPolicy grpc_service=v1.PolicyService grpc_type=unary,0.11415219778846156
+grpc_server_handling_seconds,grpc_method=ResolveAlert grpc_service=v1.AlertService grpc_type=unary,0.006953111799999999
+grpc_server_handling_seconds,grpc_method=RevokeToken grpc_service=v1.APITokenService grpc_type=unary,0.007181771846153847
+grpc_server_handling_seconds,grpc_method=ScanImage grpc_service=v1.ImageService grpc_type=unary,5.289497430551725
+grpc_server_handling_seconds,grpc_method=ScanImageInternal grpc_service=v1.ImageService grpc_type=unary,3.9949752396822906
+grpc_server_handling_seconds,grpc_method=Search grpc_service=v1.SearchService grpc_type=unary,0.011741195896551726
+grpc_server_handling_seconds,grpc_method=SimulateNetworkGraph grpc_service=v1.NetworkPolicyService grpc_type=unary,0.010512510400000003
+grpc_server_handling_seconds,grpc_method=TestImageIntegration grpc_service=v1.ImageIntegrationService grpc_type=unary,0.24526712445454543
+grpc_server_handling_seconds,grpc_method=TestNotifier grpc_service=v1.NotifierService grpc_type=unary,0.08594819253846156
+grpc_server_handling_seconds,grpc_method=TriggerRuns grpc_service=v1.ComplianceManagementService grpc_type=unary,0.015173250384615384
+grpc_server_handling_seconds,grpc_method=UpgradeCheckInFromUpgrader grpc_service=central.SensorUpgradeControlService grpc_type=unary,0.002330154888888889
+grpc_server_msg_received_total,grpc_method=ApplyNetworkPolicy grpc_service=v1.NetworkPolicyService grpc_type=unary,11
+grpc_server_msg_received_total,grpc_method=Autocomplete grpc_service=v1.SearchService grpc_type=unary,12
+grpc_server_msg_received_total,grpc_method=Communicate grpc_service=central.SensorService grpc_type=bidi_stream,8056
+grpc_server_msg_received_total,grpc_method=CountAlerts grpc_service=v1.AlertService grpc_type=unary,3
+grpc_server_msg_received_total,grpc_method=CountDiscoveredClusters grpc_service=v1.DiscoveredClustersService grpc_type=unary,2
+grpc_server_msg_received_total,grpc_method=CreateCloudSource grpc_service=v1.CloudSourcesService grpc_type=unary,1
+grpc_server_msg_received_total,grpc_method=CreateGroup grpc_service=v1.GroupService grpc_type=unary,8
+grpc_server_msg_received_total,grpc_method=CreateRole grpc_service=v1.RoleService grpc_type=unary,34
+grpc_server_msg_received_total,grpc_method=DeleteAuthProvider grpc_service=v1.AuthProviderService grpc_type=unary,4
+grpc_server_msg_received_total,grpc_method=DeleteCloudSource grpc_service=v1.CloudSourcesService grpc_type=unary,1
+grpc_server_msg_received_total,grpc_method=DeleteCluster grpc_service=v1.ClustersService grpc_type=unary,3
+grpc_server_msg_received_total,grpc_method=DeleteGroup grpc_service=v1.GroupService grpc_type=unary,3
+grpc_server_msg_received_total,grpc_method=DeleteImageIntegration grpc_service=v1.ImageIntegrationService grpc_type=unary,46
+grpc_server_msg_received_total,grpc_method=DeleteImages grpc_service=v1.ImageService grpc_type=unary,23
+grpc_server_msg_received_total,grpc_method=DeleteNotifier grpc_service=v1.NotifierService grpc_type=unary,11
+grpc_server_msg_received_total,grpc_method=DeletePermissionSet grpc_service=v1.RoleService grpc_type=unary,31
+grpc_server_msg_received_total,grpc_method=DeletePolicy grpc_service=v1.PolicyService grpc_type=unary,143
+grpc_server_msg_received_total,grpc_method=DeletePolicyCategory grpc_service=v1.PolicyCategoryService grpc_type=unary,1
+grpc_server_msg_received_total,grpc_method=DeleteProcessBaselines grpc_service=v1.ProcessBaselineService grpc_type=unary,1
+grpc_server_msg_received_total,grpc_method=DeleteRole grpc_service=v1.RoleService grpc_type=unary,34
+grpc_server_msg_received_total,grpc_method=DeleteSignatureIntegration grpc_service=v1.SignatureIntegrationService grpc_type=unary,6
+grpc_server_msg_received_total,grpc_method=DeleteSimpleAccessScope grpc_service=v1.RoleService grpc_type=unary,16
+grpc_server_msg_received_total,grpc_method=DetectBuildTime grpc_service=v1.DetectionService grpc_type=unary,12
+grpc_server_msg_received_total,grpc_method=DetectDeployTimeFromYAML grpc_service=v1.DetectionService grpc_type=unary,3
+grpc_server_msg_received_total,grpc_method=DryRunPolicy grpc_service=v1.PolicyService grpc_type=unary,1
+grpc_server_msg_received_total,grpc_method=ExchangeToken grpc_service=v1.AuthProviderService grpc_type=unary,2
+grpc_server_msg_received_total,grpc_method=GenerateInitBundle grpc_service=v1.ClusterInitService grpc_type=unary,1
+grpc_server_msg_received_total,grpc_method=GenerateNetworkPolicies grpc_service=v1.NetworkPolicyService grpc_type=unary,7
+grpc_server_msg_received_total,grpc_method=GenerateToken grpc_service=v1.APITokenService grpc_type=unary,69
+grpc_server_msg_received_total,grpc_method=Get grpc_service=v1.GRPCPreferencesService grpc_type=unary,2
+grpc_server_msg_received_total,grpc_method=GetAggregatedResults grpc_service=v1.ComplianceService grpc_type=unary,5
+grpc_server_msg_received_total,grpc_method=GetAlert grpc_service=v1.AlertService grpc_type=unary,36
+grpc_server_msg_received_total,grpc_method=GetAlertsGroup grpc_service=v1.AlertService grpc_type=unary,1
+grpc_server_msg_received_total,grpc_method=GetAuthProvider grpc_service=v1.AuthProviderService grpc_type=unary,2
+grpc_server_msg_received_total,grpc_method=GetAuthProviders grpc_service=v1.AuthProviderService grpc_type=unary,6
+grpc_server_msg_received_total,grpc_method=GetAuthStatus grpc_service=v1.AuthService grpc_type=unary,23
+grpc_server_msg_received_total,grpc_method=GetCertExpiry grpc_service=v1.CredentialExpiryService grpc_type=unary,2
+grpc_server_msg_received_total,grpc_method=GetCloudSource grpc_service=v1.CloudSourcesService grpc_type=unary,2
+grpc_server_msg_received_total,grpc_method=GetCluster grpc_service=v1.ClustersService grpc_type=unary,72
+grpc_server_msg_received_total,grpc_method=GetClusterDefaultValues grpc_service=v1.ClustersService grpc_type=unary,1
+grpc_server_msg_received_total,grpc_method=GetClusters grpc_service=v1.ClustersService grpc_type=unary,909
+grpc_server_msg_received_total,grpc_method=GetDeclarativeConfigHealths grpc_service=v1.DeclarativeConfigHealthService grpc_type=unary,84
+grpc_server_msg_received_total,grpc_method=GetDeployment grpc_service=v1.DeploymentService grpc_type=unary,144
+grpc_server_msg_received_total,grpc_method=GetDeploymentWithRisk grpc_service=v1.DeploymentService grpc_type=unary,37
+grpc_server_msg_received_total,grpc_method=GetGroup grpc_service=v1.GroupService grpc_type=unary,6
+grpc_server_msg_received_total,grpc_method=GetGroups grpc_service=v1.GroupService grpc_type=unary,13
+grpc_server_msg_received_total,grpc_method=GetImage grpc_service=v1.ImageService grpc_type=unary,41
+grpc_server_msg_received_total,grpc_method=GetImageIntegration grpc_service=v1.ImageIntegrationService grpc_type=unary,87
+grpc_server_msg_received_total,grpc_method=GetImageIntegrations grpc_service=v1.ImageIntegrationService grpc_type=unary,28
+grpc_server_msg_received_total,grpc_method=GetInitBundles grpc_service=v1.ClusterInitService grpc_type=unary,1
+grpc_server_msg_received_total,grpc_method=GetListeningEndpoints grpc_service=v1.ListeningEndpointsService grpc_type=unary,148
+grpc_server_msg_received_total,grpc_method=GetMetadata grpc_service=v1.MetadataService grpc_type=unary,4
+grpc_server_msg_received_total,grpc_method=GetNamespace grpc_service=v1.NamespaceService grpc_type=unary,7
+grpc_server_msg_received_total,grpc_method=GetNamespaces grpc_service=v1.NamespaceService grpc_type=unary,10
+grpc_server_msg_received_total,grpc_method=GetNetworkGraph grpc_service=v1.NetworkGraphService grpc_type=unary,40
+grpc_server_msg_received_total,grpc_method=GetNetworkGraph grpc_service=v1.NetworkPolicyService grpc_type=unary,9
+grpc_server_msg_received_total,grpc_method=GetNetworkPolicy grpc_service=v1.NetworkPolicyService grpc_type=unary,44
+grpc_server_msg_received_total,grpc_method=GetNotifiers grpc_service=v1.NotifierService grpc_type=unary,2
+grpc_server_msg_received_total,grpc_method=GetPolicy grpc_service=v1.PolicyService grpc_type=unary,123
+grpc_server_msg_received_total,grpc_method=GetProcessBaseline grpc_service=v1.ProcessBaselineService grpc_type=unary,34
+grpc_server_msg_received_total,grpc_method=GetProcessesByDeployment grpc_service=v1.ProcessService grpc_type=unary,38
+grpc_server_msg_received_total,grpc_method=GetResources grpc_service=v1.RoleService grpc_type=unary,4
+grpc_server_msg_received_total,grpc_method=GetRole grpc_service=v1.RbacService grpc_type=unary,141
+grpc_server_msg_received_total,grpc_method=GetRole grpc_service=v1.RoleService grpc_type=unary,64
+grpc_server_msg_received_total,grpc_method=GetRunResults grpc_service=v1.ComplianceService grpc_type=unary,20
+grpc_server_msg_received_total,grpc_method=GetRunStatuses grpc_service=v1.ComplianceManagementService grpc_type=unary,26
+grpc_server_msg_received_total,grpc_method=GetSecret grpc_service=v1.SecretService grpc_type=unary,22
+grpc_server_msg_received_total,grpc_method=GetServiceAccount grpc_service=v1.ServiceAccountService grpc_type=unary,63
+grpc_server_msg_received_total,grpc_method=GetSignatureIntegration grpc_service=v1.SignatureIntegrationService grpc_type=unary,12
+grpc_server_msg_received_total,grpc_method=GetStandard grpc_service=v1.ComplianceService grpc_type=unary,5
+grpc_server_msg_received_total,grpc_method=GetStandards grpc_service=v1.ComplianceService grpc_type=unary,2
+grpc_server_msg_received_total,grpc_method=GetSummaryCounts grpc_service=v1.SummaryService grpc_type=unary,4
+grpc_server_msg_received_total,grpc_method=GetUndoModification grpc_service=v1.NetworkPolicyService grpc_type=unary,5
+grpc_server_msg_received_total,grpc_method=GetVulnDefinitionsInfo grpc_service=v1.IntegrationHealthService grpc_type=unary,1
+grpc_server_msg_received_total,grpc_method=InvalidateScanAndRegistryCaches grpc_service=v1.ImageService grpc_type=unary,20
+grpc_server_msg_received_total,grpc_method=ListAlerts grpc_service=v1.AlertService grpc_type=unary,448
+grpc_server_msg_received_total,grpc_method=ListDeployments grpc_service=v1.DeploymentService grpc_type=unary,53
+grpc_server_msg_received_total,grpc_method=ListImages grpc_service=v1.ImageService grpc_type=unary,36
+grpc_server_msg_received_total,grpc_method=ListNodes grpc_service=v1.NodeService grpc_type=unary,4
+grpc_server_msg_received_total,grpc_method=ListPermissionSets grpc_service=v1.RoleService grpc_type=unary,5
+grpc_server_msg_received_total,grpc_method=ListPolicies grpc_service=v1.PolicyService grpc_type=unary,179
+grpc_server_msg_received_total,grpc_method=ListRoleBindings grpc_service=v1.RbacService grpc_type=unary,7
+grpc_server_msg_received_total,grpc_method=ListRoles grpc_service=v1.RbacService grpc_type=unary,6
+grpc_server_msg_received_total,grpc_method=ListSecrets grpc_service=v1.SecretService grpc_type=unary,6
+grpc_server_msg_received_total,grpc_method=ListServiceAccounts grpc_service=v1.ServiceAccountService grpc_type=unary,4
+grpc_server_msg_received_total,grpc_method=ListSimpleAccessScopes grpc_service=v1.RoleService grpc_type=unary,5
+grpc_server_msg_received_total,grpc_method=ListSubjects grpc_service=v1.RbacService grpc_type=unary,1
+grpc_server_msg_received_total,grpc_method=LockProcessBaselines grpc_service=v1.ProcessBaselineService grpc_type=unary,3
+grpc_server_msg_received_total,grpc_method=Options grpc_service=v1.SearchService grpc_type=unary,17
+grpc_server_msg_received_total,grpc_method=PatchPolicy grpc_service=v1.PolicyService grpc_type=unary,48
+grpc_server_msg_received_total,grpc_method=Ping grpc_service=v1.PingService grpc_type=unary,400
+grpc_server_msg_received_total,grpc_method=PostAuthProvider grpc_service=v1.AuthProviderService grpc_type=unary,4
+grpc_server_msg_received_total,grpc_method=PostCluster grpc_service=v1.ClustersService grpc_type=unary,7
+grpc_server_msg_received_total,grpc_method=PostImageIntegration grpc_service=v1.ImageIntegrationService grpc_type=unary,34
+grpc_server_msg_received_total,grpc_method=PostNotifier grpc_service=v1.NotifierService grpc_type=unary,11
+grpc_server_msg_received_total,grpc_method=PostPermissionSet grpc_service=v1.RoleService grpc_type=unary,31
+grpc_server_msg_received_total,grpc_method=PostPolicy grpc_service=v1.PolicyService grpc_type=unary,148
+grpc_server_msg_received_total,grpc_method=PostPolicyCategory grpc_service=v1.PolicyCategoryService grpc_type=unary,1
+grpc_server_msg_received_total,grpc_method=PostSignatureIntegration grpc_service=v1.SignatureIntegrationService grpc_type=unary,6
+grpc_server_msg_received_total,grpc_method=PostSimpleAccessScope grpc_service=v1.RoleService grpc_type=unary,5
+grpc_server_msg_received_total,grpc_method=PutCluster grpc_service=v1.ClustersService grpc_type=unary,41
+grpc_server_msg_received_total,grpc_method=PutPolicy grpc_service=v1.PolicyService grpc_type=unary,104
+grpc_server_msg_received_total,grpc_method=ReassessPolicies grpc_service=v1.PolicyService grpc_type=unary,1
+grpc_server_msg_received_total,grpc_method=ResolveAlert grpc_service=v1.AlertService grpc_type=unary,10
+grpc_server_msg_received_total,grpc_method=RevokeInitBundle grpc_service=v1.ClusterInitService grpc_type=unary,1
+grpc_server_msg_received_total,grpc_method=RevokeToken grpc_service=v1.APITokenService grpc_type=unary,13
+grpc_server_msg_received_total,grpc_method=ScanImage grpc_service=v1.ImageService grpc_type=unary,29
+grpc_server_msg_received_total,grpc_method=ScanImageInternal grpc_service=v1.ImageService grpc_type=unary,192
+grpc_server_msg_received_total,grpc_method=Search grpc_service=v1.SearchService grpc_type=unary,29
+grpc_server_msg_received_total,grpc_method=SendNetworkPolicyYAML grpc_service=v1.NetworkPolicyService grpc_type=unary,3
+grpc_server_msg_received_total,grpc_method=SimulateNetworkGraph grpc_service=v1.NetworkPolicyService grpc_type=unary,10
+grpc_server_msg_received_total,grpc_method=TLSChallenge grpc_service=v1.MetadataService grpc_type=unary,2
+grpc_server_msg_received_total,grpc_method=TestImageIntegration grpc_service=v1.ImageIntegrationService grpc_type=unary,33
+grpc_server_msg_received_total,grpc_method=TestNotifier grpc_service=v1.NotifierService grpc_type=unary,13
+grpc_server_msg_received_total,grpc_method=TriggerRuns grpc_service=v1.ComplianceManagementService grpc_type=unary,13
+grpc_server_msg_received_total,grpc_method=TriggerSensorCertRotation grpc_service=v1.SensorUpgradeService grpc_type=unary,1
+grpc_server_msg_received_total,grpc_method=UpdateGroup grpc_service=v1.GroupService grpc_type=unary,2
+grpc_server_msg_received_total,grpc_method=UpdateProcessBaselines grpc_service=v1.ProcessBaselineService grpc_type=unary,2
+grpc_server_msg_received_total,grpc_method=UpgradeCheckInFromSensor grpc_service=central.SensorUpgradeControlService grpc_type=unary,3
+grpc_server_msg_received_total,grpc_method=UpgradeCheckInFromUpgrader grpc_service=central.SensorUpgradeControlService grpc_type=unary,9
+grpc_server_msg_sent_total,grpc_method=ApplyNetworkPolicy grpc_service=v1.NetworkPolicyService grpc_type=unary,10
+grpc_server_msg_sent_total,grpc_method=Autocomplete grpc_service=v1.SearchService grpc_type=unary,12
+grpc_server_msg_sent_total,grpc_method=Communicate grpc_service=central.SensorService grpc_type=bidi_stream,2429
+grpc_server_msg_sent_total,grpc_method=CountAlerts grpc_service=v1.AlertService grpc_type=unary,3
+grpc_server_msg_sent_total,grpc_method=CountDiscoveredClusters grpc_service=v1.DiscoveredClustersService grpc_type=unary,2
+grpc_server_msg_sent_total,grpc_method=CreateCloudSource grpc_service=v1.CloudSourcesService grpc_type=unary,1
+grpc_server_msg_sent_total,grpc_method=CreateGroup grpc_service=v1.GroupService grpc_type=unary,6
+grpc_server_msg_sent_total,grpc_method=CreateRole grpc_service=v1.RoleService grpc_type=unary,34
+grpc_server_msg_sent_total,grpc_method=DeleteAuthProvider grpc_service=v1.AuthProviderService grpc_type=unary,4
+grpc_server_msg_sent_total,grpc_method=DeleteCloudSource grpc_service=v1.CloudSourcesService grpc_type=unary,1
+grpc_server_msg_sent_total,grpc_method=DeleteCluster grpc_service=v1.ClustersService grpc_type=unary,3
+grpc_server_msg_sent_total,grpc_method=DeleteGroup grpc_service=v1.GroupService grpc_type=unary,3
+grpc_server_msg_sent_total,grpc_method=DeleteImageIntegration grpc_service=v1.ImageIntegrationService grpc_type=unary,46
+grpc_server_msg_sent_total,grpc_method=DeleteImages grpc_service=v1.ImageService grpc_type=unary,23
+grpc_server_msg_sent_total,grpc_method=DeleteNotifier grpc_service=v1.NotifierService grpc_type=unary,11
+grpc_server_msg_sent_total,grpc_method=DeletePermissionSet grpc_service=v1.RoleService grpc_type=unary,31
+grpc_server_msg_sent_total,grpc_method=DeletePolicy grpc_service=v1.PolicyService grpc_type=unary,143
+grpc_server_msg_sent_total,grpc_method=DeletePolicyCategory grpc_service=v1.PolicyCategoryService grpc_type=unary,1
+grpc_server_msg_sent_total,grpc_method=DeleteProcessBaselines grpc_service=v1.ProcessBaselineService grpc_type=unary,1
+grpc_server_msg_sent_total,grpc_method=DeleteRole grpc_service=v1.RoleService grpc_type=unary,34
+grpc_server_msg_sent_total,grpc_method=DeleteSignatureIntegration grpc_service=v1.SignatureIntegrationService grpc_type=unary,6
+grpc_server_msg_sent_total,grpc_method=DeleteSimpleAccessScope grpc_service=v1.RoleService grpc_type=unary,4
+grpc_server_msg_sent_total,grpc_method=DetectBuildTime grpc_service=v1.DetectionService grpc_type=unary,12
+grpc_server_msg_sent_total,grpc_method=DetectDeployTimeFromYAML grpc_service=v1.DetectionService grpc_type=unary,3
+grpc_server_msg_sent_total,grpc_method=DryRunPolicy grpc_service=v1.PolicyService grpc_type=unary,1
+grpc_server_msg_sent_total,grpc_method=ExchangeToken grpc_service=v1.AuthProviderService grpc_type=unary,1
+grpc_server_msg_sent_total,grpc_method=GenerateInitBundle grpc_service=v1.ClusterInitService grpc_type=unary,1
+grpc_server_msg_sent_total,grpc_method=GenerateNetworkPolicies grpc_service=v1.NetworkPolicyService grpc_type=unary,7
+grpc_server_msg_sent_total,grpc_method=GenerateToken grpc_service=v1.APITokenService grpc_type=unary,69
+grpc_server_msg_sent_total,grpc_method=Get grpc_service=v1.GRPCPreferencesService grpc_type=unary,2
+grpc_server_msg_sent_total,grpc_method=GetAggregatedResults grpc_service=v1.ComplianceService grpc_type=unary,5
+grpc_server_msg_sent_total,grpc_method=GetAlert grpc_service=v1.AlertService grpc_type=unary,36
+grpc_server_msg_sent_total,grpc_method=GetAlertsGroup grpc_service=v1.AlertService grpc_type=unary,1
+grpc_server_msg_sent_total,grpc_method=GetAuthProvider grpc_service=v1.AuthProviderService grpc_type=unary,2
+grpc_server_msg_sent_total,grpc_method=GetAuthProviders grpc_service=v1.AuthProviderService grpc_type=unary,6
+grpc_server_msg_sent_total,grpc_method=GetAuthStatus grpc_service=v1.AuthService grpc_type=unary,12
+grpc_server_msg_sent_total,grpc_method=GetCertExpiry grpc_service=v1.CredentialExpiryService grpc_type=unary,2
+grpc_server_msg_sent_total,grpc_method=GetCloudSource grpc_service=v1.CloudSourcesService grpc_type=unary,1
+grpc_server_msg_sent_total,grpc_method=GetCluster grpc_service=v1.ClustersService grpc_type=unary,72
+grpc_server_msg_sent_total,grpc_method=GetClusterDefaultValues grpc_service=v1.ClustersService grpc_type=unary,1
+grpc_server_msg_sent_total,grpc_method=GetClusters grpc_service=v1.ClustersService grpc_type=unary,907
+grpc_server_msg_sent_total,grpc_method=GetDeclarativeConfigHealths grpc_service=v1.DeclarativeConfigHealthService grpc_type=unary,84
+grpc_server_msg_sent_total,grpc_method=GetDeployment grpc_service=v1.DeploymentService grpc_type=unary,138
+grpc_server_msg_sent_total,grpc_method=GetDeploymentWithRisk grpc_service=v1.DeploymentService grpc_type=unary,37
+grpc_server_msg_sent_total,grpc_method=GetGroup grpc_service=v1.GroupService grpc_type=unary,3
+grpc_server_msg_sent_total,grpc_method=GetGroups grpc_service=v1.GroupService grpc_type=unary,13
+grpc_server_msg_sent_total,grpc_method=GetImage grpc_service=v1.ImageService grpc_type=unary,41
+grpc_server_msg_sent_total,grpc_method=GetImageIntegration grpc_service=v1.ImageIntegrationService grpc_type=unary,46
+grpc_server_msg_sent_total,grpc_method=GetImageIntegrations grpc_service=v1.ImageIntegrationService grpc_type=unary,28
+grpc_server_msg_sent_total,grpc_method=GetInitBundles grpc_service=v1.ClusterInitService grpc_type=unary,1
+grpc_server_msg_sent_total,grpc_method=GetListeningEndpoints grpc_service=v1.ListeningEndpointsService grpc_type=unary,148
+grpc_server_msg_sent_total,grpc_method=GetMetadata grpc_service=v1.MetadataService grpc_type=unary,4
+grpc_server_msg_sent_total,grpc_method=GetNamespace grpc_service=v1.NamespaceService grpc_type=unary,4
+grpc_server_msg_sent_total,grpc_method=GetNamespaces grpc_service=v1.NamespaceService grpc_type=unary,10
+grpc_server_msg_sent_total,grpc_method=GetNetworkGraph grpc_service=v1.NetworkGraphService grpc_type=unary,40
+grpc_server_msg_sent_total,grpc_method=GetNetworkGraph grpc_service=v1.NetworkPolicyService grpc_type=unary,9
+grpc_server_msg_sent_total,grpc_method=GetNetworkPolicy grpc_service=v1.NetworkPolicyService grpc_type=unary,25
+grpc_server_msg_sent_total,grpc_method=GetNotifiers grpc_service=v1.NotifierService grpc_type=unary,2
+grpc_server_msg_sent_total,grpc_method=GetPolicy grpc_service=v1.PolicyService grpc_type=unary,123
+grpc_server_msg_sent_total,grpc_method=GetProcessBaseline grpc_service=v1.ProcessBaselineService grpc_type=unary,32
+grpc_server_msg_sent_total,grpc_method=GetProcessesByDeployment grpc_service=v1.ProcessService grpc_type=unary,38
+grpc_server_msg_sent_total,grpc_method=GetResources grpc_service=v1.RoleService grpc_type=unary,4
+grpc_server_msg_sent_total,grpc_method=GetRole grpc_service=v1.RbacService grpc_type=unary,141
+grpc_server_msg_sent_total,grpc_method=GetRole grpc_service=v1.RoleService grpc_type=unary,59
+grpc_server_msg_sent_total,grpc_method=GetRunResults grpc_service=v1.ComplianceService grpc_type=unary,20
+grpc_server_msg_sent_total,grpc_method=GetRunStatuses grpc_service=v1.ComplianceManagementService grpc_type=unary,26
+grpc_server_msg_sent_total,grpc_method=GetSecret grpc_service=v1.SecretService grpc_type=unary,22
+grpc_server_msg_sent_total,grpc_method=GetServiceAccount grpc_service=v1.ServiceAccountService grpc_type=unary,63
+grpc_server_msg_sent_total,grpc_method=GetSignatureIntegration grpc_service=v1.SignatureIntegrationService grpc_type=unary,6
+grpc_server_msg_sent_total,grpc_method=GetStandard grpc_service=v1.ComplianceService grpc_type=unary,5
+grpc_server_msg_sent_total,grpc_method=GetStandards grpc_service=v1.ComplianceService grpc_type=unary,2
+grpc_server_msg_sent_total,grpc_method=GetSummaryCounts grpc_service=v1.SummaryService grpc_type=unary,4
+grpc_server_msg_sent_total,grpc_method=GetUndoModification grpc_service=v1.NetworkPolicyService grpc_type=unary,5
+grpc_server_msg_sent_total,grpc_method=GetVulnDefinitionsInfo grpc_service=v1.IntegrationHealthService grpc_type=unary,1
+grpc_server_msg_sent_total,grpc_method=InvalidateScanAndRegistryCaches grpc_service=v1.ImageService grpc_type=unary,20
+grpc_server_msg_sent_total,grpc_method=ListAlerts grpc_service=v1.AlertService grpc_type=unary,448
+grpc_server_msg_sent_total,grpc_method=ListDeployments grpc_service=v1.DeploymentService grpc_type=unary,53
+grpc_server_msg_sent_total,grpc_method=ListImages grpc_service=v1.ImageService grpc_type=unary,36
+grpc_server_msg_sent_total,grpc_method=ListNodes grpc_service=v1.NodeService grpc_type=unary,4
+grpc_server_msg_sent_total,grpc_method=ListPermissionSets grpc_service=v1.RoleService grpc_type=unary,5
+grpc_server_msg_sent_total,grpc_method=ListPolicies grpc_service=v1.PolicyService grpc_type=unary,179
+grpc_server_msg_sent_total,grpc_method=ListRoleBindings grpc_service=v1.RbacService grpc_type=unary,7
+grpc_server_msg_sent_total,grpc_method=ListRoles grpc_service=v1.RbacService grpc_type=unary,6
+grpc_server_msg_sent_total,grpc_method=ListSecrets grpc_service=v1.SecretService grpc_type=unary,6
+grpc_server_msg_sent_total,grpc_method=ListServiceAccounts grpc_service=v1.ServiceAccountService grpc_type=unary,4
+grpc_server_msg_sent_total,grpc_method=ListSimpleAccessScopes grpc_service=v1.RoleService grpc_type=unary,5
+grpc_server_msg_sent_total,grpc_method=ListSubjects grpc_service=v1.RbacService grpc_type=unary,1
+grpc_server_msg_sent_total,grpc_method=LockProcessBaselines grpc_service=v1.ProcessBaselineService grpc_type=unary,3
+grpc_server_msg_sent_total,grpc_method=Options grpc_service=v1.SearchService grpc_type=unary,17
+grpc_server_msg_sent_total,grpc_method=PatchPolicy grpc_service=v1.PolicyService grpc_type=unary,48
+grpc_server_msg_sent_total,grpc_method=Ping grpc_service=v1.PingService grpc_type=unary,400
+grpc_server_msg_sent_total,grpc_method=PostAuthProvider grpc_service=v1.AuthProviderService grpc_type=unary,4
+grpc_server_msg_sent_total,grpc_method=PostCluster grpc_service=v1.ClustersService grpc_type=unary,4
+grpc_server_msg_sent_total,grpc_method=PostImageIntegration grpc_service=v1.ImageIntegrationService grpc_type=unary,34
+grpc_server_msg_sent_total,grpc_method=PostNotifier grpc_service=v1.NotifierService grpc_type=unary,11
+grpc_server_msg_sent_total,grpc_method=PostPermissionSet grpc_service=v1.RoleService grpc_type=unary,31
+grpc_server_msg_sent_total,grpc_method=PostPolicy grpc_service=v1.PolicyService grpc_type=unary,143
+grpc_server_msg_sent_total,grpc_method=PostPolicyCategory grpc_service=v1.PolicyCategoryService grpc_type=unary,1
+grpc_server_msg_sent_total,grpc_method=PostSignatureIntegration grpc_service=v1.SignatureIntegrationService grpc_type=unary,6
+grpc_server_msg_sent_total,grpc_method=PostSimpleAccessScope grpc_service=v1.RoleService grpc_type=unary,5
+grpc_server_msg_sent_total,grpc_method=PutCluster grpc_service=v1.ClustersService grpc_type=unary,41
+grpc_server_msg_sent_total,grpc_method=PutPolicy grpc_service=v1.PolicyService grpc_type=unary,104
+grpc_server_msg_sent_total,grpc_method=ReassessPolicies grpc_service=v1.PolicyService grpc_type=unary,1
+grpc_server_msg_sent_total,grpc_method=ResolveAlert grpc_service=v1.AlertService grpc_type=unary,10
+grpc_server_msg_sent_total,grpc_method=RevokeInitBundle grpc_service=v1.ClusterInitService grpc_type=unary,1
+grpc_server_msg_sent_total,grpc_method=RevokeToken grpc_service=v1.APITokenService grpc_type=unary,13
+grpc_server_msg_sent_total,grpc_method=ScanImage grpc_service=v1.ImageService grpc_type=unary,29
+grpc_server_msg_sent_total,grpc_method=ScanImageInternal grpc_service=v1.ImageService grpc_type=unary,190
+grpc_server_msg_sent_total,grpc_method=Search grpc_service=v1.SearchService grpc_type=unary,29
+grpc_server_msg_sent_total,grpc_method=SendNetworkPolicyYAML grpc_service=v1.NetworkPolicyService grpc_type=unary,3
+grpc_server_msg_sent_total,grpc_method=SimulateNetworkGraph grpc_service=v1.NetworkPolicyService grpc_type=unary,10
+grpc_server_msg_sent_total,grpc_method=TLSChallenge grpc_service=v1.MetadataService grpc_type=unary,2
+grpc_server_msg_sent_total,grpc_method=TestImageIntegration grpc_service=v1.ImageIntegrationService grpc_type=unary,33
+grpc_server_msg_sent_total,grpc_method=TestNotifier grpc_service=v1.NotifierService grpc_type=unary,9
+grpc_server_msg_sent_total,grpc_method=TriggerRuns grpc_service=v1.ComplianceManagementService grpc_type=unary,13
+grpc_server_msg_sent_total,grpc_method=TriggerSensorCertRotation grpc_service=v1.SensorUpgradeService grpc_type=unary,1
+grpc_server_msg_sent_total,grpc_method=UpdateProcessBaselines grpc_service=v1.ProcessBaselineService grpc_type=unary,2
+grpc_server_msg_sent_total,grpc_method=UpgradeCheckInFromSensor grpc_service=central.SensorUpgradeControlService grpc_type=unary,2
+grpc_server_msg_sent_total,grpc_method=UpgradeCheckInFromUpgrader grpc_service=central.SensorUpgradeControlService grpc_type=unary,9
+grpc_server_started_total,grpc_method=ApplyNetworkPolicy grpc_service=v1.NetworkPolicyService grpc_type=unary,11
+grpc_server_started_total,grpc_method=Autocomplete grpc_service=v1.SearchService grpc_type=unary,12
+grpc_server_started_total,grpc_method=Communicate grpc_service=central.SensorService grpc_type=bidi_stream,2
+grpc_server_started_total,grpc_method=CountAlerts grpc_service=v1.AlertService grpc_type=unary,3
+grpc_server_started_total,grpc_method=CountDiscoveredClusters grpc_service=v1.DiscoveredClustersService grpc_type=unary,2
+grpc_server_started_total,grpc_method=CreateCloudSource grpc_service=v1.CloudSourcesService grpc_type=unary,1
+grpc_server_started_total,grpc_method=CreateGroup grpc_service=v1.GroupService grpc_type=unary,8
+grpc_server_started_total,grpc_method=CreateRole grpc_service=v1.RoleService grpc_type=unary,34
+grpc_server_started_total,grpc_method=DeleteAuthProvider grpc_service=v1.AuthProviderService grpc_type=unary,4
+grpc_server_started_total,grpc_method=DeleteCloudSource grpc_service=v1.CloudSourcesService grpc_type=unary,1
+grpc_server_started_total,grpc_method=DeleteCluster grpc_service=v1.ClustersService grpc_type=unary,3
+grpc_server_started_total,grpc_method=DeleteGroup grpc_service=v1.GroupService grpc_type=unary,3
+grpc_server_started_total,grpc_method=DeleteImageIntegration grpc_service=v1.ImageIntegrationService grpc_type=unary,46
+grpc_server_started_total,grpc_method=DeleteImages grpc_service=v1.ImageService grpc_type=unary,23
+grpc_server_started_total,grpc_method=DeleteNotifier grpc_service=v1.NotifierService grpc_type=unary,11
+grpc_server_started_total,grpc_method=DeletePermissionSet grpc_service=v1.RoleService grpc_type=unary,31
+grpc_server_started_total,grpc_method=DeletePolicy grpc_service=v1.PolicyService grpc_type=unary,143
+grpc_server_started_total,grpc_method=DeletePolicyCategory grpc_service=v1.PolicyCategoryService grpc_type=unary,1
+grpc_server_started_total,grpc_method=DeleteProcessBaselines grpc_service=v1.ProcessBaselineService grpc_type=unary,1
+grpc_server_started_total,grpc_method=DeleteRole grpc_service=v1.RoleService grpc_type=unary,34
+grpc_server_started_total,grpc_method=DeleteSignatureIntegration grpc_service=v1.SignatureIntegrationService grpc_type=unary,6
+grpc_server_started_total,grpc_method=DeleteSimpleAccessScope grpc_service=v1.RoleService grpc_type=unary,16
+grpc_server_started_total,grpc_method=DetectBuildTime grpc_service=v1.DetectionService grpc_type=unary,12
+grpc_server_started_total,grpc_method=DetectDeployTimeFromYAML grpc_service=v1.DetectionService grpc_type=unary,3
+grpc_server_started_total,grpc_method=DryRunPolicy grpc_service=v1.PolicyService grpc_type=unary,1
+grpc_server_started_total,grpc_method=ExchangeToken grpc_service=v1.AuthProviderService grpc_type=unary,2
+grpc_server_started_total,grpc_method=GenerateInitBundle grpc_service=v1.ClusterInitService grpc_type=unary,1
+grpc_server_started_total,grpc_method=GenerateNetworkPolicies grpc_service=v1.NetworkPolicyService grpc_type=unary,7
+grpc_server_started_total,grpc_method=GenerateToken grpc_service=v1.APITokenService grpc_type=unary,69
+grpc_server_started_total,grpc_method=Get grpc_service=v1.GRPCPreferencesService grpc_type=unary,2
+grpc_server_started_total,grpc_method=GetAggregatedResults grpc_service=v1.ComplianceService grpc_type=unary,5
+grpc_server_started_total,grpc_method=GetAlert grpc_service=v1.AlertService grpc_type=unary,36
+grpc_server_started_total,grpc_method=GetAlertsGroup grpc_service=v1.AlertService grpc_type=unary,1
+grpc_server_started_total,grpc_method=GetAuthProvider grpc_service=v1.AuthProviderService grpc_type=unary,2
+grpc_server_started_total,grpc_method=GetAuthProviders grpc_service=v1.AuthProviderService grpc_type=unary,6
+grpc_server_started_total,grpc_method=GetAuthStatus grpc_service=v1.AuthService grpc_type=unary,23
+grpc_server_started_total,grpc_method=GetCertExpiry grpc_service=v1.CredentialExpiryService grpc_type=unary,2
+grpc_server_started_total,grpc_method=GetCloudSource grpc_service=v1.CloudSourcesService grpc_type=unary,2
+grpc_server_started_total,grpc_method=GetCluster grpc_service=v1.ClustersService grpc_type=unary,72
+grpc_server_started_total,grpc_method=GetClusterDefaultValues grpc_service=v1.ClustersService grpc_type=unary,1
+grpc_server_started_total,grpc_method=GetClusters grpc_service=v1.ClustersService grpc_type=unary,909
+grpc_server_started_total,grpc_method=GetDeclarativeConfigHealths grpc_service=v1.DeclarativeConfigHealthService grpc_type=unary,84
+grpc_server_started_total,grpc_method=GetDeployment grpc_service=v1.DeploymentService grpc_type=unary,144
+grpc_server_started_total,grpc_method=GetDeploymentWithRisk grpc_service=v1.DeploymentService grpc_type=unary,37
+grpc_server_started_total,grpc_method=GetGroup grpc_service=v1.GroupService grpc_type=unary,6
+grpc_server_started_total,grpc_method=GetGroups grpc_service=v1.GroupService grpc_type=unary,13
+grpc_server_started_total,grpc_method=GetImage grpc_service=v1.ImageService grpc_type=unary,41
+grpc_server_started_total,grpc_method=GetImageIntegration grpc_service=v1.ImageIntegrationService grpc_type=unary,87
+grpc_server_started_total,grpc_method=GetImageIntegrations grpc_service=v1.ImageIntegrationService grpc_type=unary,28
+grpc_server_started_total,grpc_method=GetInitBundles grpc_service=v1.ClusterInitService grpc_type=unary,1
+grpc_server_started_total,grpc_method=GetListeningEndpoints grpc_service=v1.ListeningEndpointsService grpc_type=unary,148
+grpc_server_started_total,grpc_method=GetMetadata grpc_service=v1.MetadataService grpc_type=unary,4
+grpc_server_started_total,grpc_method=GetNamespace grpc_service=v1.NamespaceService grpc_type=unary,7
+grpc_server_started_total,grpc_method=GetNamespaces grpc_service=v1.NamespaceService grpc_type=unary,10
+grpc_server_started_total,grpc_method=GetNetworkGraph grpc_service=v1.NetworkGraphService grpc_type=unary,40
+grpc_server_started_total,grpc_method=GetNetworkGraph grpc_service=v1.NetworkPolicyService grpc_type=unary,9
+grpc_server_started_total,grpc_method=GetNetworkPolicy grpc_service=v1.NetworkPolicyService grpc_type=unary,44
+grpc_server_started_total,grpc_method=GetNotifiers grpc_service=v1.NotifierService grpc_type=unary,2
+grpc_server_started_total,grpc_method=GetPolicy grpc_service=v1.PolicyService grpc_type=unary,123
+grpc_server_started_total,grpc_method=GetProcessBaseline grpc_service=v1.ProcessBaselineService grpc_type=unary,34
+grpc_server_started_total,grpc_method=GetProcessesByDeployment grpc_service=v1.ProcessService grpc_type=unary,38
+grpc_server_started_total,grpc_method=GetResources grpc_service=v1.RoleService grpc_type=unary,4
+grpc_server_started_total,grpc_method=GetRole grpc_service=v1.RbacService grpc_type=unary,141
+grpc_server_started_total,grpc_method=GetRole grpc_service=v1.RoleService grpc_type=unary,64
+grpc_server_started_total,grpc_method=GetRunResults grpc_service=v1.ComplianceService grpc_type=unary,20
+grpc_server_started_total,grpc_method=GetRunStatuses grpc_service=v1.ComplianceManagementService grpc_type=unary,26
+grpc_server_started_total,grpc_method=GetSecret grpc_service=v1.SecretService grpc_type=unary,22
+grpc_server_started_total,grpc_method=GetServiceAccount grpc_service=v1.ServiceAccountService grpc_type=unary,63
+grpc_server_started_total,grpc_method=GetSignatureIntegration grpc_service=v1.SignatureIntegrationService grpc_type=unary,12
+grpc_server_started_total,grpc_method=GetStandard grpc_service=v1.ComplianceService grpc_type=unary,5
+grpc_server_started_total,grpc_method=GetStandards grpc_service=v1.ComplianceService grpc_type=unary,2
+grpc_server_started_total,grpc_method=GetSummaryCounts grpc_service=v1.SummaryService grpc_type=unary,4
+grpc_server_started_total,grpc_method=GetUndoModification grpc_service=v1.NetworkPolicyService grpc_type=unary,5
+grpc_server_started_total,grpc_method=GetVulnDefinitionsInfo grpc_service=v1.IntegrationHealthService grpc_type=unary,1
+grpc_server_started_total,grpc_method=InvalidateScanAndRegistryCaches grpc_service=v1.ImageService grpc_type=unary,20
+grpc_server_started_total,grpc_method=ListAlerts grpc_service=v1.AlertService grpc_type=unary,448
+grpc_server_started_total,grpc_method=ListDeployments grpc_service=v1.DeploymentService grpc_type=unary,53
+grpc_server_started_total,grpc_method=ListImages grpc_service=v1.ImageService grpc_type=unary,36
+grpc_server_started_total,grpc_method=ListNodes grpc_service=v1.NodeService grpc_type=unary,4
+grpc_server_started_total,grpc_method=ListPermissionSets grpc_service=v1.RoleService grpc_type=unary,5
+grpc_server_started_total,grpc_method=ListPolicies grpc_service=v1.PolicyService grpc_type=unary,179
+grpc_server_started_total,grpc_method=ListRoleBindings grpc_service=v1.RbacService grpc_type=unary,7
+grpc_server_started_total,grpc_method=ListRoles grpc_service=v1.RbacService grpc_type=unary,6
+grpc_server_started_total,grpc_method=ListSecrets grpc_service=v1.SecretService grpc_type=unary,6
+grpc_server_started_total,grpc_method=ListServiceAccounts grpc_service=v1.ServiceAccountService grpc_type=unary,4
+grpc_server_started_total,grpc_method=ListSimpleAccessScopes grpc_service=v1.RoleService grpc_type=unary,5
+grpc_server_started_total,grpc_method=ListSubjects grpc_service=v1.RbacService grpc_type=unary,1
+grpc_server_started_total,grpc_method=LockProcessBaselines grpc_service=v1.ProcessBaselineService grpc_type=unary,3
+grpc_server_started_total,grpc_method=Options grpc_service=v1.SearchService grpc_type=unary,17
+grpc_server_started_total,grpc_method=PatchPolicy grpc_service=v1.PolicyService grpc_type=unary,48
+grpc_server_started_total,grpc_method=Ping grpc_service=v1.PingService grpc_type=unary,400
+grpc_server_started_total,grpc_method=PostAuthProvider grpc_service=v1.AuthProviderService grpc_type=unary,4
+grpc_server_started_total,grpc_method=PostCluster grpc_service=v1.ClustersService grpc_type=unary,7
+grpc_server_started_total,grpc_method=PostImageIntegration grpc_service=v1.ImageIntegrationService grpc_type=unary,34
+grpc_server_started_total,grpc_method=PostNotifier grpc_service=v1.NotifierService grpc_type=unary,11
+grpc_server_started_total,grpc_method=PostPermissionSet grpc_service=v1.RoleService grpc_type=unary,31
+grpc_server_started_total,grpc_method=PostPolicy grpc_service=v1.PolicyService grpc_type=unary,148
+grpc_server_started_total,grpc_method=PostPolicyCategory grpc_service=v1.PolicyCategoryService grpc_type=unary,1
+grpc_server_started_total,grpc_method=PostSignatureIntegration grpc_service=v1.SignatureIntegrationService grpc_type=unary,6
+grpc_server_started_total,grpc_method=PostSimpleAccessScope grpc_service=v1.RoleService grpc_type=unary,5
+grpc_server_started_total,grpc_method=PutCluster grpc_service=v1.ClustersService grpc_type=unary,41
+grpc_server_started_total,grpc_method=PutPolicy grpc_service=v1.PolicyService grpc_type=unary,104
+grpc_server_started_total,grpc_method=ReassessPolicies grpc_service=v1.PolicyService grpc_type=unary,1
+grpc_server_started_total,grpc_method=ResolveAlert grpc_service=v1.AlertService grpc_type=unary,10
+grpc_server_started_total,grpc_method=RevokeInitBundle grpc_service=v1.ClusterInitService grpc_type=unary,1
+grpc_server_started_total,grpc_method=RevokeToken grpc_service=v1.APITokenService grpc_type=unary,13
+grpc_server_started_total,grpc_method=ScanImage grpc_service=v1.ImageService grpc_type=unary,29
+grpc_server_started_total,grpc_method=ScanImageInternal grpc_service=v1.ImageService grpc_type=unary,192
+grpc_server_started_total,grpc_method=Search grpc_service=v1.SearchService grpc_type=unary,29
+grpc_server_started_total,grpc_method=SendNetworkPolicyYAML grpc_service=v1.NetworkPolicyService grpc_type=unary,3
+grpc_server_started_total,grpc_method=SimulateNetworkGraph grpc_service=v1.NetworkPolicyService grpc_type=unary,10
+grpc_server_started_total,grpc_method=TLSChallenge grpc_service=v1.MetadataService grpc_type=unary,2
+grpc_server_started_total,grpc_method=TestImageIntegration grpc_service=v1.ImageIntegrationService grpc_type=unary,33
+grpc_server_started_total,grpc_method=TestNotifier grpc_service=v1.NotifierService grpc_type=unary,13
+grpc_server_started_total,grpc_method=TriggerRuns grpc_service=v1.ComplianceManagementService grpc_type=unary,13
+grpc_server_started_total,grpc_method=TriggerSensorCertRotation grpc_service=v1.SensorUpgradeService grpc_type=unary,1
+grpc_server_started_total,grpc_method=UpdateGroup grpc_service=v1.GroupService grpc_type=unary,2
+grpc_server_started_total,grpc_method=UpdateProcessBaselines grpc_service=v1.ProcessBaselineService grpc_type=unary,2
+grpc_server_started_total,grpc_method=UpgradeCheckInFromSensor grpc_service=central.SensorUpgradeControlService grpc_type=unary,3
+grpc_server_started_total,grpc_method=UpgradeCheckInFromUpgrader grpc_service=central.SensorUpgradeControlService grpc_type=unary,9
+http_incoming_in_flight_requests,path=/,0
+http_incoming_in_flight_requests,path=/api/administration/usage/secured-units/csv,0
+http_incoming_in_flight_requests,path=/api/cli/download/,0
+http_incoming_in_flight_requests,path=/api/compliance/export/csv,0
+http_incoming_in_flight_requests,path=/api/docs/swagger,0
+http_incoming_in_flight_requests,path=/api/docs/v2/swagger,0
+http_incoming_in_flight_requests,path=/api/export/csv/cluster/cve,0
+http_incoming_in_flight_requests,path=/api/export/csv/image/cve,0
+http_incoming_in_flight_requests,path=/api/export/csv/node/cve,0
+http_incoming_in_flight_requests,path=/api/extensions/backup,0
+http_incoming_in_flight_requests,path=/api/extensions/certgen/central,0
+http_incoming_in_flight_requests,path=/api/extensions/certgen/centraldb,0
+http_incoming_in_flight_requests,path=/api/extensions/certgen/cluster,0
+http_incoming_in_flight_requests,path=/api/extensions/certgen/scanner,0
+http_incoming_in_flight_requests,path=/api/extensions/certs/backup,0
+http_incoming_in_flight_requests,path=/api/extensions/clusters/helm-config.yaml,0
+http_incoming_in_flight_requests,path=/api/extensions/clusters/zip,0
+http_incoming_in_flight_requests,path=/api/extensions/diagnostics,1
+http_incoming_in_flight_requests,path=/api/extensions/helm-charts/,0
+http_incoming_in_flight_requests,path=/api/extensions/probeupload,0
+http_incoming_in_flight_requests,path=/api/extensions/scanner/zip,0
+http_incoming_in_flight_requests,path=/api/extensions/scannerdefinitions,0
+http_incoming_in_flight_requests,path=/api/graphql,0
+http_incoming_in_flight_requests,path=/api/logimbue,0
+http_incoming_in_flight_requests,path=/api/reports/jobs/download,0
+http_incoming_in_flight_requests,path=/api/risk/timeline/export/csv,0
+http_incoming_in_flight_requests,path=/api/splunk/ta/compliance,0
+http_incoming_in_flight_requests,path=/api/splunk/ta/violations,0
+http_incoming_in_flight_requests,path=/api/splunk/ta/vulnmgmt,0
+http_incoming_in_flight_requests,path=/api/vm/export/csv,0
+http_incoming_in_flight_requests,path=/db/backup,0
+http_incoming_in_flight_requests,path=/db/v2/restore,0
+http_incoming_in_flight_requests,path=/db/v2/resumerestore,0
+http_incoming_in_flight_requests,path=/debug/block,0
+http_incoming_in_flight_requests,path=/debug/dump,0
+http_incoming_in_flight_requests,path=/debug/goroutine,0
+http_incoming_in_flight_requests,path=/debug/heap,0
+http_incoming_in_flight_requests,path=/debug/mutex,0
+http_incoming_in_flight_requests,path=/debug/pprof,0
+http_incoming_in_flight_requests,path=/debug/pprof/cmdline,0
+http_incoming_in_flight_requests,path=/debug/pprof/profile,0
+http_incoming_in_flight_requests,path=/debug/pprof/symbol,0
+http_incoming_in_flight_requests,path=/debug/pprof/trace,0
+http_incoming_in_flight_requests,path=/debug/threadcreate,0
+http_incoming_in_flight_requests,path=/debug/versions.json,0
+http_incoming_in_flight_requests,path=/kernel-objects/,0
+http_incoming_in_flight_requests,path=/sso/,0
+http_incoming_in_flight_requests,path=/v1/,0
+http_incoming_in_flight_requests,path=/v2/,0
+http_incoming_request_duration_histogram_seconds,code=200 method=get path=/api/extensions/scannerdefinitions,0.06543743566666667
+http_incoming_request_duration_histogram_seconds,code=200 method=get path=/v1/,0.0010317126098765435
+http_incoming_request_duration_histogram_seconds,code=200 method=post path=/api/graphql,0.017244474257142862
+http_incoming_request_duration_histogram_seconds,code=304 method=get path=/api/extensions/scannerdefinitions,0.0027754254166666666
+http_incoming_request_size_histogram_bytes,code=200 method=get path=/api/extensions/scannerdefinitions,181
+http_incoming_request_size_histogram_bytes,code=200 method=get path=/v1/,69.3283950617284
+http_incoming_request_size_histogram_bytes,code=200 method=post path=/api/graphql,785.4142857142857
+http_incoming_request_size_histogram_bytes,code=304 method=get path=/api/extensions/scannerdefinitions,181
+http_incoming_requests_total,code=200 method=get path=/api/export/csv/image/cve,3
+http_incoming_requests_total,code=200 method=get path=/api/extensions/diagnostics,2
+http_incoming_requests_total,code=200 method=get path=/api/extensions/scannerdefinitions,6
+http_incoming_requests_total,code=200 method=get path=/debug/dump,1
+http_incoming_requests_total,code=200 method=get path=/v1/,405
+http_incoming_requests_total,code=200 method=post path=/api/compliance/export/csv,1
+http_incoming_requests_total,code=200 method=post path=/api/extensions/certgen/central,1
+http_incoming_requests_total,code=200 method=post path=/api/extensions/certgen/cluster,1
+http_incoming_requests_total,code=200 method=post path=/api/extensions/certgen/scanner,1
+http_incoming_requests_total,code=200 method=post path=/api/extensions/clusters/zip,2
+http_incoming_requests_total,code=200 method=post path=/api/graphql,70
+http_incoming_requests_total,code=200 method=post path=/v1/,1
+http_incoming_requests_total,code=303 method=get path=/sso/,4
+http_incoming_requests_total,code=304 method=get path=/api/extensions/scannerdefinitions,12
+http_incoming_requests_total,code=401 method=get path=/api/extensions/diagnostics,1
+http_incoming_requests_total,code=401 method=post path=/api/graphql,1
+http_incoming_requests_total,code=403 method=get path=/api/extensions/diagnostics,1
+http_incoming_requests_total,code=403 method=post path=/v1/,1
+http_incoming_response_size_histogram_bytes,code=200 method=get path=/api/extensions/scannerdefinitions,1.0359779e+07
+http_incoming_response_size_histogram_bytes,code=200 method=get path=/v1/,27.42222222222222
+http_incoming_response_size_histogram_bytes,code=200 method=post path=/api/graphql,1291.9
+http_incoming_response_size_histogram_bytes,code=304 method=get path=/api/extensions/scannerdefinitions,0
+image_upsert_deduper,status=deduped,1689
+image_upsert_deduper,status=passed,146
+info,branding=RHACS build=internal central_id=59137597-0c84-4a45-bfb1-e9ae12b38ca3 central_version=4.4.x-408-gcce8223eaa hosting=self-managed install_method=manifest,1
+k8s_event_processing_duration,Action=CREATE_RESOURCE Dispatcher=v1.Deployment Resource=Deployment,21.476744186046513
+k8s_event_processing_duration,Action=CREATE_RESOURCE Dispatcher=v1.Namespace Resource=Namespace,10.285714285714286
+k8s_event_processing_duration,Action=CREATE_RESOURCE Dispatcher=v1.NetworkPolicy Resource=NetworkPolicy,4.861471861471862
+k8s_event_processing_duration,Action=CREATE_RESOURCE Dispatcher=v1.Pod Resource=Pod,14.06280193236715
+k8s_event_processing_duration,Action=CREATE_RESOURCE Dispatcher=v1.Secret Resource=ImageIntegration,22.875
+k8s_event_processing_duration,Action=CREATE_RESOURCE Dispatcher=v1.Secret Resource=Secret,13.987341772151899
+k8s_event_processing_duration,Action=CREATE_RESOURCE Dispatcher=v1.ServiceAccount Resource=ServiceAccount,3
+k8s_event_processing_duration,Action=REMOVE_RESOURCE Dispatcher=v1.Deployment Resource=Deployment,12.666666666666666
+k8s_event_processing_duration,Action=REMOVE_RESOURCE Dispatcher=v1.Namespace Resource=Namespace,1
+k8s_event_processing_duration,Action=REMOVE_RESOURCE Dispatcher=v1.NetworkPolicy Resource=NetworkPolicy,9.883211678832117
+k8s_event_processing_duration,Action=REMOVE_RESOURCE Dispatcher=v1.Pod Resource=Pod,6.971014492753623
+k8s_event_processing_duration,Action=REMOVE_RESOURCE Dispatcher=v1.Secret Resource=ImageIntegration,4.777777777777778
+k8s_event_processing_duration,Action=REMOVE_RESOURCE Dispatcher=v1.Secret Resource=Secret,4.63013698630137
+k8s_event_processing_duration,Action=REMOVE_RESOURCE Dispatcher=v1.ServiceAccount Resource=ServiceAccount,0.4444444444444444
+k8s_event_processing_duration,Action=SYNC_RESOURCE Dispatcher=v1.ClusterRole Resource=Role,1917.4336283185842
+k8s_event_processing_duration,Action=SYNC_RESOURCE Dispatcher=v1.ClusterRoleBinding Resource=Binding,2152.970873786408
+k8s_event_processing_duration,Action=SYNC_RESOURCE Dispatcher=v1.DaemonSet Resource=Deployment,1276.5714285714287
+k8s_event_processing_duration,Action=SYNC_RESOURCE Dispatcher=v1.Deployment Resource=Deployment,869.4444444444445
+k8s_event_processing_duration,Action=SYNC_RESOURCE Dispatcher=v1.Namespace Resource=Namespace,1186.2857142857142
+k8s_event_processing_duration,Action=SYNC_RESOURCE Dispatcher=v1.NetworkPolicy Resource=NetworkPolicy,1139
+k8s_event_processing_duration,Action=SYNC_RESOURCE Dispatcher=v1.Pod Resource=Pod,184.75925925925927
+k8s_event_processing_duration,Action=SYNC_RESOURCE Dispatcher=v1.Role Resource=Role,2009.9259259259259
+k8s_event_processing_duration,Action=SYNC_RESOURCE Dispatcher=v1.RoleBinding Resource=Binding,1611
+k8s_event_processing_duration,Action=SYNC_RESOURCE Dispatcher=v1.Secret Resource=Secret,1479.95
+k8s_event_processing_duration,Action=SYNC_RESOURCE Dispatcher=v1.ServiceAccount Resource=ServiceAccount,1401.5806451612902
+k8s_event_processing_duration,Action=UPDATE_RESOURCE Dispatcher=v1.DaemonSet Resource=Deployment,4.111111111111111
+k8s_event_processing_duration,Action=UPDATE_RESOURCE Dispatcher=v1.Deployment Resource=Deployment,18.026315789473685
+k8s_event_processing_duration,Action=UPDATE_RESOURCE Dispatcher=v1.Pod Resource=Deployment,16.183333333333334
+k8s_event_processing_duration,Action=UPDATE_RESOURCE Dispatcher=v1.Pod Resource=Pod,8.636079249217936
+k8s_event_processing_duration,Action=UPDATE_RESOURCE Dispatcher=v1.Secret Resource=Secret,1
+k8s_event_processing_duration,Action=UPDATE_RESOURCE Dispatcher=v1.Service Resource=Deployment,6.972972972972973
+k8s_event_processing_duration,Action=UPDATE_RESOURCE Dispatcher=v1.ServiceAccount Resource=ServiceAccount,2.3333333333333335
+metadata_cache_hits,,23
+metadata_cache_misses,,156
+node_scan_duration,Error=false Scanner=,4.826248925373135
+node_scan_num_components,ClusterName=remote NodeName=gke-rox-ci-qa-e2e-test-1-default-pool-3103934f-9wh3,0
+node_scan_num_components,ClusterName=remote NodeName=gke-rox-ci-qa-e2e-test-1-default-pool-3103934f-c2v3,0
+node_scan_num_components,ClusterName=remote NodeName=gke-rox-ci-qa-e2e-test-1-default-pool-3103934f-xcn7,0
+orphaned_plop_total,ClusterID=d0526792-67ad-448c-adf6-9a5ca731644e,67
+postgres_acquire_conn_op_duration,Operation=Get Type=Config,4.6504711
+postgres_acquire_conn_op_duration,Operation=Get Type=DelegatedRegistryConfig,0.02734634146341464
+postgres_acquire_conn_op_duration,Operation=Get Type=Image,0.10045416365886377
+postgres_acquire_conn_op_duration,Operation=Get Type=InstallationInfo,0.009407800000000001
+postgres_acquire_conn_op_duration,Operation=Get Type=NetworkFlow,0.5007942203389829
+postgres_acquire_conn_op_duration,Operation=Get Type=Node,0.3440078965517241
+postgres_acquire_conn_op_duration,Operation=Get Type=NodeMetadata,31.063670761194025
+postgres_acquire_conn_op_duration,Operation=GetMany Type=Image,0.04588932786885249
+postgres_acquire_conn_op_duration,Operation=GetMany Type=Node,0.0050947499999999995
+postgres_acquire_conn_op_duration,Operation=Remove Type=Image,0.005109571428571429
+postgres_acquire_conn_op_duration,Operation=RemoveFlowsByDeployment Type=NetworkFlow,0.008056578034682078
+postgres_acquire_conn_op_duration,Operation=UpdateMany Type=ClusterCVE,0.45763771794871805
+postgres_acquire_conn_op_duration,Operation=Upsert Type=ActiveComponent,0.004765888888888888
+postgres_acquire_conn_op_duration,Operation=Upsert Type=AdministrationEvent,0.004692809523809523
+postgres_acquire_conn_op_duration,Operation=Upsert Type=Alert,0.009172451503600161
+postgres_acquire_conn_op_duration,Operation=Upsert Type=AuthProvider,0.00381452
+postgres_acquire_conn_op_duration,Operation=Upsert Type=Cluster,0.041691571428571425
+postgres_acquire_conn_op_duration,Operation=Upsert Type=ClusterHealthStatus,0.005008241935483871
+postgres_acquire_conn_op_duration,Operation=Upsert Type=ComplianceDomain,0.006565785714285714
+postgres_acquire_conn_op_duration,Operation=Upsert Type=ComplianceIntegration,0.004908837398373985
+postgres_acquire_conn_op_duration,Operation=Upsert Type=ComplianceRunMetadata,0.008282133333333334
+postgres_acquire_conn_op_duration,Operation=Upsert Type=ComplianceRunResults,0.003496600000000001
+postgres_acquire_conn_op_duration,Operation=Upsert Type=ComplianceStrings,0.005002966666666665
+postgres_acquire_conn_op_duration,Operation=Upsert Type=DeclarativeConfigHealth,0.013135164893617022
+postgres_acquire_conn_op_duration,Operation=Upsert Type=Deployment,13.206311701492528
+postgres_acquire_conn_op_duration,Operation=Upsert Type=DiscoveredCluster,0.01909157142857143
+postgres_acquire_conn_op_duration,Operation=Upsert Type=Group,0.0036525454545454543
+postgres_acquire_conn_op_duration,Operation=Upsert Type=Hash,0.03768367741935482
+postgres_acquire_conn_op_duration,Operation=Upsert Type=ImageIntegration,0.1762636500000001
+postgres_acquire_conn_op_duration,Operation=Upsert Type=IntegrationHealth,0.09491573623853221
+postgres_acquire_conn_op_duration,Operation=Upsert Type=K8SRole,54.46845267123285
+postgres_acquire_conn_op_duration,Operation=Upsert Type=K8SRoleBinding,87.72358920143888
+postgres_acquire_conn_op_duration,Operation=Upsert Type=NamespaceMetadata,2.180230347826087
+postgres_acquire_conn_op_duration,Operation=Upsert Type=NetworkBaseline,0.0031133030303030296
+postgres_acquire_conn_op_duration,Operation=Upsert Type=NetworkEntity,0.003078797714106765
+postgres_acquire_conn_op_duration,Operation=Upsert Type=NetworkPolicy,13.854315247899175
+postgres_acquire_conn_op_duration,Operation=Upsert Type=NetworkPolicyApplicationUndoRecord,0.004950300000000001
+postgres_acquire_conn_op_duration,Operation=Upsert Type=Node,0.6973228059701497
+postgres_acquire_conn_op_duration,Operation=Upsert Type=Notifier,0.004138941176470588
+postgres_acquire_conn_op_duration,Operation=Upsert Type=PermissionSet,0.0050819767441860455
+postgres_acquire_conn_op_duration,Operation=Upsert Type=Pod,0.9294773
+postgres_acquire_conn_op_duration,Operation=Upsert Type=Policy,0.004518086387434553
+postgres_acquire_conn_op_duration,Operation=Upsert Type=PolicyCategory,0.003791740740740739
+postgres_acquire_conn_op_duration,Operation=Upsert Type=PolicyCategoryEdge,0.0057582913043478295
+postgres_acquire_conn_op_duration,Operation=Upsert Type=ProcessBaseline,0.0041922450980392155
+postgres_acquire_conn_op_duration,Operation=Upsert Type=ProcessBaselineResults,0.006777486725663717
+postgres_acquire_conn_op_duration,Operation=Upsert Type=ProcessIndicator,0.31211823766816144
+postgres_acquire_conn_op_duration,Operation=Upsert Type=ProcessListeningOnPortStorage,0.017457340909090912
+postgres_acquire_conn_op_duration,Operation=Upsert Type=Risk,0.011365657534246572
+postgres_acquire_conn_op_duration,Operation=Upsert Type=Role,0.0040259807692307695
+postgres_acquire_conn_op_duration,Operation=Upsert Type=Secret,70.62987266037737
+postgres_acquire_conn_op_duration,Operation=Upsert Type=ServiceAccount,18.787207438095237
+postgres_acquire_conn_op_duration,Operation=Upsert Type=ServiceIdentity,0.011877555555555554
+postgres_acquire_conn_op_duration,Operation=Upsert Type=SignatureIntegration,0.008906
+postgres_acquire_conn_op_duration,Operation=Upsert Type=SimpleAccessScope,0.0040898
+postgres_acquire_conn_op_duration,Operation=Upsert Type=TokenMetadata,0.014659353658536588
+postgres_available_size_bytes,,2.5236873216e+10
+postgres_connected,,1
+postgres_db_size_bytes,database=central_active,7.0365743e+07
+postgres_db_size_bytes,database=postgres,8.294959e+06
+postgres_db_size_bytes,database=template0,7.938563e+06
+postgres_db_size_bytes,database=template1,7.938563e+06
+postgres_maximum_db_connections,,200
+postgres_op_duration,Operation=Count Type=Alert,1.72198875
+postgres_op_duration,Operation=Count Type=Deployment,0.9185350159767626
+postgres_op_duration,Operation=Count Type=Image,1.3770904287949923
+postgres_op_duration,Operation=Count Type=ImageCVE,1.500449359937402
+postgres_op_duration,Operation=Count Type=ImageComponent,2.249713608763692
+postgres_op_duration,Operation=Count Type=NetworkPolicy,0.483109
+postgres_op_duration,Operation=Count Type=Secret,0.504629367816092
+postgres_op_duration,Operation=Exists Type=AuthProvider,1.0730097826086955
+postgres_op_duration,Operation=Exists Type=Notifier,0.8988362727272728
+postgres_op_duration,Operation=Get Type=Alert,0.7537675869565217
+postgres_op_duration,Operation=Get Type=AuthProvider,0.5612880266666667
+postgres_op_duration,Operation=Get Type=Blob,1.14297025
+postgres_op_duration,Operation=Get Type=ClusterHealthStatus,0.9421808064516125
+postgres_op_duration,Operation=Get Type=ComplianceConfig,0.6780001333333333
+postgres_op_duration,Operation=Get Type=ComplianceRunMetadata,0.6651568000000001
+postgres_op_duration,Operation=Get Type=ComplianceRunResults,0.9054131219512191
+postgres_op_duration,Operation=Get Type=ComplianceStrings,0.72365335
+postgres_op_duration,Operation=Get Type=Config,9.844943624999999
+postgres_op_duration,Operation=Get Type=DeclarativeConfigHealth,0.5885460088495574
+postgres_op_duration,Operation=Get Type=DelegatedRegistryConfig,0.7206281951219512
+postgres_op_duration,Operation=Get Type=Group,0.6371503220338982
+postgres_op_duration,Operation=Get Type=Image,4.921377842567915
+postgres_op_duration,Operation=Get Type=ImageComponents,0.6853499423710213
+postgres_op_duration,Operation=Get Type=ImageIntegration,0.9548306733333336
+postgres_op_duration,Operation=Get Type=ImageMetadata,0.5542289656767297
+postgres_op_duration,Operation=Get Type=InstallationInfo,0.8352149999999999
+postgres_op_duration,Operation=Get Type=IntegrationHealth,1.2233557674418616
+postgres_op_duration,Operation=Get Type=K8SRole,0.531153762589928
+postgres_op_duration,Operation=Get Type=NetworkBaseline,1.190154317919075
+postgres_op_duration,Operation=Get Type=NetworkEntity,0.4002970752504895
+postgres_op_duration,Operation=Get Type=NetworkGraphConfig,0.6543689999999999
+postgres_op_duration,Operation=Get Type=NetworkPolicy,0.8985215303867399
+postgres_op_duration,Operation=Get Type=NetworkPolicyApplicationUndoRecord,1.5906161333333333
+postgres_op_duration,Operation=Get Type=Node,4.177913820689657
+postgres_op_duration,Operation=Get Type=NodeMetadata,32.62387222388062
+postgres_op_duration,Operation=Get Type=Notifier,0.6842832631578946
+postgres_op_duration,Operation=Get Type=PermissionSet,0.6713423447643984
+postgres_op_duration,Operation=Get Type=Policy,0.7161521791907514
+postgres_op_duration,Operation=Get Type=PolicyCategory,0.43161546958863745
+postgres_op_duration,Operation=Get Type=ProcessBaselineResults,0.913167001063829
+postgres_op_duration,Operation=Get Type=Risk,1.2334345803212856
+postgres_op_duration,Operation=Get Type=Role,0.9006615550141087
+postgres_op_duration,Operation=Get Type=Secret,0.9600602608695653
+postgres_op_duration,Operation=Get Type=ServiceAccount,0.5595622343750001
+postgres_op_duration,Operation=Get Type=SignatureIntegration,0.7828672083333333
+postgres_op_duration,Operation=Get Type=SimpleAccessScope,0.5640230474172188
+postgres_op_duration,Operation=Get Type=TokenMetadata,0.7344518461538463
+postgres_op_duration,Operation=GetAll Type=AuthProvider,1.6460891599999998
+postgres_op_duration,Operation=GetAll Type=ImageIntegration,2.58318237912088
+postgres_op_duration,Operation=GetAll Type=Notifier,3.2271762954545453
+postgres_op_duration,Operation=GetAll Type=Policy,3.9663944012738868
+postgres_op_duration,Operation=GetByQuery Type=Alert,1.700262584319528
+postgres_op_duration,Operation=GetByQuery Type=ComplianceIntegration,3.1814529552845565
+postgres_op_duration,Operation=GetByQuery Type=NetworkPolicy,1.45898579245283
+postgres_op_duration,Operation=GetByQuery Type=ProcessIndicator,0.9946456797020482
+postgres_op_duration,Operation=GetByQuery Type=ProcessListeningOnPortStorage,1.4049563636363638
+postgres_op_duration,Operation=GetFlowsForDeployment Type=NetworkFlow,1.226278227272727
+postgres_op_duration,Operation=GetMany Type=ActiveComponent,0.09954912068965517
+postgres_op_duration,Operation=GetMany Type=AdministrationEvent,2.785653666666667
+postgres_op_duration,Operation=GetMany Type=Alert,0.8458459214586261
+postgres_op_duration,Operation=GetMany Type=CVE,0.7592779999999999
+postgres_op_duration,Operation=GetMany Type=ClusterCVEEdgeIDs,1.8880604358974353
+postgres_op_duration,Operation=GetMany Type=ClusterHealthStatus,0.7836116693744933
+postgres_op_duration,Operation=GetMany Type=ComplianceRunMetadata,0.46524615384615375
+postgres_op_duration,Operation=GetMany Type=Image,10.408963763157894
+postgres_op_duration,Operation=GetMany Type=ImageCVE,4.407986149999998
+postgres_op_duration,Operation=GetMany Type=ImageCVEEdges,0.7047135382585776
+postgres_op_duration,Operation=GetMany Type=ImageCVEs,0.8077671493403694
+postgres_op_duration,Operation=GetMany Type=ImageComponent,2.7773732222222227
+postgres_op_duration,Operation=GetMany Type=ImageComponentCVEEdges,0.8239657873216251
+postgres_op_duration,Operation=GetMany Type=ImageComponentEdges,0.5402418221734342
+postgres_op_duration,Operation=GetMany Type=K8SRole,1.7894457428571426
+postgres_op_duration,Operation=GetMany Type=K8SRoleBinding,0.09702443853820604
+postgres_op_duration,Operation=GetMany Type=NetworkFlow,2.2981681186440674
+postgres_op_duration,Operation=GetMany Type=Node,1.9141417407407406
+postgres_op_duration,Operation=GetMany Type=NodeCVEs,0.6320721453744491
+postgres_op_duration,Operation=GetMany Type=NodeComponent,0.6012310975609759
+postgres_op_duration,Operation=GetMany Type=NodeComponentCVERelations,0.4543377125000004
+postgres_op_duration,Operation=GetMany Type=NodeComponentEdge,0.5923720687500001
+postgres_op_duration,Operation=GetMany Type=PolicyCategory,0.19026829581151833
+postgres_op_duration,Operation=GetMany Type=PolicyCategoryEdge,0.21730991361256524
+postgres_op_duration,Operation=GetMany Type=ProcessIndicator,2.0001132727272726
+postgres_op_duration,Operation=GetMany Type=Secret,0.37172250000000007
+postgres_op_duration,Operation=GetMany Type=ServiceAccount,0.399705375
+postgres_op_duration,Operation=GetProcessListeningOnPort Type=ProcessListeningOnPortStorage,0.859574087837838
+postgres_op_duration,Operation=Remove Type=AuthProvider,1.5612510869565213
+postgres_op_duration,Operation=Remove Type=DeclarativeConfigHealth,1.574137842105263
+postgres_op_duration,Operation=Remove Type=Deployment,2.5495547283237006
+postgres_op_duration,Operation=Remove Type=Group,1.74389225
+postgres_op_duration,Operation=Remove Type=Image,14.567777952380952
+postgres_op_duration,Operation=Remove Type=ImageIntegration,2.382125630434783
+postgres_op_duration,Operation=Remove Type=IntegrationHealth,1.814826
+postgres_op_duration,Operation=Remove Type=K8SRole,2.4582070000000003
+postgres_op_duration,Operation=Remove Type=NamespaceMetadata,3.756476
+postgres_op_duration,Operation=Remove Type=NetworkPolicy,2.345507766423358
+postgres_op_duration,Operation=Remove Type=Notifier,2.308276615384615
+postgres_op_duration,Operation=Remove Type=PermissionSet,2.0426928787878786
+postgres_op_duration,Operation=Remove Type=Pod,3.9205111380952355
+postgres_op_duration,Operation=Remove Type=Policy,2.9599015874125887
+postgres_op_duration,Operation=Remove Type=PolicyCategoryEdge,0.47926377391304353
+postgres_op_duration,Operation=Remove Type=ProcessBaseline,2.4476251599999994
+postgres_op_duration,Operation=Remove Type=ProcessBaselineResults,3.6928936220472433
+postgres_op_duration,Operation=Remove Type=ProcessIndicator,2.876881380952382
+postgres_op_duration,Operation=Remove Type=ProcessListeningOnPortStorage,1.035270080952381
+postgres_op_duration,Operation=Remove Type=Risk,4.52658582040816
+postgres_op_duration,Operation=Remove Type=Role,2.048650361111111
+postgres_op_duration,Operation=Remove Type=Secret,2.7497189315068504
+postgres_op_duration,Operation=Remove Type=ServiceAccount,3.3477246666666662
+postgres_op_duration,Operation=Remove Type=SignatureIntegration,1.6118101666666667
+postgres_op_duration,Operation=Remove Type=SimpleAccessScope,1.74447
+postgres_op_duration,Operation=RemoveFlowsByDeployment Type=NetworkFlow,3.3791696531791895
+postgres_op_duration,Operation=RemoveMany Type=ClusterCVEEdges,1.3893530256410258
+postgres_op_duration,Operation=RemoveMany Type=ClusterCVEs,1.4680713589743588
+postgres_op_duration,Operation=RemoveMany Type=NetworkBaseline,1.8331408409090912
+postgres_op_duration,Operation=Search Type=ActiveComponent,0.42388581132075465
+postgres_op_duration,Operation=Search Type=Alert,2.111660571428571
+postgres_op_duration,Operation=Search Type=Cluster,0.5749409587852495
+postgres_op_duration,Operation=Search Type=ComplianceRunMetadata,0.7362951025641025
+postgres_op_duration,Operation=Search Type=Deployment,2.1527332852112697
+postgres_op_duration,Operation=Search Type=Image,1.0815310963114753
+postgres_op_duration,Operation=Search Type=ImageCVE,6.522059904761905
+postgres_op_duration,Operation=Search Type=ImageComponent,4.306686375
+postgres_op_duration,Operation=Search Type=ImageIntegration,0.24944572727272726
+postgres_op_duration,Operation=Search Type=K8SRole,1.0847196279069768
+postgres_op_duration,Operation=Search Type=K8SRoleBinding,0.5940114457236844
+postgres_op_duration,Operation=Search Type=NamespaceMetadata,0.8492063977900552
+postgres_op_duration,Operation=Search Type=Node,2.048731558139535
+postgres_op_duration,Operation=Search Type=NodeCVE,1.9754501428571427
+postgres_op_duration,Operation=Search Type=NodeComponent,1.2430854
+postgres_op_duration,Operation=Search Type=Pod,6.480924249999999
+postgres_op_duration,Operation=Search Type=Policy,0.31290833333333334
+postgres_op_duration,Operation=Search Type=PolicyCategory,0.6408405342832072
+postgres_op_duration,Operation=Search Type=PolicyCategoryEdge,0.530811678010471
+postgres_op_duration,Operation=Search Type=ProcessBaseline,0.7578033181818188
+postgres_op_duration,Operation=Search Type=ProcessIndicator,0.7140996000000001
+postgres_op_duration,Operation=Search Type=Risk,1.531727875
+postgres_op_duration,Operation=Search Type=Secret,1.203502304347826
+postgres_op_duration,Operation=Search Type=ServiceAccount,1.719815166666666
+postgres_op_duration,Operation=Search Type=VulnerabilityRequest,11.147839374999998
+postgres_op_duration,Operation=UpdateMany Type=ActiveComponent,4.656507888888888
+postgres_op_duration,Operation=UpdateMany Type=AdministrationEvent,3.9900570952380954
+postgres_op_duration,Operation=UpdateMany Type=Alert,2.8944935076238916
+postgres_op_duration,Operation=UpdateMany Type=DiscoveredCluster,0.7924235714285714
+postgres_op_duration,Operation=UpdateMany Type=NetworkBaseline,1.4364482727272727
+postgres_op_duration,Operation=UpdateMany Type=NetworkFlow,5.3841303220339
+postgres_op_duration,Operation=UpdateMany Type=PolicyCategory,0.2967812956521738
+postgres_op_duration,Operation=UpdateMany Type=PolicyCategoryEdge,1.6628858000000004
+postgres_op_duration,Operation=UpdateMany Type=ProcessIndicator,4.544205388392856
+postgres_op_duration,Operation=UpdateMany Type=ProcessListeningOnPortStorage,1.6155427499999995
+postgres_op_duration,Operation=Upsert Type=AuthProvider,1.8339693200000005
+postgres_op_duration,Operation=Upsert Type=Cluster,5.461288841269841
+postgres_op_duration,Operation=Upsert Type=ClusterHealthStatus,1.950777927419355
+postgres_op_duration,Operation=Upsert Type=ComplianceDomain,2.3223444285714288
+postgres_op_duration,Operation=Upsert Type=ComplianceIntegration,2.5788536829268294
+postgres_op_duration,Operation=Upsert Type=ComplianceRunMetadata,3.2166968333333332
+postgres_op_duration,Operation=Upsert Type=ComplianceRunResults,2.3139198666666663
+postgres_op_duration,Operation=Upsert Type=ComplianceStrings,2.349924133333334
+postgres_op_duration,Operation=Upsert Type=DeclarativeConfigHealth,1.6591945585106394
+postgres_op_duration,Operation=Upsert Type=Deployment,27.02661086268654
+postgres_op_duration,Operation=Upsert Type=Group,1.5306004318181814
+postgres_op_duration,Operation=Upsert Type=Hash,4.399125774193547
+postgres_op_duration,Operation=Upsert Type=Image,19.142350287738427
+postgres_op_duration,Operation=Upsert Type=ImageIntegration,2.9491470166666662
+postgres_op_duration,Operation=Upsert Type=IntegrationHealth,6.23282517431193
+postgres_op_duration,Operation=Upsert Type=K8SRole,112.6711022260274
+postgres_op_duration,Operation=Upsert Type=K8SRoleBinding,150.90000903597127
+postgres_op_duration,Operation=Upsert Type=NamespaceMetadata,26.08098926086956
+postgres_op_duration,Operation=Upsert Type=NetworkEntity,1.5152933512516749
+postgres_op_duration,Operation=Upsert Type=NetworkPolicy,23.09675228571428
+postgres_op_duration,Operation=Upsert Type=NetworkPolicyApplicationUndoRecord,9.6427644
+postgres_op_duration,Operation=Upsert Type=Node,64.15334216417911
+postgres_op_duration,Operation=Upsert Type=Notifier,1.7791011470588236
+postgres_op_duration,Operation=Upsert Type=PermissionSet,6.464429547619046
+postgres_op_duration,Operation=Upsert Type=Pod,7.486367554098378
+postgres_op_duration,Operation=Upsert Type=Policy,1.9312710523560201
+postgres_op_duration,Operation=Upsert Type=PolicyCategory,1.5604453076923075
+postgres_op_duration,Operation=Upsert Type=ProcessBaseline,1.6791155544554448
+postgres_op_duration,Operation=Upsert Type=ProcessBaselineResults,16.286590119469025
+postgres_op_duration,Operation=Upsert Type=Risk,2.272357248682823
+postgres_op_duration,Operation=Upsert Type=Role,5.410382098039213
+postgres_op_duration,Operation=Upsert Type=Secret,103.19188912264151
+postgres_op_duration,Operation=Upsert Type=ServiceAccount,62.4985993904762
+postgres_op_duration,Operation=Upsert Type=ServiceIdentity,2.0901945555555557
+postgres_op_duration,Operation=Upsert Type=SignatureIntegration,2.1626256666666666
+postgres_op_duration,Operation=Upsert Type=SimpleAccessScope,2.0057745789473684
+postgres_op_duration,Operation=Upsert Type=TokenMetadata,2.1935114756097573
+postgres_op_duration,Operation=Walk Type=AuthProvider,1.64255528
+postgres_op_duration,Operation=Walk Type=ComplianceOperatorCheckResult,2.2753751875
+postgres_op_duration,Operation=Walk Type=ComplianceOperatorProfile,1.8981594705882354
+postgres_op_duration,Operation=Walk Type=ComplianceOperatorScan,2.4769310625
+postgres_op_duration,Operation=Walk Type=DeclarativeConfigHealth,1.9287982777777775
+postgres_op_duration,Operation=Walk Type=Group,2.4127348278688516
+postgres_op_duration,Operation=Walk Type=ImageIntegration,2.5793823241758225
+postgres_op_duration,Operation=Walk Type=NetworkEntity,425.90291314285724
+postgres_op_duration,Operation=Walk Type=Notifier,3.2232989545454553
+postgres_op_duration,Operation=Walk Type=PermissionSet,1.8025795862068963
+postgres_op_duration,Operation=Walk Type=Policy,3.962567974522292
+postgres_op_duration,Operation=Walk Type=Role,2.6507642631578947
+postgres_op_duration,Operation=Walk Type=SignatureIntegration,2.44837925
+postgres_op_duration,Operation=Walk Type=SimpleAccessScope,1.653373482758621
+postgres_op_duration,Operation=Walk Type=WatchedImage,2.1744642203389826
+postgres_table_data_bytes,table=active_components,81920
+postgres_table_data_bytes,table=active_components_active_contexts_slices,57344
+postgres_table_data_bytes,table=administration_events,40960
+postgres_table_data_bytes,table=alerts,3.301376e+06
+postgres_table_data_bytes,table=api_tokens,49152
+postgres_table_data_bytes,table=auth_machine_to_machine_configs,0
+postgres_table_data_bytes,table=auth_machine_to_machine_configs_mappings,0
+postgres_table_data_bytes,table=auth_providers,8192
+postgres_table_data_bytes,table=blobs,8192
+postgres_table_data_bytes,table=cloud_sources,8192
+postgres_table_data_bytes,table=cluster_cve_edges,8192
+postgres_table_data_bytes,table=cluster_cves,57344
+postgres_table_data_bytes,table=cluster_health_statuses,8192
+postgres_table_data_bytes,table=cluster_init_bundles,8192
+postgres_table_data_bytes,table=clusters,106496
+postgres_table_data_bytes,table=collections,0
+postgres_table_data_bytes,table=collections_embedded_collections,0
+postgres_table_data_bytes,table=compliance_configs,0
+postgres_table_data_bytes,table=compliance_domains,8192
+postgres_table_data_bytes,table=compliance_integrations,8192
+postgres_table_data_bytes,table=compliance_operator_check_result_v2,0
+postgres_table_data_bytes,table=compliance_operator_check_results,0
+postgres_table_data_bytes,table=compliance_operator_cluster_scan_config_statuses,0
+postgres_table_data_bytes,table=compliance_operator_profile_v2,0
+postgres_table_data_bytes,table=compliance_operator_profile_v2_rules,0
+postgres_table_data_bytes,table=compliance_operator_profiles,0
+postgres_table_data_bytes,table=compliance_operator_rule_v2,0
+postgres_table_data_bytes,table=compliance_operator_rule_v2_controls,0
+postgres_table_data_bytes,table=compliance_operator_rules,0
+postgres_table_data_bytes,table=compliance_operator_scan_configuration_v2,0
+postgres_table_data_bytes,table=compliance_operator_scan_configuration_v2_clusters,0
+postgres_table_data_bytes,table=compliance_operator_scan_configuration_v2_profiles,0
+postgres_table_data_bytes,table=compliance_operator_scan_setting_binding_v2,0
+postgres_table_data_bytes,table=compliance_operator_scan_setting_bindings,0
+postgres_table_data_bytes,table=compliance_operator_scan_v2,0
+postgres_table_data_bytes,table=compliance_operator_scans,0
+postgres_table_data_bytes,table=compliance_operator_suite_v2,0
+postgres_table_data_bytes,table=compliance_run_metadata,40960
+postgres_table_data_bytes,table=compliance_run_results,40960
+postgres_table_data_bytes,table=compliance_strings,40960
+postgres_table_data_bytes,table=configs,8192
+postgres_table_data_bytes,table=declarative_config_healths,8192
+postgres_table_data_bytes,table=delegated_registry_configs,0
+postgres_table_data_bytes,table=deployments,221184
+postgres_table_data_bytes,table=deployments_containers,114688
+postgres_table_data_bytes,table=deployments_containers_envs,221184
+postgres_table_data_bytes,table=deployments_containers_secrets,40960
+postgres_table_data_bytes,table=deployments_containers_volumes,704512
+postgres_table_data_bytes,table=deployments_ports,40960
+postgres_table_data_bytes,table=deployments_ports_exposure_infos,40960
+postgres_table_data_bytes,table=discovered_clusters,8192
+postgres_table_data_bytes,table=external_backups,0
+postgres_table_data_bytes,table=groups,8192
+postgres_table_data_bytes,table=hashes,40960
+postgres_table_data_bytes,table=image_component_cve_edges,3.579904e+06
+postgres_table_data_bytes,table=image_component_edges,2.351104e+06
+postgres_table_data_bytes,table=image_components,737280
+postgres_table_data_bytes,table=image_cve_edges,5.152768e+06
+postgres_table_data_bytes,table=image_cves,6.668288e+06
+postgres_table_data_bytes,table=image_integrations,8192
+postgres_table_data_bytes,table=images,163840
+postgres_table_data_bytes,table=images_layers,385024
+postgres_table_data_bytes,table=installation_infos,8192
+postgres_table_data_bytes,table=integration_healths,40960
+postgres_table_data_bytes,table=k8s_roles,409600
+postgres_table_data_bytes,table=listening_endpoints,114688
+postgres_table_data_bytes,table=log_imbues,0
+postgres_table_data_bytes,table=namespaces,8192
+postgres_table_data_bytes,table=network_baselines,49152
+postgres_table_data_bytes,table=network_entities,7.921664e+06
+postgres_table_data_bytes,table=network_flows_v2,188416
+postgres_table_data_bytes,table=network_graph_configs,8192
+postgres_table_data_bytes,table=networkpolicies,229376
+postgres_table_data_bytes,table=networkpoliciesundodeployments,0
+postgres_table_data_bytes,table=networkpolicyapplicationundorecords,8192
+postgres_table_data_bytes,table=node_component_edges,57344
+postgres_table_data_bytes,table=node_components,40960
+postgres_table_data_bytes,table=node_components_cves_edges,0
+postgres_table_data_bytes,table=node_cves,0
+postgres_table_data_bytes,table=nodes,90112
+postgres_table_data_bytes,table=nodes_taints,0
+postgres_table_data_bytes,table=notification_schedules,8192
+postgres_table_data_bytes,table=notifier_enc_configs,0
+postgres_table_data_bytes,table=notifiers,8192
+postgres_table_data_bytes,table=permission_sets,40960
+postgres_table_data_bytes,table=pods,221184
+postgres_table_data_bytes,table=pods_live_instances,229376
+postgres_table_data_bytes,table=policies,221184
+postgres_table_data_bytes,table=policy_categories,8192
+postgres_table_data_bytes,table=policy_category_edges,65536
+postgres_table_data_bytes,table=process_baseline_results,81920
+postgres_table_data_bytes,table=process_baselines,65536
+postgres_table_data_bytes,table=process_indicators,442368
+postgres_table_data_bytes,table=report_configurations,0
+postgres_table_data_bytes,table=report_configurations_notifiers,0
+postgres_table_data_bytes,table=report_snapshots,0
+postgres_table_data_bytes,table=risks,737280
+postgres_table_data_bytes,table=role_bindings,1.097728e+06
+postgres_table_data_bytes,table=role_bindings_subjects,98304
+postgres_table_data_bytes,table=roles,8192
+postgres_table_data_bytes,table=secrets,65536
+postgres_table_data_bytes,table=secrets_files,40960
+postgres_table_data_bytes,table=secrets_files_registries,8192
+postgres_table_data_bytes,table=secured_units,8192
+postgres_table_data_bytes,table=sensor_upgrade_configs,8192
+postgres_table_data_bytes,table=service_accounts,253952
+postgres_table_data_bytes,table=service_identities,8192
+postgres_table_data_bytes,table=signature_integrations,8192
+postgres_table_data_bytes,table=simple_access_scopes,8192
+postgres_table_data_bytes,table=system_infos,0
+postgres_table_data_bytes,table=versions,8192
+postgres_table_data_bytes,table=vulnerability_requests,0
+postgres_table_data_bytes,table=vulnerability_requests_approvers,0
+postgres_table_data_bytes,table=vulnerability_requests_approvers_v2,0
+postgres_table_data_bytes,table=vulnerability_requests_comments,0
+postgres_table_data_bytes,table=watched_images,0
+postgres_table_index_bytes,table=active_components,73728
+postgres_table_index_bytes,table=active_components_active_contexts_slices,57344
+postgres_table_index_bytes,table=administration_events,16384
+postgres_table_index_bytes,table=alerts,458752
+postgres_table_index_bytes,table=api_tokens,16384
+postgres_table_index_bytes,table=auth_machine_to_machine_configs,16384
+postgres_table_index_bytes,table=auth_machine_to_machine_configs_mappings,16384
+postgres_table_index_bytes,table=auth_providers,32768
+postgres_table_index_bytes,table=blobs,16384
+postgres_table_index_bytes,table=cloud_sources,32768
+postgres_table_index_bytes,table=cluster_cve_edges,49152
+postgres_table_index_bytes,table=cluster_cves,49152
+postgres_table_index_bytes,table=cluster_health_statuses,16384
+postgres_table_index_bytes,table=cluster_init_bundles,16384
+postgres_table_index_bytes,table=clusters,32768
+postgres_table_index_bytes,table=collections,16384
+postgres_table_index_bytes,table=collections_embedded_collections,16384
+postgres_table_index_bytes,table=compliance_configs,8192
+postgres_table_index_bytes,table=compliance_domains,16384
+postgres_table_index_bytes,table=compliance_integrations,65536
+postgres_table_index_bytes,table=compliance_operator_check_result_v2,40960
+postgres_table_index_bytes,table=compliance_operator_check_results,8192
+postgres_table_index_bytes,table=compliance_operator_cluster_scan_config_statuses,40960
+postgres_table_index_bytes,table=compliance_operator_profile_v2,40960
+postgres_table_index_bytes,table=compliance_operator_profile_v2_rules,16384
+postgres_table_index_bytes,table=compliance_operator_profiles,8192
+postgres_table_index_bytes,table=compliance_operator_rule_v2,40960
+postgres_table_index_bytes,table=compliance_operator_rule_v2_controls,16384
+postgres_table_index_bytes,table=compliance_operator_rules,8192
+postgres_table_index_bytes,table=compliance_operator_scan_configuration_v2,16384
+postgres_table_index_bytes,table=compliance_operator_scan_configuration_v2_clusters,65536
+postgres_table_index_bytes,table=compliance_operator_scan_configuration_v2_profiles,16384
+postgres_table_index_bytes,table=compliance_operator_scan_setting_binding_v2,40960
+postgres_table_index_bytes,table=compliance_operator_scan_setting_bindings,8192
+postgres_table_index_bytes,table=compliance_operator_scan_v2,40960
+postgres_table_index_bytes,table=compliance_operator_scans,8192
+postgres_table_index_bytes,table=compliance_operator_suite_v2,40960
+postgres_table_index_bytes,table=compliance_run_metadata,49152
+postgres_table_index_bytes,table=compliance_run_results,49152
+postgres_table_index_bytes,table=compliance_strings,16384
+postgres_table_index_bytes,table=configs,0
+postgres_table_index_bytes,table=declarative_config_healths,16384
+postgres_table_index_bytes,table=delegated_registry_configs,0
+postgres_table_index_bytes,table=deployments,32768
+postgres_table_index_bytes,table=deployments_containers,65536
+postgres_table_index_bytes,table=deployments_containers_envs,65536
+postgres_table_index_bytes,table=deployments_containers_secrets,32768
+postgres_table_index_bytes,table=deployments_containers_volumes,32768
+postgres_table_index_bytes,table=deployments_ports,32768
+postgres_table_index_bytes,table=deployments_ports_exposure_infos,32768
+postgres_table_index_bytes,table=discovered_clusters,16384
+postgres_table_index_bytes,table=external_backups,8192
+postgres_table_index_bytes,table=groups,32768
+postgres_table_index_bytes,table=hashes,16384
+postgres_table_index_bytes,table=image_component_cve_edges,2.629632e+06
+postgres_table_index_bytes,table=image_component_edges,1.343488e+06
+postgres_table_index_bytes,table=image_components,270336
+postgres_table_index_bytes,table=image_cve_edges,3.31776e+06
+postgres_table_index_bytes,table=image_cves,770048
+postgres_table_index_bytes,table=image_integrations,49152
+postgres_table_index_bytes,table=images,16384
+postgres_table_index_bytes,table=images_layers,262144
+postgres_table_index_bytes,table=installation_infos,0
+postgres_table_index_bytes,table=integration_healths,16384
+postgres_table_index_bytes,table=k8s_roles,32768
+postgres_table_index_bytes,table=listening_endpoints,114688
+postgres_table_index_bytes,table=log_imbues,8192
+postgres_table_index_bytes,table=namespaces,32768
+postgres_table_index_bytes,table=network_baselines,32768
+postgres_table_index_bytes,table=network_entities,3.579904e+06
+postgres_table_index_bytes,table=network_flows_v2,589824
+postgres_table_index_bytes,table=network_graph_configs,16384
+postgres_table_index_bytes,table=networkpolicies,57344
+postgres_table_index_bytes,table=networkpoliciesundodeployments,8192
+postgres_table_index_bytes,table=networkpolicyapplicationundorecords,16384
+postgres_table_index_bytes,table=node_component_edges,81920
+postgres_table_index_bytes,table=node_components,16384
+postgres_table_index_bytes,table=node_components_cves_edges,73728
+postgres_table_index_bytes,table=node_cves,40960
+postgres_table_index_bytes,table=nodes,49152
+postgres_table_index_bytes,table=nodes_taints,16384
+postgres_table_index_bytes,table=notification_schedules,0
+postgres_table_index_bytes,table=notifier_enc_configs,0
+postgres_table_index_bytes,table=notifiers,32768
+postgres_table_index_bytes,table=permission_sets,32768
+postgres_table_index_bytes,table=pods,32768
+postgres_table_index_bytes,table=pods_live_instances,32768
+postgres_table_index_bytes,table=policies,81920
+postgres_table_index_bytes,table=policy_categories,32768
+postgres_table_index_bytes,table=policy_category_edges,40960
+postgres_table_index_bytes,table=process_baseline_results,32768
+postgres_table_index_bytes,table=process_baselines,90112
+postgres_table_index_bytes,table=process_indicators,122880
+postgres_table_index_bytes,table=report_configurations,8192
+postgres_table_index_bytes,table=report_configurations_notifiers,16384
+postgres_table_index_bytes,table=report_snapshots,8192
+postgres_table_index_bytes,table=risks,237568
+postgres_table_index_bytes,table=role_bindings,32768
+postgres_table_index_bytes,table=role_bindings_subjects,32768
+postgres_table_index_bytes,table=roles,16384
+postgres_table_index_bytes,table=secrets,32768
+postgres_table_index_bytes,table=secrets_files,32768
+postgres_table_index_bytes,table=secrets_files_registries,32768
+postgres_table_index_bytes,table=secured_units,32768
+postgres_table_index_bytes,table=sensor_upgrade_configs,0
+postgres_table_index_bytes,table=service_accounts,32768
+postgres_table_index_bytes,table=service_identities,16384
+postgres_table_index_bytes,table=signature_integrations,32768
+postgres_table_index_bytes,table=simple_access_scopes,32768
+postgres_table_index_bytes,table=system_infos,0
+postgres_table_index_bytes,table=versions,0
+postgres_table_index_bytes,table=vulnerability_requests,16384
+postgres_table_index_bytes,table=vulnerability_requests_approvers,16384
+postgres_table_index_bytes,table=vulnerability_requests_approvers_v2,16384
+postgres_table_index_bytes,table=vulnerability_requests_comments,16384
+postgres_table_index_bytes,table=watched_images,8192
+postgres_table_size,table=active_components,90
+postgres_table_size,table=active_components_active_contexts_slices,90
+postgres_table_size,table=administration_events,0
+postgres_table_size,table=alerts,2223
+postgres_table_size,table=api_tokens,69
+postgres_table_size,table=auth_machine_to_machine_configs,0
+postgres_table_size,table=auth_machine_to_machine_configs_mappings,0
+postgres_table_size,table=auth_providers,0
+postgres_table_size,table=blobs,0
+postgres_table_size,table=cloud_sources,0
+postgres_table_size,table=cluster_cve_edges,4
+postgres_table_size,table=cluster_cves,4
+postgres_table_size,table=cluster_health_statuses,2
+postgres_table_size,table=cluster_init_bundles,0
+postgres_table_size,table=clusters,1
+postgres_table_size,table=collections,0
+postgres_table_size,table=collections_embedded_collections,0
+postgres_table_size,table=compliance_configs,0
+postgres_table_size,table=compliance_domains,0
+postgres_table_size,table=compliance_integrations,1
+postgres_table_size,table=compliance_operator_check_result_v2,0
+postgres_table_size,table=compliance_operator_check_results,0
+postgres_table_size,table=compliance_operator_cluster_scan_config_statuses,0
+postgres_table_size,table=compliance_operator_profile_v2,0
+postgres_table_size,table=compliance_operator_profile_v2_rules,0
+postgres_table_size,table=compliance_operator_profiles,0
+postgres_table_size,table=compliance_operator_rule_v2,0
+postgres_table_size,table=compliance_operator_rule_v2_controls,0
+postgres_table_size,table=compliance_operator_rules,0
+postgres_table_size,table=compliance_operator_scan_configuration_v2,0
+postgres_table_size,table=compliance_operator_scan_configuration_v2_clusters,0
+postgres_table_size,table=compliance_operator_scan_configuration_v2_profiles,0
+postgres_table_size,table=compliance_operator_scan_setting_binding_v2,0
+postgres_table_size,table=compliance_operator_scan_setting_bindings,0
+postgres_table_size,table=compliance_operator_scan_v2,0
+postgres_table_size,table=compliance_operator_scans,0
+postgres_table_size,table=compliance_operator_suite_v2,0
+postgres_table_size,table=compliance_run_metadata,0
+postgres_table_size,table=compliance_run_results,0
+postgres_table_size,table=compliance_strings,0
+postgres_table_size,table=configs,0
+postgres_table_size,table=declarative_config_healths,6
+postgres_table_size,table=delegated_registry_configs,0
+postgres_table_size,table=deployments,51
+postgres_table_size,table=deployments_containers,73
+postgres_table_size,table=deployments_containers_envs,511
+postgres_table_size,table=deployments_containers_secrets,30
+postgres_table_size,table=deployments_containers_volumes,170
+postgres_table_size,table=deployments_ports,44
+postgres_table_size,table=deployments_ports_exposure_infos,32
+postgres_table_size,table=discovered_clusters,0
+postgres_table_size,table=external_backups,0
+postgres_table_size,table=groups,0
+postgres_table_size,table=hashes,1
+postgres_table_size,table=image_component_cve_edges,10704
+postgres_table_size,table=image_component_edges,3996
+postgres_table_size,table=image_components,2807
+postgres_table_size,table=image_cve_edges,10518
+postgres_table_size,table=image_cves,6391
+postgres_table_size,table=image_integrations,13
+postgres_table_size,table=images,64
+postgres_table_size,table=images_layers,1251
+postgres_table_size,table=installation_infos,0
+postgres_table_size,table=integration_healths,15
+postgres_table_size,table=k8s_roles,140
+postgres_table_size,table=listening_endpoints,79
+postgres_table_size,table=log_imbues,0
+postgres_table_size,table=namespaces,0
+postgres_table_size,table=network_baselines,49
+postgres_table_size,table=network_entities,57483
+postgres_table_size,table=network_flows_v2,159
+postgres_table_size,table=network_graph_configs,0
+postgres_table_size,table=networkpolicies,114
+postgres_table_size,table=networkpoliciesundodeployments,0
+postgres_table_size,table=networkpolicyapplicationundorecords,0
+postgres_table_size,table=node_component_edges,12
+postgres_table_size,table=node_components,4
+postgres_table_size,table=node_components_cves_edges,0
+postgres_table_size,table=node_cves,0
+postgres_table_size,table=nodes,3
+postgres_table_size,table=nodes_taints,0
+postgres_table_size,table=notification_schedules,0
+postgres_table_size,table=notifier_enc_configs,0
+postgres_table_size,table=notifiers,0
+postgres_table_size,table=permission_sets,12
+postgres_table_size,table=pods,51
+postgres_table_size,table=pods_live_instances,82
+postgres_table_size,table=policies,86
+postgres_table_size,table=policy_categories,0
+postgres_table_size,table=policy_category_edges,109
+postgres_table_size,table=process_baseline_results,50
+postgres_table_size,table=process_baselines,41
+postgres_table_size,table=process_indicators,292
+postgres_table_size,table=report_configurations,0
+postgres_table_size,table=report_configurations_notifiers,0
+postgres_table_size,table=report_snapshots,0
+postgres_table_size,table=risks,1263
+postgres_table_size,table=role_bindings,131
+postgres_table_size,table=role_bindings_subjects,135
+postgres_table_size,table=roles,10
+postgres_table_size,table=secrets,27
+postgres_table_size,table=secrets_files,43
+postgres_table_size,table=secrets_files_registries,7
+postgres_table_size,table=secured_units,0
+postgres_table_size,table=sensor_upgrade_configs,0
+postgres_table_size,table=service_accounts,65
+postgres_table_size,table=service_identities,0
+postgres_table_size,table=signature_integrations,0
+postgres_table_size,table=simple_access_scopes,0
+postgres_table_size,table=system_infos,0
+postgres_table_size,table=versions,0
+postgres_table_size,table=vulnerability_requests,0
+postgres_table_size,table=vulnerability_requests_approvers,0
+postgres_table_size,table=vulnerability_requests_approvers_v2,0
+postgres_table_size,table=vulnerability_requests_comments,0
+postgres_table_size,table=watched_images,0
+postgres_table_toast_bytes,table=active_components,8192
+postgres_table_toast_bytes,table=active_components_active_contexts_slices,8192
+postgres_table_toast_bytes,table=administration_events,8192
+postgres_table_toast_bytes,table=alerts,2.883584e+06
+postgres_table_toast_bytes,table=api_tokens,8192
+postgres_table_toast_bytes,table=auth_machine_to_machine_configs,8192
+postgres_table_toast_bytes,table=auth_machine_to_machine_configs_mappings,8192
+postgres_table_toast_bytes,table=auth_providers,8192
+postgres_table_toast_bytes,table=blobs,8192
+postgres_table_toast_bytes,table=cloud_sources,8192
+postgres_table_toast_bytes,table=cluster_cve_edges,8192
+postgres_table_toast_bytes,table=cluster_cves,8192
+postgres_table_toast_bytes,table=cluster_health_statuses,8192
+postgres_table_toast_bytes,table=cluster_init_bundles,8192
+postgres_table_toast_bytes,table=clusters,8192
+postgres_table_toast_bytes,table=collections,8192
+postgres_table_toast_bytes,table=collections_embedded_collections,8192
+postgres_table_toast_bytes,table=compliance_configs,8192
+postgres_table_toast_bytes,table=compliance_domains,98304
+postgres_table_toast_bytes,table=compliance_integrations,8192
+postgres_table_toast_bytes,table=compliance_operator_check_result_v2,8192
+postgres_table_toast_bytes,table=compliance_operator_check_results,8192
+postgres_table_toast_bytes,table=compliance_operator_cluster_scan_config_statuses,8192
+postgres_table_toast_bytes,table=compliance_operator_profile_v2,8192
+postgres_table_toast_bytes,table=compliance_operator_profile_v2_rules,8192
+postgres_table_toast_bytes,table=compliance_operator_profiles,8192
+postgres_table_toast_bytes,table=compliance_operator_rule_v2,8192
+postgres_table_toast_bytes,table=compliance_operator_rule_v2_controls,8192
+postgres_table_toast_bytes,table=compliance_operator_rules,8192
+postgres_table_toast_bytes,table=compliance_operator_scan_configuration_v2,8192
+postgres_table_toast_bytes,table=compliance_operator_scan_configuration_v2_clusters,0
+postgres_table_toast_bytes,table=compliance_operator_scan_configuration_v2_profiles,8192
+postgres_table_toast_bytes,table=compliance_operator_scan_setting_binding_v2,8192
+postgres_table_toast_bytes,table=compliance_operator_scan_setting_bindings,8192
+postgres_table_toast_bytes,table=compliance_operator_scan_v2,8192
+postgres_table_toast_bytes,table=compliance_operator_scans,8192
+postgres_table_toast_bytes,table=compliance_operator_suite_v2,8192
+postgres_table_toast_bytes,table=compliance_run_metadata,8192
+postgres_table_toast_bytes,table=compliance_run_results,147456
+postgres_table_toast_bytes,table=compliance_strings,163840
+postgres_table_toast_bytes,table=configs,8192
+postgres_table_toast_bytes,table=declarative_config_healths,8192
+postgres_table_toast_bytes,table=delegated_registry_configs,8192
+postgres_table_toast_bytes,table=deployments,180224
+postgres_table_toast_bytes,table=deployments_containers,8192
+postgres_table_toast_bytes,table=deployments_containers_envs,8192
+postgres_table_toast_bytes,table=deployments_containers_secrets,8192
+postgres_table_toast_bytes,table=deployments_containers_volumes,8192
+postgres_table_toast_bytes,table=deployments_ports,8192
+postgres_table_toast_bytes,table=deployments_ports_exposure_infos,8192
+postgres_table_toast_bytes,table=discovered_clusters,8192
+postgres_table_toast_bytes,table=external_backups,8192
+postgres_table_toast_bytes,table=groups,8192
+postgres_table_toast_bytes,table=hashes,172032
+postgres_table_toast_bytes,table=image_component_cve_edges,8192
+postgres_table_toast_bytes,table=image_component_edges,8192
+postgres_table_toast_bytes,table=image_components,8192
+postgres_table_toast_bytes,table=image_cve_edges,8192
+postgres_table_toast_bytes,table=image_cves,81920
+postgres_table_toast_bytes,table=image_integrations,81920
+postgres_table_toast_bytes,table=images,901120
+postgres_table_toast_bytes,table=images_layers,8192
+postgres_table_toast_bytes,table=installation_infos,8192
+postgres_table_toast_bytes,table=integration_healths,8192
+postgres_table_toast_bytes,table=k8s_roles,8192
+postgres_table_toast_bytes,table=listening_endpoints,8192
+postgres_table_toast_bytes,table=log_imbues,8192
+postgres_table_toast_bytes,table=namespaces,8192
+postgres_table_toast_bytes,table=network_baselines,8192
+postgres_table_toast_bytes,table=network_entities,8192
+postgres_table_toast_bytes,table=network_flows_v2,32768
+postgres_table_toast_bytes,table=network_graph_configs,8192
+postgres_table_toast_bytes,table=networkpolicies,8192
+postgres_table_toast_bytes,table=networkpoliciesundodeployments,8192
+postgres_table_toast_bytes,table=networkpolicyapplicationundorecords,73728
+postgres_table_toast_bytes,table=node_component_edges,8192
+postgres_table_toast_bytes,table=node_components,8192
+postgres_table_toast_bytes,table=node_components_cves_edges,8192
+postgres_table_toast_bytes,table=node_cves,8192
+postgres_table_toast_bytes,table=nodes,57344
+postgres_table_toast_bytes,table=nodes_taints,8192
+postgres_table_toast_bytes,table=notification_schedules,8192
+postgres_table_toast_bytes,table=notifier_enc_configs,8192
+postgres_table_toast_bytes,table=notifiers,8192
+postgres_table_toast_bytes,table=permission_sets,8192
+postgres_table_toast_bytes,table=pods,8192
+postgres_table_toast_bytes,table=pods_live_instances,8192
+postgres_table_toast_bytes,table=policies,57344
+postgres_table_toast_bytes,table=policy_categories,8192
+postgres_table_toast_bytes,table=policy_category_edges,8192
+postgres_table_toast_bytes,table=process_baseline_results,8192
+postgres_table_toast_bytes,table=process_baselines,8192
+postgres_table_toast_bytes,table=process_indicators,57344
+postgres_table_toast_bytes,table=report_configurations,8192
+postgres_table_toast_bytes,table=report_configurations_notifiers,8192
+postgres_table_toast_bytes,table=report_snapshots,8192
+postgres_table_toast_bytes,table=risks,24576
+postgres_table_toast_bytes,table=role_bindings,8192
+postgres_table_toast_bytes,table=role_bindings_subjects,8192
+postgres_table_toast_bytes,table=roles,8192
+postgres_table_toast_bytes,table=secrets,8192
+postgres_table_toast_bytes,table=secrets_files,0
+postgres_table_toast_bytes,table=secrets_files_registries,8192
+postgres_table_toast_bytes,table=secured_units,8192
+postgres_table_toast_bytes,table=sensor_upgrade_configs,8192
+postgres_table_toast_bytes,table=service_accounts,8192
+postgres_table_toast_bytes,table=service_identities,8192
+postgres_table_toast_bytes,table=signature_integrations,8192
+postgres_table_toast_bytes,table=simple_access_scopes,8192
+postgres_table_toast_bytes,table=system_infos,8192
+postgres_table_toast_bytes,table=versions,8192
+postgres_table_toast_bytes,table=vulnerability_requests,8192
+postgres_table_toast_bytes,table=vulnerability_requests_approvers,8192
+postgres_table_toast_bytes,table=vulnerability_requests_approvers_v2,8192
+postgres_table_toast_bytes,table=vulnerability_requests_comments,8192
+postgres_table_toast_bytes,table=watched_images,8192
+postgres_table_total_bytes,table=active_components,163840
+postgres_table_total_bytes,table=active_components_active_contexts_slices,122880
+postgres_table_total_bytes,table=administration_events,65536
+postgres_table_total_bytes,table=alerts,6.643712e+06
+postgres_table_total_bytes,table=api_tokens,73728
+postgres_table_total_bytes,table=auth_machine_to_machine_configs,24576
+postgres_table_total_bytes,table=auth_machine_to_machine_configs_mappings,24576
+postgres_table_total_bytes,table=auth_providers,49152
+postgres_table_total_bytes,table=blobs,32768
+postgres_table_total_bytes,table=cloud_sources,49152
+postgres_table_total_bytes,table=cluster_cve_edges,65536
+postgres_table_total_bytes,table=cluster_cves,114688
+postgres_table_total_bytes,table=cluster_health_statuses,32768
+postgres_table_total_bytes,table=cluster_init_bundles,32768
+postgres_table_total_bytes,table=clusters,147456
+postgres_table_total_bytes,table=collections,24576
+postgres_table_total_bytes,table=collections_embedded_collections,24576
+postgres_table_total_bytes,table=compliance_configs,16384
+postgres_table_total_bytes,table=compliance_domains,122880
+postgres_table_total_bytes,table=compliance_integrations,81920
+postgres_table_total_bytes,table=compliance_operator_check_result_v2,49152
+postgres_table_total_bytes,table=compliance_operator_check_results,16384
+postgres_table_total_bytes,table=compliance_operator_cluster_scan_config_statuses,49152
+postgres_table_total_bytes,table=compliance_operator_profile_v2,49152
+postgres_table_total_bytes,table=compliance_operator_profile_v2_rules,24576
+postgres_table_total_bytes,table=compliance_operator_profiles,16384
+postgres_table_total_bytes,table=compliance_operator_rule_v2,49152
+postgres_table_total_bytes,table=compliance_operator_rule_v2_controls,24576
+postgres_table_total_bytes,table=compliance_operator_rules,16384
+postgres_table_total_bytes,table=compliance_operator_scan_configuration_v2,24576
+postgres_table_total_bytes,table=compliance_operator_scan_configuration_v2_clusters,65536
+postgres_table_total_bytes,table=compliance_operator_scan_configuration_v2_profiles,24576
+postgres_table_total_bytes,table=compliance_operator_scan_setting_binding_v2,49152
+postgres_table_total_bytes,table=compliance_operator_scan_setting_bindings,16384
+postgres_table_total_bytes,table=compliance_operator_scan_v2,49152
+postgres_table_total_bytes,table=compliance_operator_scans,16384
+postgres_table_total_bytes,table=compliance_operator_suite_v2,49152
+postgres_table_total_bytes,table=compliance_run_metadata,98304
+postgres_table_total_bytes,table=compliance_run_results,237568
+postgres_table_total_bytes,table=compliance_strings,221184
+postgres_table_total_bytes,table=configs,16384
+postgres_table_total_bytes,table=declarative_config_healths,32768
+postgres_table_total_bytes,table=delegated_registry_configs,8192
+postgres_table_total_bytes,table=deployments,434176
+postgres_table_total_bytes,table=deployments_containers,188416
+postgres_table_total_bytes,table=deployments_containers_envs,294912
+postgres_table_total_bytes,table=deployments_containers_secrets,81920
+postgres_table_total_bytes,table=deployments_containers_volumes,745472
+postgres_table_total_bytes,table=deployments_ports,81920
+postgres_table_total_bytes,table=deployments_ports_exposure_infos,81920
+postgres_table_total_bytes,table=discovered_clusters,32768
+postgres_table_total_bytes,table=external_backups,16384
+postgres_table_total_bytes,table=groups,49152
+postgres_table_total_bytes,table=hashes,229376
+postgres_table_total_bytes,table=image_component_cve_edges,6.217728e+06
+postgres_table_total_bytes,table=image_component_edges,3.702784e+06
+postgres_table_total_bytes,table=image_components,1.015808e+06
+postgres_table_total_bytes,table=image_cve_edges,8.47872e+06
+postgres_table_total_bytes,table=image_cves,7.520256e+06
+postgres_table_total_bytes,table=image_integrations,139264
+postgres_table_total_bytes,table=images,1.081344e+06
+postgres_table_total_bytes,table=images_layers,655360
+postgres_table_total_bytes,table=installation_infos,16384
+postgres_table_total_bytes,table=integration_healths,65536
+postgres_table_total_bytes,table=k8s_roles,450560
+postgres_table_total_bytes,table=listening_endpoints,237568
+postgres_table_total_bytes,table=log_imbues,16384
+postgres_table_total_bytes,table=namespaces,49152
+postgres_table_total_bytes,table=network_baselines,90112
+postgres_table_total_bytes,table=network_entities,1.150976e+07
+postgres_table_total_bytes,table=network_flows_v2,811008
+postgres_table_total_bytes,table=network_graph_configs,32768
+postgres_table_total_bytes,table=networkpolicies,294912
+postgres_table_total_bytes,table=networkpoliciesundodeployments,16384
+postgres_table_total_bytes,table=networkpolicyapplicationundorecords,98304
+postgres_table_total_bytes,table=node_component_edges,147456
+postgres_table_total_bytes,table=node_components,65536
+postgres_table_total_bytes,table=node_components_cves_edges,81920
+postgres_table_total_bytes,table=node_cves,49152
+postgres_table_total_bytes,table=nodes,196608
+postgres_table_total_bytes,table=nodes_taints,24576
+postgres_table_total_bytes,table=notification_schedules,16384
+postgres_table_total_bytes,table=notifier_enc_configs,8192
+postgres_table_total_bytes,table=notifiers,49152
+postgres_table_total_bytes,table=permission_sets,81920
+postgres_table_total_bytes,table=pods,262144
+postgres_table_total_bytes,table=pods_live_instances,270336
+postgres_table_total_bytes,table=policies,360448
+postgres_table_total_bytes,table=policy_categories,49152
+postgres_table_total_bytes,table=policy_category_edges,114688
+postgres_table_total_bytes,table=process_baseline_results,122880
+postgres_table_total_bytes,table=process_baselines,163840
+postgres_table_total_bytes,table=process_indicators,622592
+postgres_table_total_bytes,table=report_configurations,16384
+postgres_table_total_bytes,table=report_configurations_notifiers,24576
+postgres_table_total_bytes,table=report_snapshots,16384
+postgres_table_total_bytes,table=risks,999424
+postgres_table_total_bytes,table=role_bindings,1.138688e+06
+postgres_table_total_bytes,table=role_bindings_subjects,139264
+postgres_table_total_bytes,table=roles,32768
+postgres_table_total_bytes,table=secrets,106496
+postgres_table_total_bytes,table=secrets_files,73728
+postgres_table_total_bytes,table=secrets_files_registries,49152
+postgres_table_total_bytes,table=secured_units,49152
+postgres_table_total_bytes,table=sensor_upgrade_configs,16384
+postgres_table_total_bytes,table=service_accounts,294912
+postgres_table_total_bytes,table=service_identities,32768
+postgres_table_total_bytes,table=signature_integrations,49152
+postgres_table_total_bytes,table=simple_access_scopes,49152
+postgres_table_total_bytes,table=system_infos,8192
+postgres_table_total_bytes,table=versions,16384
+postgres_table_total_bytes,table=vulnerability_requests,24576
+postgres_table_total_bytes,table=vulnerability_requests_approvers,24576
+postgres_table_total_bytes,table=vulnerability_requests_approvers_v2,24576
+postgres_table_total_bytes,table=vulnerability_requests_comments,24576
+postgres_table_total_bytes,table=watched_images,16384
+postgres_total_connections,state=active,1
+postgres_total_connections,state=idle,9
+postgres_total_connections,state=idle in transaction,0
+postgres_total_size_bytes,,9.4537828e+07
+process_cpu_nr_periods,,22629
+process_cpu_nr_throttled,,0
+process_cpu_seconds_total,,198.62
+process_cpu_throttled_time,,0
+process_filter,Type=Added,2000
+process_filter,Type=NotAdded,19
+process_max_fds,,1.048576e+06
+process_open_fds,,381
+process_pruning_cache_hits,,0
+process_pruning_cache_misses,,0
+process_queue_length,,0
+process_resident_memory_bytes,,3.94780672e+08
+process_start_time_seconds,,1.71345813042e+09
+process_virtual_memory_bytes,,6.839328768e+09
+process_virtual_memory_max_bytes,,1.8446744073709552e+19
+pruned_process_indicators,,0
+reprocessor_duration_seconds,,2.604977916
+resource_processed_count,Operation=Add Resource=Alert,394
+resource_processed_count,Operation=Add Resource=ComplianceOperatorInfo,246
+resource_processed_count,Operation=Add Resource=Deployment,174
+resource_processed_count,Operation=Add Resource=DeploymentReprocess,767
+resource_processed_count,Operation=Add Resource=ImageIntegration,48
+resource_processed_count,Operation=Add Resource=Namespace,14
+resource_processed_count,Operation=Add Resource=NetworkPolicy,231
+resource_processed_count,Operation=Add Resource=Pod,207
+resource_processed_count,Operation=Add Resource=ProcessIndicator,2019
+resource_processed_count,Operation=Add Resource=ProcessListeningOnPort,44
+resource_processed_count,Operation=Add Resource=Role,6
+resource_processed_count,Operation=Add Resource=RoleBinding,5
+resource_processed_count,Operation=Add Resource=Secret,79
+resource_processed_count,Operation=Add Resource=ServiceAccount,19
+resource_processed_count,Operation=Remove Resource=Alert,168
+resource_processed_count,Operation=Remove Resource=Deployment,173
+resource_processed_count,Operation=Remove Resource=ImageIntegration,18
+resource_processed_count,Operation=Remove Resource=Namespace,13
+resource_processed_count,Operation=Remove Resource=NetworkPolicy,137
+resource_processed_count,Operation=Remove Resource=Pod,207
+resource_processed_count,Operation=Remove Resource=Role,6
+resource_processed_count,Operation=Remove Resource=RoleBinding,4
+resource_processed_count,Operation=Remove Resource=Secret,73
+resource_processed_count,Operation=Remove Resource=ServiceAccount,18
+resource_processed_count,Operation=Sync Resource=Alert,49
+resource_processed_count,Operation=Sync Resource=Deployment,49
+resource_processed_count,Operation=Sync Resource=ImageIntegration,4
+resource_processed_count,Operation=Sync Resource=Namespace,7
+resource_processed_count,Operation=Sync Resource=NetworkPolicy,7
+resource_processed_count,Operation=Sync Resource=Node,3
+resource_processed_count,Operation=Sync Resource=Pod,54
+resource_processed_count,Operation=Sync Resource=Role,140
+resource_processed_count,Operation=Sync Resource=RoleBinding,131
+resource_processed_count,Operation=Sync Resource=Secret,20
+resource_processed_count,Operation=Sync Resource=ServiceAccount,62
+resource_processed_count,Operation=Update Resource=Alert,1431
+resource_processed_count,Operation=Update Resource=Deployment,264
+resource_processed_count,Operation=Update Resource=Namespace,2
+resource_processed_count,Operation=Update Resource=Pod,959
+resource_processed_count,Operation=Update Resource=RoleBinding,3
+resource_processed_count,Operation=Update Resource=Secret,7
+resource_processed_count,Operation=Update Resource=ServiceAccount,24
+risk_processing_duration,Risk_Reprocessor=Deployment,19.15886472620599
+risk_processing_duration,Risk_Reprocessor=Image,23.145514988010955
+risk_processing_duration,Risk_Reprocessor=ImageComponent,0.05337253780390065
+risk_processing_duration,Risk_Reprocessor=Node,64.18856467164174
+scan_duration,Error=false Scanner=Stackrox Scanner,5221.231952879436
+scan_duration,Error=false Scanner=gcr,459.00540137499996
+secured_clusters,branding=RHACS build=internal central_id=59137597-0c84-4a45-bfb1-e9ae12b38ca3 central_version=4.4.x-408-gcce8223eaa hosting=self-managed install_method=manifest,1
+secured_nodes,branding=RHACS build=internal central_id=59137597-0c84-4a45-bfb1-e9ae12b38ca3 central_version=4.4.x-408-gcce8223eaa hosting=self-managed install_method=manifest,3
+secured_vcpus,branding=RHACS build=internal central_id=59137597-0c84-4a45-bfb1-e9ae12b38ca3 central_version=4.4.x-408-gcce8223eaa hosting=self-managed install_method=manifest,12
+sensor_connected,ClusterID=d0526792-67ad-448c-adf6-9a5ca731644e connection_state=STARTUP,2
+sensor_event_deduper,status=deduped type=AlertResults,2
+sensor_event_deduper,status=passed type=AlertResults,2042
+sensor_event_deduper,status=passed type=Binding,143
+sensor_event_deduper,status=passed type=Deployment,665
+sensor_event_deduper,status=passed type=ImageIntegration,70
+sensor_event_deduper,status=passed type=Namespace,36
+sensor_event_deduper,status=passed type=NetworkPolicy,375
+sensor_event_deduper,status=passed type=Node,3
+sensor_event_deduper,status=passed type=Pod,1437
+sensor_event_deduper,status=passed type=ProcessIndicator,2019
+sensor_event_deduper,status=passed type=ReprocessDeployment,767
+sensor_event_deduper,status=passed type=Role,152
+sensor_event_deduper,status=passed type=Secret,179
+sensor_event_deduper,status=passed type=ServiceAccount,123
+sensor_event_duration,Action=CREATE_RESOURCE Type=AlertResults,11.233640316239322
+sensor_event_duration,Action=CREATE_RESOURCE Type=Binding,3.1217522
+sensor_event_duration,Action=CREATE_RESOURCE Type=Deployment,5.269809471264366
+sensor_event_duration,Action=CREATE_RESOURCE Type=ImageIntegration,142.13198149999997
+sensor_event_duration,Action=CREATE_RESOURCE Type=Namespace,3.303713785714286
+sensor_event_duration,Action=CREATE_RESOURCE Type=NetworkPolicy,3.5219737056277047
+sensor_event_duration,Action=CREATE_RESOURCE Type=Pod,3.4771246280193253
+sensor_event_duration,Action=CREATE_RESOURCE Type=ProcessIndicator,0.04088682516097086
+sensor_event_duration,Action=CREATE_RESOURCE Type=Role,3.1840455
+sensor_event_duration,Action=CREATE_RESOURCE Type=Secret,3.253279987341773
+sensor_event_duration,Action=CREATE_RESOURCE Type=ServiceAccount,8.938536210526316
+sensor_event_duration,Action=REMOVE_RESOURCE Type=AlertResults,13.204041815476184
+sensor_event_duration,Action=REMOVE_RESOURCE Type=Deployment,20.26427614450867
+sensor_event_duration,Action=REMOVE_RESOURCE Type=ImageIntegration,77.53955522222223
+sensor_event_duration,Action=REMOVE_RESOURCE Type=Namespace,3.900050461538461
+sensor_event_duration,Action=REMOVE_RESOURCE Type=NetworkPolicy,3.378247576642335
+sensor_event_duration,Action=REMOVE_RESOURCE Type=Pod,8.041378603864736
+sensor_event_duration,Action=REMOVE_RESOURCE Type=Role,2.5291111666666666
+sensor_event_duration,Action=REMOVE_RESOURCE Type=Secret,2.7937292739726023
+sensor_event_duration,Action=REMOVE_RESOURCE Type=ServiceAccount,3.391305833333333
+sensor_event_duration,Action=SYNC_RESOURCE Type=AlertResults,21.821479387755105
+sensor_event_duration,Action=SYNC_RESOURCE Type=Binding,159.9878996641222
+sensor_event_duration,Action=SYNC_RESOURCE Type=Deployment,406.8147781020407
+sensor_event_duration,Action=SYNC_RESOURCE Type=Namespace,78.61295957142856
+sensor_event_duration,Action=SYNC_RESOURCE Type=NetworkPolicy,671.2460362857144
+sensor_event_duration,Action=SYNC_RESOURCE Type=Pod,89.97019068518519
+sensor_event_duration,Action=SYNC_RESOURCE Type=Role,117.41322384285715
+sensor_event_duration,Action=SYNC_RESOURCE Type=Secret,533.3450502999999
+sensor_event_duration,Action=SYNC_RESOURCE Type=ServiceAccount,111.1443698548387
+sensor_event_duration,Action=UNSET_ACTION_RESOURCE Type=AlertResults,7.030032744186046
+sensor_event_duration,Action=UNSET_ACTION_RESOURCE Type=ClusterHealthInfo,2.9477025123966967
+sensor_event_duration,Action=UNSET_ACTION_RESOURCE Type=ClusterMetrics,0.06766007142857143
+sensor_event_duration,Action=UNSET_ACTION_RESOURCE Type=ComplianceOperatorInfo,5.819502069105693
+sensor_event_duration,Action=UNSET_ACTION_RESOURCE Type=NetworkFlow,5.4991620169491515
+sensor_event_duration,Action=UNSET_ACTION_RESOURCE Type=ProcessListeningOnPortUpdate,6.8320569318181805
+sensor_event_duration,Action=UNSET_ACTION_RESOURCE Type=ReprocessDeployment,19.220242992177333
+sensor_event_duration,Action=UPDATE_RESOURCE Type=AlertResults,7.960511916841377
+sensor_event_duration,Action=UPDATE_RESOURCE Type=Deployment,8.09513200757576
+sensor_event_duration,Action=UPDATE_RESOURCE Type=Pod,3.8104452888425393
+sensor_event_duration,Action=UPDATE_RESOURCE Type=Secret,2.821348285714286
+sensor_event_duration,Action=UPDATE_RESOURCE Type=ServiceAccount,3.375456666666667
+sensor_event_queue,Operation=Add Type=AlertResults,2042
+sensor_event_queue,Operation=Add Type=Binding,143
+sensor_event_queue,Operation=Add Type=ClusterHealthInfo,121
+sensor_event_queue,Operation=Add Type=ClusterMetrics,14
+sensor_event_queue,Operation=Add Type=ClusterStatusUpdate,4
+sensor_event_queue,Operation=Add Type=ComplianceOperatorInfo,246
+sensor_event_queue,Operation=Add Type=Deployment,1427
+sensor_event_queue,Operation=Add Type=DeploymentEnhancementResponse,3
+sensor_event_queue,Operation=Add Type=Event,8015
+sensor_event_queue,Operation=Add Type=ImageIntegration,70
+sensor_event_queue,Operation=Add Type=Namespace,36
+sensor_event_queue,Operation=Add Type=NetworkFlowUpdate,118
+sensor_event_queue,Operation=Add Type=NetworkPoliciesResponse,10
+sensor_event_queue,Operation=Add Type=NetworkPolicy,375
+sensor_event_queue,Operation=Add Type=Node,3
+sensor_event_queue,Operation=Add Type=Pod,1427
+sensor_event_queue,Operation=Add Type=ProcessIndicator,2019
+sensor_event_queue,Operation=Add Type=ProcessListeningOnPortUpdate,44
+sensor_event_queue,Operation=Add Type=Role,152
+sensor_event_queue,Operation=Add Type=ScrapeUpdate,72
+sensor_event_queue,Operation=Add Type=Secret,179
+sensor_event_queue,Operation=Add Type=ServiceAccount,123
+sensor_event_queue,Operation=Add Type=TelemetryDataResponse,174
+sensor_event_queue,Operation=Dedupe Type=Deployment,5
+sensor_event_queue,Operation=Dedupe Type=Pod,10
+sensor_event_queue,Operation=Remove Type=AlertResults,2042
+sensor_event_queue,Operation=Remove Type=Binding,143
+sensor_event_queue,Operation=Remove Type=ClusterHealthInfo,121
+sensor_event_queue,Operation=Remove Type=ClusterMetrics,14
+sensor_event_queue,Operation=Remove Type=ClusterStatusUpdate,4
+sensor_event_queue,Operation=Remove Type=ComplianceOperatorInfo,246
+sensor_event_queue,Operation=Remove Type=Deployment,1427
+sensor_event_queue,Operation=Remove Type=DeploymentEnhancementResponse,3
+sensor_event_queue,Operation=Remove Type=Event,8015
+sensor_event_queue,Operation=Remove Type=ImageIntegration,70
+sensor_event_queue,Operation=Remove Type=Namespace,36
+sensor_event_queue,Operation=Remove Type=NetworkFlowUpdate,118
+sensor_event_queue,Operation=Remove Type=NetworkPoliciesResponse,10
+sensor_event_queue,Operation=Remove Type=NetworkPolicy,375
+sensor_event_queue,Operation=Remove Type=Node,3
+sensor_event_queue,Operation=Remove Type=Pod,1427
+sensor_event_queue,Operation=Remove Type=ProcessIndicator,2019
+sensor_event_queue,Operation=Remove Type=ProcessListeningOnPortUpdate,44
+sensor_event_queue,Operation=Remove Type=Role,152
+sensor_event_queue,Operation=Remove Type=ScrapeUpdate,72
+sensor_event_queue,Operation=Remove Type=Secret,179
+sensor_event_queue,Operation=Remove Type=ServiceAccount,123
+sensor_event_queue,Operation=Remove Type=TelemetryDataResponse,174
+signature_verification_reprocessor_duration_seconds,,0.003316566
+total_network_endpoints_received_counter,ClusterID=d0526792-67ad-448c-adf6-9a5ca731644e,178
+total_network_flows_central_received_counter,ClusterID=d0526792-67ad-448c-adf6-9a5ca731644e,592
+uptime_seconds,,3920.000882308

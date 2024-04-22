@@ -3,25 +3,26 @@ package main
 import (
 	"context"
 	"fmt"
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
 	"log"
 	"strings"
 	"time"
 
-	monitoring "cloud.google.com/go/monitoring/apiv3"
-	"github.com/golang/protobuf/ptypes/timestamp"
+	monitoring "cloud.google.com/go/monitoring/apiv3/v2"
+	"cloud.google.com/go/monitoring/apiv3/v2/monitoringpb"
 	"github.com/pkg/errors"
 	"github.com/prometheus/prom2json"
 	"google.golang.org/genproto/googleapis/api/label"
 	google_metric "google.golang.org/genproto/googleapis/api/metric"
 	metricpb "google.golang.org/genproto/googleapis/api/metric"
 	"google.golang.org/genproto/googleapis/api/monitoredres"
-	monitoringpb "google.golang.org/genproto/googleapis/monitoring/v3"
+	timestamp "google.golang.org/protobuf/types/known/timestamppb"
 )
 
 type gcpMonitoring struct {
 	projectID string
 	client    *monitoring.MetricClient
-	ctx       context.Context
 }
 
 var commonMetricLabels = []*label.LabelDescriptor{
@@ -79,7 +80,7 @@ func (g *gcpMonitoring) createMetricDescriptors(families []*prom2json.Family) {
 }
 
 func (g *gcpMonitoring) createMetricDescriptor(family *prom2json.Family) (*metricpb.MetricDescriptor, error) {
-	metricName := strings.Title(strings.ReplaceAll(family.Name, "_", " "))
+	metricName := cases.Title(language.Und).String(strings.ReplaceAll(family.Name, "_", " "))
 
 	valueType := valueTypeFromFamilyType(family.Type)
 

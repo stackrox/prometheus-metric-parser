@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"log"
+	"os"
 	"sort"
 	"strconv"
 	"strings"
@@ -96,17 +98,17 @@ func (m metricMap) stdout(keys []familyKey) {
 	for i, k := range keys {
 		keyString := keyStrings[i]
 		if m[k].count == 0 {
-			fmt.Printf("%-80v %0.0f\n", keyString, m[k].value)
+			fmt.Fprintf(out, "%-80v %0.0f\n", keyString, m[k].value)
 		} else {
 			fraction := fmt.Sprintf("(%0.0f/%d)", m[k].sum, int64(m[k].count))
-			fmt.Printf("%-80v %s %0.3f\n", keyString, fraction, m[k].value)
+			fmt.Fprintf(out, "%-80v %s %0.3f\n", keyString, fraction, m[k].value)
 		}
 	}
 }
 
 func (m metricMap) csv(keys []familyKey) {
 	for _, k := range keys {
-		fmt.Printf("%s,%s,%g\n", k.metric, k.labels, m[k].value)
+		fmt.Fprintf(out, "%s,%s,%g\n", k.metric, k.labels, m[k].value)
 	}
 }
 
@@ -115,7 +117,7 @@ func (m metricMap) printInfluxDBLineProtocol(keys []familyKey, labels map[string
 		influxStr := k.metric
 		influxStr += makeInfluxdbLabels(m[k].labels)
 		influxStr += makeInfluxdbLabels(labels)
-		fmt.Printf("%s value=%g %d\n", influxStr, m[k].value, timestamp)
+		fmt.Fprintf(out, "%s value=%g %d\n", influxStr, m[k].value, timestamp)
 	}
 }
 
@@ -151,6 +153,8 @@ func (m metricMap) writeToGoogleCloudMonitoring(keys []familyKey, labels map[str
 	}
 	fmt.Println("done")
 }
+
+var out io.Writer = os.Stdout
 
 func (m metricMap) Print(format string, labels map[string]string, projectID string, timestamp int64) {
 	keys := m.toSortedKeys()
