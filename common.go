@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/csv"
 	"fmt"
 	"io"
 	"log"
@@ -107,8 +108,17 @@ func (m metricMap) stdout(keys []familyKey) {
 }
 
 func (m metricMap) csv(keys []familyKey) {
+	w := csv.NewWriter(out)
 	for _, k := range keys {
-		fmt.Fprintf(out, "%s,%s,%g\n", k.metric, k.labels, m[k].value)
+		value := fmt.Sprintf("%g", m[k].value)
+		record := []string{k.metric, k.labels, value}
+		if err := w.Write(record); err != nil {
+			log.Fatalln("error writing record to csv:", err)
+		}
+		w.Flush()
+		if err := w.Error(); err != nil {
+			log.Fatalln("error flushing to csv:", err)
+		}
 	}
 }
 
