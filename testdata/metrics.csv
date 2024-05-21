@@ -81,7 +81,7 @@ graphql_op_duration,Operation=LastScanned Resolver=ImageCVEs,0.7142033773584906
 graphql_op_duration,Operation=Pods Resolver=Root,2.2733501999999994
 graphql_op_duration,Operation=PolicyViolationEvents Resolver=Pods,1.1325613749999999
 graphql_op_duration,Operation=ProcessActivityEvents Resolver=Pods,0.899895125
-graphql_query_duration,Query=
+graphql_query_duration,"Query=
     query getPodEvents($podsQuery: String) {
         result: pods(query: $podsQuery) {
             id
@@ -101,7 +101,7 @@ graphql_query_duration,Query=
                 }
             }
         }
-    },4.701071875
+    }",4.701071875
 grpc_error,Code=Canceled,1
 grpc_last_message_size_received_bytes,Type=*central.MsgFromSensor_ClusterHealthInfo_,39
 grpc_last_message_size_received_bytes,Type=*central.MsgFromSensor_ClusterMetrics_,6
