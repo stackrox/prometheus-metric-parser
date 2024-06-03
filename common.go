@@ -6,6 +6,7 @@ import (
 	"io"
 	"log"
 	"os"
+	"slices"
 	"sort"
 	"strconv"
 	"strings"
@@ -13,6 +14,7 @@ import (
 	"github.com/pkg/errors"
 	"github.com/prometheus/prom2json"
 	"github.com/spf13/cobra"
+	"golang.org/x/exp/maps"
 )
 
 type metricOptions struct {
@@ -107,18 +109,30 @@ func (m metricMap) stdout(keys []familyKey) {
 	}
 }
 
-func (m metricMap) csv(keys []familyKey) {
+func (m metricMap) csv(keys []familyKey, labels map[string]string) {
 	w := csv.NewWriter(out)
+	header := []string{"metric", "labels", "value"}
+	additionalHeaders := maps.Keys(labels)
+	slices.Sort(additionalHeaders)
+	header = append(header, additionalHeaders...)
+	additionalValues := make([]string, 0, len(additionalHeaders))
+	for _, h := range additionalHeaders {
+		additionalValues = append(additionalValues, labels[h])
+	}
+	if err := w.Write(header); err != nil {
+		log.Fatalln("error writing header to csv:", err)
+	}
 	for _, k := range keys {
 		value := fmt.Sprintf("%g", m[k].value)
 		record := []string{k.metric, k.labels, value}
+		record = append(record, additionalValues...)
 		if err := w.Write(record); err != nil {
 			log.Fatalln("error writing record to csv:", err)
 		}
-		w.Flush()
-		if err := w.Error(); err != nil {
-			log.Fatalln("error flushing to csv:", err)
-		}
+	}
+	w.Flush()
+	if err := w.Error(); err != nil {
+		log.Fatalln("error flushing to csv:", err)
 	}
 }
 
@@ -173,7 +187,7 @@ func (m metricMap) Print(format string, labels map[string]string, projectID stri
 	case "plain":
 		m.stdout(keys)
 	case "csv":
-		m.csv(keys)
+		m.csv(keys, labels)
 	case "influxdb":
 		m.printInfluxDBLineProtocol(keys, labels, timestamp)
 	case "gcp-monitoring":

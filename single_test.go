@@ -30,6 +30,7 @@ func Test_single(t *testing.T) {
 				minHistogramCount: 5,
 				trimPrefix:        "rox_central_",
 				format:            tt.format,
+				labels:            "B=b,A=a , C= c ,,D=,=,=xyz",
 			})
 
 			assert.NoError(t, err)
