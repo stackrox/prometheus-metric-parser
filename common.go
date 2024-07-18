@@ -123,7 +123,7 @@ func (m metricMap) csv(keys []familyKey, labels map[string]string) {
 		log.Fatalln("error writing header to csv:", err)
 	}
 	for _, k := range keys {
-		value := fmt.Sprintf("%g", m[k].value)
+		value := fmt.Sprintf("%.8f", m[k].value)
 		record := []string{k.metric, k.labels, value}
 		record = append(record, additionalValues...)
 		if err := w.Write(record); err != nil {
